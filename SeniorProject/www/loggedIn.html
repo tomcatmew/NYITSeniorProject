@@ -6,10 +6,15 @@
     <meta charset="utf-8">
 
 
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-app.js"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
     <script>
       // Initialize Firebase
+
+
+
       var config = {
         apiKey: "AIzaSyBJ0OUomwjctk3CwENKoRCOuCQ5P92Mb6k",
         authDomain: "seniorproject-4f192.firebaseapp.com",
@@ -18,7 +23,9 @@
         storageBucket: "seniorproject-4f192.appspot.com",
         messagingSenderId: "375389359538"
       };
+
       firebase.initializeApp(config);
+
     </script>
 
     <script type="text/javascript" src="data.json"></script>
@@ -35,16 +42,8 @@
   <!-- A simple example script to add text to the page that displays the user's Display Name and Email -->
   <script>
   // Track the UID of the current user.
+
   var currentUid = null;
-
-
-
-  function generateSchedules(departmentCode,courseNumber,courseTitle, term, credits, location, time ,instructor){
-
-
-  }
-
-
 
 
   firebase.auth().onAuthStateChanged(function(user) {
@@ -57,9 +56,15 @@
     // Update the current user UID.
     currentUid = user.uid;
 
-    var mydata = JSON.parse(data);
-    document.body.innerHTML = '<h1> Hello ' + user.displayName + ' </h1> <h2> Your email address is: ' + user.email + ' <h/2> <h4> 1:' + load() + '</h4>';
 
+    var mydata = JSON.parse(data);
+    //document.body.innerHTML = '<h1> Hello ' + user.displayName + ' </h1> <h2> Your email address is: ' + user.email + ' <h/2> <h4> 1:' + load() + '</h4>';
+
+     //save data!!// SaveUserInfo(user);
+    //getUserInfo(user)
+    //getUserInfoRealTime(user);
+    //addCourse(user);
+    getUserInfoRealTime(user);
    } else {
     // Sign out operation. Reset the current user UID.
     currentUid = null;
@@ -69,6 +74,18 @@
   });
 
   </script>
+
+
+  <h1 id = "user-info"> </h1>
+  <h1 id = "course1-info"> </h1>
+  <h1 id = "course2-info"> </h1>
+
+  <!-- <ul id = "course-list">
+
+    <li id =>  </li>
+
+  </ul> -->
+
 
 
 
