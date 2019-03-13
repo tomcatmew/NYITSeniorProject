@@ -1,0 +1,483 @@
+begin camera_parameters _0.0_1290x920 (RGB)(1)
+ focal_length:                      29.51678575982105456887
+ ppac:                              -1.34970980451137290146 -0.20459329367491027596
+ ppbs:                               0 0
+ film_format:                       18.11472824000000159117 25.39999937999999701788
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        19.68992199999999925808 19.68992199999999925808
+ image_size_in_pixels:              920 1290
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            459.50000000000000000000 644.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_1439x799 (RGB)(2)
+ focal_length:                      26.30612854549968560036
+ ppac:                              -0.51211882509207140579 0.27057438462375943411
+ ppbs:                               0 0
+ film_format:                       14.10326645300000159011 25.40000053300000359968
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        17.65114700000000169666 17.65114700000000169666
+ image_size_in_pixels:              799 1439
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            398.50000000000000000000 718.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_1504x827 (RGB)(3)
+ focal_length:                      25.17008899173579905550
+ ppac:                              -0.63454955180094618772 -1.23441410240223503614
+ ppbs:                               0 0
+ film_format:                       13.96662244599999880279 25.40000019200000025421
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        16.88829799999999892179 16.88829799999999892179
+ image_size_in_pixels:              827 1504
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            412.50000000000000000000 751.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_1139x722 (RGB)(4)
+ focal_length:                      32.85809227832082513032
+ ppac:                              -0.09265393628984655572 -6.23018700039382444800
+ ppbs:                               0 0
+ film_format:                       16.10078988600000116094 25.39999955700000455749
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        22.30026300000000105683 22.30026300000000105683
+ image_size_in_pixels:              722 1139
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            360.50000000000000000000 568.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_686x881 (RGB)(5)
+ focal_length:                      52.91634858727036316850
+ ppac:                              -3.97105378195085734205 -9.13006188680243546685
+ ppbs:                               0 0
+ film_format:                       32.62011655899999595931 25.39999995399999832557
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        37.02623899999999679267 37.02623899999999679267
+ image_size_in_pixels:              881 686
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            439.50000000000000000000 342.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_646x889 (RGB)(6)
+ focal_length:                      55.92260745068915639422
+ ppac:                              -5.27168992270001801614 -7.21614535383712141225
+ ppbs:                               0 0
+ film_format:                       34.95448876500000068290 25.39999970999999945320
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        39.31888500000000163936 39.31888500000000163936
+ image_size_in_pixels:              889 646
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            443.50000000000000000000 322.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_715x901 (RGB)(7)
+ focal_length:                      50.61134690699650917622
+ ppac:                              -3.91330318966890278176 -3.37168057348723948508
+ ppbs:                               0 0
+ film_format:                       32.00755287599999832082 25.40000033999999828893
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        35.52447599999999994225 35.52447599999999994225
+ image_size_in_pixels:              901 715
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            449.50000000000000000000 356.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_772x932 (RGB)(8)
+ focal_length:                      38.43297371064524980966
+ ppac:                              -1.15567749400928199144 -3.98812399034678755072
+ ppbs:                               0 0
+ film_format:                       30.66424832799999933286 25.39999968799999763291
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        32.90155399999999730198 32.90155399999999730198
+ image_size_in_pixels:              932 772
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            465.50000000000000000000 385.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_939x844 (RGB)(9)
+ focal_length:                      41.52465667369351365323
+ ppac:                              -1.75818317624435604962 -0.01177744033809931430
+ ppbs:                               0 0
+ film_format:                       22.83024473200000059592 25.39999976699999706398
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        27.05005299999999834881 27.05005299999999834881
+ image_size_in_pixels:              844 939
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            421.50000000000000000000 468.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_1209x690 (RGB)(10)
+ focal_length:                      31.25366290162048699131
+ ppac:                              -0.45663921521636097189 -0.24229664514829643562
+ ppbs:                               0 0
+ film_format:                       14.49627762000000075204 25.39999948200000190468
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        21.00909800000000160480 21.00909800000000160480
+ image_size_in_pixels:              690 1209
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            344.50000000000000000000 603.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_1309x673 (RGB)(11)
+ focal_length:                      28.86284507480299055260
+ ppac:                              0.12049368710323524190 2.68908892463882853718
+ ppbs:                               0 0
+ film_format:                       13.05897612500000093405 25.39999962499999952570
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        19.40412500000000051159 19.40412500000000051159
+ image_size_in_pixels:              673 1309
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            335.50000000000000000000 653.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_1253x805 (RGB)(12)
+ focal_length:                      30.10321054248447580903
+ ppac:                              0.17386370092228983775 2.12809865081832416678
+ ppbs:                               0 0
+ film_format:                       16.31843594500000094172 25.40000029700000183652
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        20.27134900000000072851 20.27134900000000072851
+ image_size_in_pixels:              805 1253
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            401.50000000000000000000 625.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_1038x889 (RGB)(13)
+ focal_length:                      36.18922038024272325174
+ ppac:                              -0.94816771768414431776 0.24687747960516404078
+ ppbs:                               0 0
+ film_format:                       21.75395001499999736438 25.40000012999999867702
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        24.47013499999999908141 24.47013499999999908141
+ image_size_in_pixels:              889 1038
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            443.50000000000000000000 518.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_862x1006 (RGB)(14)
+ focal_length:                      46.52165794278462129796
+ ppac:                              -0.85039584387655797748 -2.46846415698939480876
+ ppbs:                               0 0
+ film_format:                       29.64315514200000123424 25.39999973399999788626
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        29.46635699999999857823 29.46635699999999857823
+ image_size_in_pixels:              1006 862
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            502.50000000000000000000 430.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_886x1016 (RGB)(15)
+ focal_length:                      43.07185212976459354195
+ ppac:                              -1.30722788307535875418 -4.76984544203017701847
+ ppbs:                               0 0
+ film_format:                       29.12686275199999741403 25.40000039199999903872
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        28.66817199999999843385 28.66817199999999843385
+ image_size_in_pixels:              1016 886
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            507.50000000000000000000 442.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_775x969 (RGB)(16)
+ focal_length:                      50.24216916781441710782
+ ppac:                              -1.13641775498135499944 2.95514397652818372464
+ ppbs:                               0 0
+ film_format:                       31.75819398600000198485 25.40000035000000266905
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        32.77419400000000138107 32.77419400000000138107
+ image_size_in_pixels:              969 775
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            483.50000000000000000000 386.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_1292x1033 (RGB)(21)
+ focal_length:                      32.78991671552908826470
+ ppac:                              -0.90722147904005112640 5.29748034829278147129
+ ppbs:                               0 0
+ film_format:                       20.30820461900000140076 25.40000035599999961278
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        19.65944299999999955730 19.65944299999999955730
+ image_size_in_pixels:              1033 1292
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            515.50000000000000000000 645.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_1472x867 (RGB)(23)
+ focal_length:                      28.79006517169610646079
+ ppac:                              -0.32215258589705475512 1.74183169883602961825
+ ppbs:                               0 0
+ film_format:                       14.96046214499999926772 25.40000032000000018684
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        17.25543499999999852434 17.25543499999999852434
+ image_size_in_pixels:              867 1472
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            432.50000000000000000000 735.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_653x1016 (RGB)(24)
+ focal_length:                      61.50437465983859652852
+ ppac:                              -5.33629430302428442445 -2.63755901511665369341
+ ppbs:                               0 0
+ film_format:                       39.51975535199999711722 25.40000024099999720306
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        38.89739699999999800184 38.89739699999999800184
+ image_size_in_pixels:              1016 653
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            507.50000000000000000000 325.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_1151x718 (RGB)(25)
+ focal_length:                      35.85664268041850988311
+ ppac:                              0.36364037439403895657 -6.21824741605329389671
+ ppbs:                               0 0
+ film_format:                       15.84465670600000031243 25.39999981700000120100
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        22.06776699999999991064 22.06776699999999991064
+ image_size_in_pixels:              718 1151
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            358.50000000000000000000 574.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_866x879 (RGB)(26)
+ focal_length:                      46.40489582147131386591
+ ppac:                              -0.72232385496295481442 5.08105167640953325758
+ ppbs:                               0 0
+ film_format:                       25.78129326600000226222 25.39999996399999915297
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        29.33025400000000004752 29.33025400000000004752
+ image_size_in_pixels:              879 866
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            438.50000000000000000000 432.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_754x988 (RGB)(27)
+ focal_length:                      47.12203366026695050550
+ ppac:                              -1.69540450632038330880 3.77874373643391825439
+ ppbs:                               0 0
+ film_format:                       33.28275896400000277708 25.40000026199999894061
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        33.68700299999999714373 33.68700299999999714373
+ image_size_in_pixels:              988 754
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            493.50000000000000000000 376.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters
+begin camera_parameters _0.0_1433x921 (RGB)(28)
+ focal_length:                      29.67423106879044780726
+ ppac:                              -0.46480997091852704894 0.71511059852463954023
+ ppbs:                               0 0
+ film_format:                       16.32477289200000214464 25.39999951600000471785
+ lens_distortion_flag:              off
+ io_required:                       yes
+ camera_type:                       frame
+ media_type:                        digital
+ pixel_size:                        17.72505200000000158411 17.72505200000000158411
+ image_size_in_pixels:              921 1433
+ scanline_orientation:              4
+ photo_coord_sys_orientation:       1
+ photo_coord_sys_origin:            459.50000000000000000000 715.50000000000000000000
+ focal_length_calibration_flag:     off
+ calibrated_focal_length_stddev:    0.03
+ ppac_calibration_flag:             off
+ calibrated_ppac_stddevs:           0.003   0.003
+ self_calibration_enabled_params:   0
+ antenna_offsets:                   0   0   0
+end camera_parameters

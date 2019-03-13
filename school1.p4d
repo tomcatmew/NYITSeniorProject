@@ -1,0 +1,1233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pix4dmapper>
+    <software>
+        <projectVersion>4.3.31</projectVersion>
+        <p4dVersion>21</p4dVersion>
+        <cameraModelVersion>19</cameraModelVersion>
+    </software>
+    <options>
+        <initial>
+            <runStep>false</runStep>
+            <!--    General    -->
+            <!--Keypoints Image Scale-->
+            <keypointsImageScale>Full</keypointsImageScale>
+            <imageScale>2</imageScale>
+            <!--Quality report-->
+            <generateOrthoInReport>false</generateOrthoInReport>
+            <!--    Matching    -->
+            <!--Matching Image Pairs-->
+            <matchStrategy>AutoOblique</matchStrategy>
+            <matchTimeNbNeighbours>4</matchTimeNbNeighbours>
+            <matchUseTriangulation>false</matchUseTriangulation>
+            <matchRelativeDistanceImages>0</matchRelativeDistanceImages>
+            <matchMtpMaxImagePair>50</matchMtpMaxImagePair>
+            <matchImageSimilarityMaxPairs>6</matchImageSimilarityMaxPairs>
+            <matchTimeMultiCamera>1</matchTimeMultiCamera>
+            <!--Matching Strategy-->
+            <geometricallyVerifiedMatching>false</geometricallyVerifiedMatching>
+            <!--    Calibration    -->
+            <!--Targeted number of keypoints-->
+            <keypointSelectionMethod>Automatic</keypointSelectionMethod>
+            <numberOfKeypoints>10000</numberOfKeypoints>
+            <!--Method-->
+            <calibrationMethod>Standard</calibrationMethod>
+            <!--Optimizer-->
+            <optimizerType>Ceres</optimizerType>
+            <!--Camera optimization-->
+            <internalParamOptimization>All</internalParamOptimization>
+            <externalParamOptimization>All</externalParamOptimization>
+            <leverarmParamOptimization>None</leverarmParamOptimization>
+            <!--Rematch-->
+            <rematchStrategy>Auto</rematchStrategy>
+            <rematch>true</rematch>
+            <rematchOverlap>0.3000000119</rematchOverlap>
+            <!--SkySegmentation-->
+            <automaticSkyMasking>true</automaticSkyMasking>
+            <!--Export-->
+            <exportCameraParamsAATBBA>true</exportCameraParamsAATBBA>
+            <exportUndistortedImages>false</exportUndistortedImages>
+            <!--    Miscellaneous options    -->
+            <matchAll>false</matchAll>
+            <targetCameraDist>0</targetCameraDist>
+            <descriptorType>0</descriptorType>
+            <minImageDist>0</minImageDist>
+            <rigMatch>true</rigMatch>
+            <saveKMLReport>false</saveKMLReport>
+            <createThumbnails>true</createThumbnails>
+            <threshAdd>20</threshAdd>
+            <threshHom>10</threshHom>
+        </initial>
+        <dense>
+            <runStep>true</runStep>
+            <!--Densification-->
+            <pclImageDownscaleFactor>1</pclImageDownscaleFactor>
+            <pclImageMultiscale>true</pclImageMultiscale>
+            <pclDensity>Optimal</pclDensity>
+            <pclMinNoMatches>3</pclMinNoMatches>
+            <!--Export-->
+            <pclExportLAS>true</pclExportLAS>
+            <pclExportLAZ>false</pclExportLAZ>
+            <pclExportPLY>false</pclExportPLY>
+            <pclExportXYZ>false</pclExportXYZ>
+            <pclExportXYZDelim>Space</pclExportXYZDelim>
+            <pclExportMergeTiles>false</pclExportMergeTiles>
+            <!--    Advanced    -->
+            <!--Densification-->
+            <pclWindowSize>9</pclWindowSize>
+            <!--Image groups-->
+            <pclImageGroups>
+                <group name=""/>
+            </pclImageGroups>
+            <!--Point cloud Filters-->
+            <pclUseProcessingArea>true</pclUseProcessingArea>
+            <pclUseAnnotations>true</pclUseAnnotations>
+            <pclLimitDepthAutomatically>true</pclLimitDepthAutomatically>
+            <!--Classification-->
+            <pclClassify>false</pclClassify>
+        </dense>
+        <mesh>
+            <!--Generation-->
+            <meshGenerate3dTexturedMesh>true</meshGenerate3dTexturedMesh>
+            <!--Settings-->
+            <meshResolution>Custom</meshResolution>
+            <meshMaxOctreeDepth>14</meshMaxOctreeDepth>
+            <meshTextureSize>8192</meshTextureSize>
+            <meshDecimationCriteria>Qualitative</meshDecimationCriteria>
+            <meshMaxTriangles>1000000</meshMaxTriangles>
+            <meshDecimationStrategy>Sensitive</meshDecimationStrategy>
+            <meshTextureColorBalancing>false</meshTextureColorBalancing>
+            <!--Export-->
+            <meshExportPLY>false</meshExportPLY>
+            <meshExportFBX>true</meshExportFBX>
+            <meshExportDXF>false</meshExportDXF>
+            <meshExportOBJ>true</meshExportOBJ>
+            <meshExportTiledOBJ>false</meshExportTiledOBJ>
+            <meshExportPDF3D>true</meshExportPDF3D>
+            <meshExportPDF3DLogoPath></meshExportPDF3DLogoPath>
+            <!--Image groups-->
+            <meshGeometryImageGroups>
+                <group name=""/>
+            </meshGeometryImageGroups>
+            <meshTextureImageGroups>
+                <group name=""/>
+            </meshTextureImageGroups>
+            <!--Mesh generation-->
+            <meshSampleDensityDivider>1</meshSampleDensityDivider>
+            <!--LOD generation-->
+            <lodExportOSGB>false</lodExportOSGB>
+            <lodExportSLPK>false</lodExportSLPK>
+            <lodLevelCount>4</lodLevelCount>
+            <lodTextureQuality>0</lodTextureQuality>
+        </mesh>
+        <ortho>
+            <runStep>false</runStep>
+            <!--    DSM and Orthomosaic   -->
+            <!--Resolution-->
+            <orthoResolution>-1</orthoResolution>
+            <!--DSM Filters-->
+            <dsmFilterUseNoiseFilter>true</dsmFilterUseNoiseFilter>
+            <dsmFilterUseSmoothing>true</dsmFilterUseSmoothing>
+            <dsmFilterSmoothingType>Sharp</dsmFilterSmoothingType>
+            <!--Raster DSM-->
+            <dsmTIFF>true</dsmTIFF>
+            <dsmMethod>InverseDistanceWeighting</dsmMethod>
+            <dsmTIFFMergeTiles>true</dsmTIFFMergeTiles>
+            <!--Orthomosaic-->
+            <mosaicTIFF>true</mosaicTIFF>
+            <mosaicTIFFMergeTiles>true</mosaicTIFFMergeTiles>
+            <mosaicTIFFNoTransparency>false</mosaicTIFFNoTransparency>
+            <mosaicKML>false</mosaicKML>
+            <!--    Additional outputs    -->
+            <!--Grid DSM-->
+            <gridDsmXYZ>false</gridDsmXYZ>
+            <gridDsmXYZDelim>Space</gridDsmXYZDelim>
+            <gridDsmLAS>false</gridDsmLAS>
+            <gridDsmLAZ>false</gridDsmLAZ>
+            <gridDsmGridSpacing>100</gridDsmGridSpacing>
+            <!--Raster DTM-->
+            <dtmTIFF>false</dtmTIFF>
+            <dtmTIFFMergeTiles>true</dtmTIFFMergeTiles>
+            <dtmResolution>-5</dtmResolution>
+            <!--Contour lines-->
+            <contourSHP>false</contourSHP>
+            <contourPDF>false</contourPDF>
+            <contourDXF>false</contourDXF>
+            <contourBase>0</contourBase>
+            <contourElevationInterval>10</contourElevationInterval>
+            <contourResolution>100</contourResolution>
+            <contourMinLineSize>20</contourMinLineSize>
+            <!--    Miscellaneous options    -->
+            <meanResolution>10.0534905444</meanResolution>
+            <mosaicVisib>true</mosaicVisib>
+            <mosaicGainc>true</mosaicGainc>
+            <dsmPNG>false</dsmPNG>
+        </ortho>
+        <index>
+            <radiometry>
+                <camera id="8">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="0">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="1">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="2">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="3">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="4">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="5">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="6">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="7">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="9">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="10">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="11">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="12">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="13">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="14">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="15">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="16">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="17">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="18">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="19">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="20">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="21">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="22">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="23">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="24">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="25">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="26">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="27">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="28">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+                <camera id="29">
+                    <radiometricCorrection>none</radiometricCorrection>
+                </camera>
+            </radiometry>
+            <!--Resolution-->
+            <indexResolution>-1</indexResolution>
+            <indexDownsamplingMethod>Gauss</indexDownsamplingMethod>
+            <!--Reflectance Map-->
+            <indexReflectance>false</indexReflectance>
+            <indexReflectanceMergeTiles>false</indexReflectanceMergeTiles>
+            <indices>
+                <index name="red" formula="red" enabled="false"/>
+                <index name="green" formula="green" enabled="false"/>
+                <index name="blue" formula="blue" enabled="false"/>
+                <index name="grayscale" formula="0.2126 * red + 0.7152 * green + 0.0722 * blue" enabled="false"/>
+            </indices>
+            <!--Export-->
+            <indexExportPointSHP>false</indexExportPointSHP>
+            <indexExportPointSHPGridSize>200</indexExportPointSHPGridSize>
+            <indexExportPolygonSHP>false</indexExportPolygonSHP>
+            <indexExportPolygonSHPGridSize>400</indexExportPolygonSHPGridSize>
+        </index>
+    </options>
+    <inputs>
+        <cameras>
+            <camera name="_0.0_1290x920">
+                <imageWidth>1290</imageWidth>
+                <imageHeight>920</imageHeight>
+                <pixelSize>19.689922</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>9.057364</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>0</id>
+            </camera>
+            <camera name="_0.0_1439x799">
+                <imageWidth>1439</imageWidth>
+                <imageHeight>799</imageHeight>
+                <pixelSize>17.651147</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>7.051633</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>1</id>
+            </camera>
+            <camera name="_0.0_1504x827">
+                <imageWidth>1504</imageWidth>
+                <imageHeight>827</imageHeight>
+                <pixelSize>16.888298</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>6.983311</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>2</id>
+            </camera>
+            <camera name="_0.0_1139x722">
+                <imageWidth>1139</imageWidth>
+                <imageHeight>722</imageHeight>
+                <pixelSize>22.300263</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>8.050395</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>3</id>
+            </camera>
+            <camera name="_0.0_686x881">
+                <imageWidth>686</imageWidth>
+                <imageHeight>881</imageHeight>
+                <pixelSize>37.026239</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>16.310058</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>4</id>
+            </camera>
+            <camera name="_0.0_646x889">
+                <imageWidth>646</imageWidth>
+                <imageHeight>889</imageHeight>
+                <pixelSize>39.318885</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>17.477245</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>5</id>
+            </camera>
+            <camera name="_0.0_715x901">
+                <imageWidth>715</imageWidth>
+                <imageHeight>901</imageHeight>
+                <pixelSize>35.524476</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>16.003776</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>6</id>
+            </camera>
+            <camera name="_0.0_772x932">
+                <imageWidth>772</imageWidth>
+                <imageHeight>932</imageHeight>
+                <pixelSize>32.901554</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>15.332124</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>7</id>
+            </camera>
+            <camera name="_0.0_939x844">
+                <imageWidth>939</imageWidth>
+                <imageHeight>844</imageHeight>
+                <pixelSize>27.050053</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>11.415122</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>8</id>
+            </camera>
+            <camera name="_0.0_1209x690">
+                <imageWidth>1209</imageWidth>
+                <imageHeight>690</imageHeight>
+                <pixelSize>21.009098</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>7.248139</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>9</id>
+            </camera>
+            <camera name="_0.0_1309x673">
+                <imageWidth>1309</imageWidth>
+                <imageHeight>673</imageHeight>
+                <pixelSize>19.404125</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>6.529488</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>10</id>
+            </camera>
+            <camera name="_0.0_1253x805">
+                <imageWidth>1253</imageWidth>
+                <imageHeight>805</imageHeight>
+                <pixelSize>20.271349</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>8.159218</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>11</id>
+            </camera>
+            <camera name="_0.0_1038x889">
+                <imageWidth>1038</imageWidth>
+                <imageHeight>889</imageHeight>
+                <pixelSize>24.470135</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>10.876975</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>12</id>
+            </camera>
+            <camera name="_0.0_862x1006">
+                <imageWidth>862</imageWidth>
+                <imageHeight>1006</imageHeight>
+                <pixelSize>29.466357</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>14.821578</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>13</id>
+            </camera>
+            <camera name="_0.0_886x1016">
+                <imageWidth>886</imageWidth>
+                <imageHeight>1016</imageHeight>
+                <pixelSize>28.668172</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>14.563431</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>14</id>
+            </camera>
+            <camera name="_0.0_775x969">
+                <imageWidth>775</imageWidth>
+                <imageHeight>969</imageHeight>
+                <pixelSize>32.774194</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>15.879097</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>15</id>
+            </camera>
+            <camera name="_0.0_503x1056">
+                <imageWidth>503</imageWidth>
+                <imageHeight>1056</imageHeight>
+                <pixelSize>50.497018</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>26.662425</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>16</id>
+            </camera>
+            <camera name="_0.0_1212x1000">
+                <imageWidth>1212</imageWidth>
+                <imageHeight>1000</imageHeight>
+                <pixelSize>20.957096</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>10.478548</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>17</id>
+            </camera>
+            <camera name="_0.0_459x958">
+                <imageWidth>459</imageWidth>
+                <imageHeight>958</imageHeight>
+                <pixelSize>55.337691</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>26.506754</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>18</id>
+            </camera>
+            <camera name="_0.0_436x915">
+                <imageWidth>436</imageWidth>
+                <imageHeight>915</imageHeight>
+                <pixelSize>58.256881</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>26.652523</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>19</id>
+            </camera>
+            <camera name="_0.0_1292x1033">
+                <imageWidth>1292</imageWidth>
+                <imageHeight>1033</imageHeight>
+                <pixelSize>19.659443</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>10.154102</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>20</id>
+            </camera>
+            <camera name="_0.0_1353x1026">
+                <imageWidth>1353</imageWidth>
+                <imageHeight>1026</imageHeight>
+                <pixelSize>18.773097</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>9.630599</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>21</id>
+            </camera>
+            <camera name="_0.0_1472x867">
+                <imageWidth>1472</imageWidth>
+                <imageHeight>867</imageHeight>
+                <pixelSize>17.255435</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>7.480231</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>22</id>
+            </camera>
+            <camera name="_0.0_653x1016">
+                <imageWidth>653</imageWidth>
+                <imageHeight>1016</imageHeight>
+                <pixelSize>38.897397</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>19.759877</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>23</id>
+            </camera>
+            <camera name="_0.0_1151x718">
+                <imageWidth>1151</imageWidth>
+                <imageHeight>718</imageHeight>
+                <pixelSize>22.067767</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>7.922328</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>24</id>
+            </camera>
+            <camera name="_0.0_866x879">
+                <imageWidth>866</imageWidth>
+                <imageHeight>879</imageHeight>
+                <pixelSize>29.330254</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>12.890647</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>25</id>
+            </camera>
+            <camera name="_0.0_754x988">
+                <imageWidth>754</imageWidth>
+                <imageHeight>988</imageHeight>
+                <pixelSize>33.687003</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>16.641379</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>26</id>
+            </camera>
+            <camera name="_0.0_1433x921">
+                <imageWidth>1433</imageWidth>
+                <imageHeight>921</imageHeight>
+                <pixelSize>17.725052</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>8.162387</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>27</id>
+            </camera>
+            <camera name="_0.0_828x993">
+                <imageWidth>828</imageWidth>
+                <imageHeight>993</imageHeight>
+                <pixelSize>30.676329</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>15.230797</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>28</id>
+            </camera>
+            <camera name="_0.0_730x1009">
+                <imageWidth>730</imageWidth>
+                <imageHeight>1009</imageHeight>
+                <pixelSize>34.794521</pixelSize>
+                <principalPointXmm>12.7</principalPointXmm>
+                <principalPointYmm>17.553836</principalPointYmm>
+                <lensType>perspective</lensType>
+                <focalLengthmm>20</focalLengthmm>
+                <distortion>5</distortion>
+                <radialK1>0</radialK1>
+                <radialK2>0</radialK2>
+                <radialK3>0</radialK3>
+                <tangentialT1>0</tangentialT1>
+                <tangentialT2>0</tangentialT2>
+                <cameraModelSource>exif</cameraModelSource>
+                <band name="Red" centralWaveLength="660" width="0" weight="0.2126"/>
+                <band name="Green" centralWaveLength="550" width="0" weight="0.7152"/>
+                <band name="Blue" centralWaveLength="470" width="0" weight="0.0722"/>
+                <serialNumber></serialNumber>
+                <fixedBands>false</fixedBands>
+                <id>29</id>
+            </camera>
+        </cameras>
+        <coordinateSystems>
+            <southingWesting>true</southingWesting>
+            <output>
+                <WKT>LOCAL_CS[&quot;Arbitrary (m)&quot;,LOCAL_DATUM[&quot;Arbitrary datum&quot;],UNIT[&quot;meter&quot;,1.0,AUTHORITY[&quot;EPSG&quot;,&quot;9001&quot;]]]</WKT>
+                <verticalDef model="noConv"/>
+            </output>
+            <gcp>
+                <WKT>LOCAL_CS[&quot;Arbitrary (m)&quot;,LOCAL_DATUM[&quot;Arbitrary datum&quot;],UNIT[&quot;meter&quot;,1.0,AUTHORITY[&quot;EPSG&quot;,&quot;9001&quot;]]]</WKT>
+                <verticalDef model="noConv"/>
+            </gcp>
+            <image>
+                <WKT>GEOGCS[&quot;WGS 84&quot;,DATUM[&quot;WGS_1984&quot;,SPHEROID[&quot;WGS 84&quot;,6378137,298.257223563,AUTHORITY[&quot;EPSG&quot;,&quot;7030&quot;]],TOWGS84[0,0,0,0,0,0,0],AUTHORITY[&quot;EPSG&quot;,&quot;6326&quot;]],PRIMEM[&quot;Greenwich&quot;,0,AUTHORITY[&quot;EPSG&quot;,&quot;8901&quot;]],UNIT[&quot;degree&quot;,0.01745329251994328,AUTHORITY[&quot;EPSG&quot;,&quot;9122&quot;]],AUTHORITY[&quot;EPSG&quot;,&quot;4326&quot;]]</WKT>
+                <verticalDef model="geoid" geoidName="EGM 96 Geoid"/>
+            </image>
+        </coordinateSystems>
+        <gcps>
+            <GCP label="mtp1" alt="0" lat="0" lng="0" x="-13.6419620514" y="66.5626831055" z="-161.677444458" tiePoint3D="true" id="0" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp2" alt="0" lat="0" lng="0" x="78.4059448242" y="51.561706543" z="-152.0635375977" tiePoint3D="true" id="1" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp3" alt="0" lat="0" lng="0" x="-14.4122476578" y="63.0494346619" z="-161.4548492432" tiePoint3D="true" id="2" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp4" alt="0" lat="0" lng="0" x="4.4638347626" y="56.565700531" z="-125.8064422607" tiePoint3D="true" id="3" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp5" alt="0" lat="0" lng="0" x="-24.5581417084" y="84.8552780151" z="-155.0933685303" tiePoint3D="true" id="4" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp6" alt="0" lat="0" lng="0" x="0.9322482944" y="54.18409729" z="-129.6999206543" tiePoint3D="true" id="5" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp7" alt="0" lat="0" lng="0" x="-31.342634201" y="68.8584594727" z="-160.0045776367" tiePoint3D="true" id="6" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp8" alt="0" lat="0" lng="0" x="-0.9097016454" y="58.9323348999" z="-124.3697967529" tiePoint3D="true" id="7" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp9" alt="0" lat="0" lng="0" x="-29.4691944122" y="79.3509216309" z="-155.785369873" tiePoint3D="true" id="8" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp10" alt="0" lat="0" lng="0" x="0.7643364072" y="54.816028595" z="-127.4016342163" tiePoint3D="true" id="9" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp11" alt="0" lat="0" lng="0" x="-31.5398674011" y="68.1905593872" z="-160.3617401123" tiePoint3D="true" id="10" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp13" alt="0" lat="0" lng="0" x="25.0266876221" y="-3.7213537693" z="-108.6211624146" tiePoint3D="true" id="12" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp14" alt="0" lat="0" lng="0" x="8.2175865173" y="20.0469894409" z="-178.9817657471" tiePoint3D="true" id="13" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp15" alt="0" lat="0" lng="0" x="-10.8950920105" y="75.2086486816" z="-153.3255310059" tiePoint3D="true" id="14" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp16" alt="0" lat="0" lng="0" x="-0.6317314506" y="67.4932403564" z="-125.1687240601" tiePoint3D="true" id="15" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp17" alt="0" lat="0" lng="0" x="-11.3969278336" y="58.9075813293" z="-157.9905090332" tiePoint3D="true" id="16" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+            <GCP label="mtp18" alt="0" lat="0" lng="0" x="-8.6367540359" y="54.1830024719" z="-128.9825134277" tiePoint3D="true" id="17" accuracyXY="0.02" accuracyZ="0.02" type="MTP"/>
+        </gcps>
+        <radiometry/>
+        <images>
+            <image path="D:/NYIT/tootlsfor project/1.JPG" group="group1" enabled="true">
+                <camera name="_0.0_1290x920" id="0"/>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/2.JPG" group="group1" enabled="true">
+                <camera name="_0.0_1439x799" id="1"/>
+                <time>2019:03:13 05:21:00</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/3.JPG" group="group1" enabled="true">
+                <camera name="_0.0_1504x827" id="2"/>
+                <time>2019:03:13 05:21:52</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/4.JPG" group="group1" enabled="true">
+                <camera name="_0.0_1139x722" id="3"/>
+                <time>2019:03:13 05:22:44</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/5.JPG" group="group1" enabled="true">
+                <camera name="_0.0_686x881" id="4"/>
+                <time>2019:03:13 05:23:43</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/6.JPG" group="group1" enabled="true">
+                <camera name="_0.0_646x889" id="5"/>
+                <time>2019:03:13 05:24:23</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/7.JPG" group="group1" enabled="true">
+                <camera name="_0.0_715x901" id="6"/>
+                <time>2019:03:13 05:24:56</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/8.JPG" group="group1" enabled="true">
+                <camera name="_0.0_772x932" id="7"/>
+                <time>2019:03:13 05:25:28</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/9.JPG" group="group1" enabled="true">
+                <camera name="_0.0_939x844" id="8"/>
+                <time>2019:03:13 05:25:47</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/10.JPG" group="group1" enabled="true">
+                <camera name="_0.0_1209x690" id="9"/>
+                <time>2019:03:13 05:26:09</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/11.JPG" group="group1" enabled="true">
+                <camera name="_0.0_1309x673" id="10"/>
+                <time>2019:03:13 05:26:42</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/13.JPG" group="group1" enabled="true">
+                <camera name="_0.0_1253x805" id="11"/>
+                <time>2019:03:13 05:27:04</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/14.JPG" group="group1" enabled="true">
+                <camera name="_0.0_1038x889" id="12"/>
+                <time>2019:03:13 05:27:53</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/15.JPG" group="group1" enabled="true">
+                <camera name="_0.0_862x1006" id="13"/>
+                <time>2019:03:13 05:31:39</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/16.JPG" group="group1" enabled="true">
+                <camera name="_0.0_886x1016" id="14"/>
+                <time>2019:03:13 05:33:09</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/17.JPG" group="group1" enabled="true">
+                <camera name="_0.0_775x969" id="15"/>
+                <time>2019:03:13 05:33:32</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/18.JPG" group="group1" enabled="true">
+                <camera name="_0.0_503x1056" id="16"/>
+                <time>2019:03:13 05:35:53</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/19.JPG" group="group1" enabled="true">
+                <camera name="_0.0_1212x1000" id="17"/>
+                <time>2019:03:13 05:37:30</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/20.JPG" group="group1" enabled="true">
+                <camera name="_0.0_459x958" id="18"/>
+                <time>2019:03:13 05:37:56</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/21.JPG" group="group1" enabled="true">
+                <camera name="_0.0_436x915" id="19"/>
+                <time>2019:03:13 05:38:27</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/22.JPG" group="group1" enabled="true">
+                <camera name="_0.0_1292x1033" id="20"/>
+                <time>2019:03:13 05:39:13</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/23.JPG" group="group1" enabled="true">
+                <camera name="_0.0_1353x1026" id="21"/>
+                <time>2019:03:13 05:40:02</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/24.JPG" group="group1" enabled="true">
+                <camera name="_0.0_1472x867" id="22"/>
+                <time>2019:03:13 05:40:32</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/25.JPG" group="group1" enabled="true">
+                <camera name="_0.0_653x1016" id="23"/>
+                <time>2019:03:13 05:40:54</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/26.JPG" group="group1" enabled="true">
+                <camera name="_0.0_1151x718" id="24"/>
+                <time>2019:03:13 05:41:15</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/27.JPG" group="group1" enabled="true">
+                <camera name="_0.0_866x879" id="25"/>
+                <time>2019:03:13 05:41:34</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/28.JPG" group="group1" enabled="true">
+                <camera name="_0.0_754x988" id="26"/>
+                <time>2019:03:13 05:41:50</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/29.JPG" group="group1" enabled="true">
+                <camera name="_0.0_1433x921" id="27"/>
+                <time>2019:03:13 05:43:15</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/30.JPG" group="group1" enabled="true">
+                <camera name="_0.0_828x993" id="28"/>
+                <time>2019:03:13 05:44:04</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+            <image path="D:/NYIT/tootlsfor project/31.JPG" group="group1" enabled="true">
+                <camera name="_0.0_730x1009" id="29"/>
+                <time>2019:03:13 05:44:19</time>
+                <gps alt="0" lat="0" lng="0"/>
+                <xyz x="0" y="0" z="0"/>
+                <accuracyXY>5</accuracyXY>
+                <accuracyZ>10</accuracyZ>
+            </image>
+        </images>
+        <indexRegions/>
+        <indexClasses/>
+        <objects>
+            <object name="Clipping Box" type="CLIPPING_BOX" centerX="0" centerY="0" centerZ="0" sizeX="5" sizeY="5" sizeZ="5" rotationZ="0" fresh="true"/>
+            <object name="Orientation 1" type="ORIENTATION" axis="3" accuracy="0.001">
+                <gcpId>16</gcpId>
+                <gcpId>17</gcpId>
+            </object>
+            <object name="Unclassified" type="POINT_GROUP" groupId="0" classificationId="0" locked="false"/>
+            <object name="Disabled" type="POINT_GROUP" groupId="1" classificationId="0" locked="false"/>
+            <object name="Ground" type="POINT_GROUP" groupId="100" classificationId="0" locked="false"/>
+            <object name="Road Surface" type="POINT_GROUP" groupId="106" classificationId="0" locked="false"/>
+            <object name="High Vegetation" type="POINT_GROUP" groupId="102" classificationId="0" locked="false"/>
+            <object name="Building" type="POINT_GROUP" groupId="103" classificationId="0" locked="false"/>
+            <object name="Human Made Object" type="POINT_GROUP" groupId="109" classificationId="0" locked="false"/>
+        </objects>
+    </inputs>
+</pix4dmapper>
