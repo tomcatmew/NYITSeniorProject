@@ -1,18 +1,29 @@
-function getCourseTest(info){
-   var userRef = info.userInfo;
+课程数据库格式：
 
-  document.getElementById("user-info").innerHTML = "User Info: </br>"+ "Name: " + userRef.name  + "</br>Email: " + userRef.email + "</br>UID: " + userRef.uid + "</br>";
-  var count = 1;
-  console.log(info.courses);
-
-  for(let z of Object.keys(info.courses))
-  {
-    var ref = info.courses[z];
-    document.getElementById("course" + count + "-info").innerHTML = "Courses Info: </br>"+ "("+ ref.course_id +  ") " + ref.department_code + " " + ref.course_number + " " + ref.course_title + " " + ref.location + " " + ref.room + " " + ref.term + " " + ref.time + "instructor: " + ref.instructor ;
-    count++;
-  }
-
-
+      CSCI101:{
+        course_id: "1235",
+        department_code: "CSCI",
+        course_number: "101",
+        course_title: "Coursetitle",
+        capmus: "Manhattan Campus",
+        location: "Guiliano Global",
+        room: "601",
+        term: "Fall 2018",
+        instructor: "Dr. Li",
+        time: "time"
+      },
+      CSCI108:{
+        course_id: "1235",
+        department_code: "CSCI",
+        course_number: "108",
+        course_title: "Coursetitle",
+        capmus: "Manhattan Campus",
+        location: "Guiliano Global",
+        room: "601",
+        term: "Fall 2018",
+        instructor: "Dr. Li",
+        time: "time"
+      }
 
 # NYITSeniorProject
 NYIT Senior Project - Web App
