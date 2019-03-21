@@ -120,7 +120,7 @@
         room: "405",
         term: "Spring 2019",
         instructor: "Steven Billis",
-        time: "Mo 2:00PM - 3:20PM We 2:00PM - 3:20PM"
+        time: "1 14:00 15:20 3 14:00 15:20"
       },
       
       CSCI135-M01:{
@@ -134,7 +134,7 @@
         room: "723",
         term: "Spring 2019",
         instructor: "Simon Ben-Avi",
-        time: "Fr 5:30PM - 8:10PM"
+        time: "5 17:30 20:10"
       },
       CSCI135-M02:{
         course_id: "3671",
@@ -147,7 +147,7 @@
         room: "11",
         term: "Spring 2019",
         instructor: "Nabi Sertac Artan",
-        time: "Tu 3:30PM - 4:50PM Th 3:30PM - 4:50PM"
+        time: "2 15:30 16:50 4 15:30 16:50"
       },
       CSCI135-M03:{
         course_id: "3672",
@@ -160,7 +160,7 @@
         room: "606",
         term: "Spring 2019",
         instructor: "Nabi Sertac Artan",
-        time: "Mo 2:00PM - 3:20PM We 2:00PM - 3:20PM"
+        time: "1 14:00 15:20 3 14:00 15:20"
       },
       CSCI155-M01:{
         course_id: "2454",
@@ -173,7 +173,7 @@
         room: "822",
         term: "Spring 2019",
         instructor: "Maharshi Shah",
-        time: "Th 5:30PM - 8:10PM"
+        time: "4 17:30 21:10"
       },
       CSCI155-M03:{
         course_id: "1888",
@@ -186,7 +186,7 @@
         room: "312",
         term: "Spring 2019",
         instructor: "Simon Ben-Avi",
-        time: "Tu 5:30PM - 8:10PM"
+        time: "2 17:30 20:10"
       },
       CSCI155-M05:{
         course_id: "2752",
@@ -199,7 +199,7 @@
         room: "312",
         term: "Spring 2019",
         instructor: "Simon Ben-Avi",
-        time: "Tu 3:30PM - 4:50PM Th 3:30PM - 4:50PM"
+        time: "2 15:30 16:50 4 15:30 16:50"
       },
       CSCI185-M03:{
         course_id: "1892",
@@ -212,7 +212,7 @@
         room: "312",
         term: "Spring 2019",
         instructor: "Michael Kadri",
-        time: "Mo 5:30PM - 9:10PM"
+        time: "1 17:30 21:10"
       },
       CSCI185-M04:{
         course_id: "1994",
@@ -225,7 +225,7 @@
         room: "312",
         term: "Spring 2019",
         instructor: "Michael Kadri",
-        time: "Mo 5:30PM - 9:10PM"
+        time: "1 17:30 21:10"
       },
       
       
