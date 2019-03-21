@@ -4,120 +4,126 @@
 // }
 
 
-function SaveUserInfo(user){
+function saveUserInfo(user){
 
   var db = firebase.firestore();
 
-  var userData = {
-   userInfo:{
-      uid: user.uid,
+  var userInfoData = {
+      email: user.email,
       name: user.displayName,
-      email: user.email
-    },
-    courses:{
-      course1:{
+      uid: user.uid
+  };
+
+db.collection("user").doc(user.email).collection("account").doc("userInfo").set(userInfoData).then(function() {
+    console.log("User InfoDocument successfully written!");
+});
+
+
+}//end  SaveUserInfo(user)
+
+function addCourse(user){
+  var db = firebase.firestore();
+  db.collection("user").doc(user.email).collection("courses").add({
+      course_id: "1235",
+      department_code: "CSCI",
+      course_number: "101",
+      course_title: "Coursetitle",
+      capmus: "Manhattan Campus",
+      location: "Guiliano Global",
+      room: "601",
+      term: "Fall 2018",
+      instructor: "Dr. Li",
+      time: "time"
+})
+.then(function() {
+    console.log("Document successfully written!");
+})
+.catch(function(error) {
+    console.error("Error writing document: ", error);
+});
+}
+
+function courseDescription(info){
+
+
+}
+
+function coursesDatabase(){
+    var db = firebase.firestore();
+
+    var coursesDatabase = {
+      CSCI101:{
         course_id: "1235",
         department_code: "CSCI",
         course_number: "101",
         course_title: "Coursetitle",
-        term: "Fall 2019",
         capmus: "Manhattan Campus",
         location: "Guiliano Global",
         room: "601",
+        term: "Fall 2018",
         instructor: "Dr. Li",
         time: "time"
       },
-
-      course2:{
-        course_id: "2235",
+      CSCI108:{
+        course_id: "1235",
         department_code: "CSCI",
-        course_number: "201",
+        course_number: "108",
         course_title: "Coursetitle",
-        term: "Fall 2019",
         capmus: "Manhattan Campus",
         location: "Guiliano Global",
-        room: "501",
-        instructor: "Dr. Lu",
+        room: "601",
+        term: "Fall 2018",
+        instructor: "Dr. Li",
         time: "time"
       }
 
-    }
-  };
+    };
 
-db.collection("user").doc(user.email).set(userData).then(function() {
-    console.log("Document successfully written!");
-});
-
-}//end  SaveUserInfo(user)
-
-//format error
-// function addCourse(user){
-//   var db = firebase.firestore();
-//   db.collection("user").doc(user.email).set({
-//     courses:{
-//       course_id: "1235",
-//       department_code: "CSCI",
-//       course_number: "101",
-//       course_title: "Coursetitle",
-//       capmus: "Manhattan Campus",
-//       location: "Guiliano Global",
-//       room: "601",
-//       instructor: "Dr. Li",
-//       time: "time"
-//     },
-//     userInfo:{
-//
-//      }
-//
-//
-//
-// })
-// .then(function() {
-//     console.log("Document successfully written!");
-// })
-// .catch(function(error) {
-//     console.error("Error writing document: ", error);
-// });
-// }
-
-function courseDescription(info){
-     // var tempCourse = "";
-     // var name = "course2";
-     // var ref = info.courses.course1
-     // var ref2 = info.courses.course2
-     // var list = document.createElement("LI");
-     // var course1Test = document.createTextNode( "("+ ref.course_id +  ") " + ref.department_code + " " + ref.course_number + " " + ref.course_title + " " + ref.location + " " + ref.room + " " + ref.term + " " + ref.time + "instructor: " + ref.instructor );
-     // var course2Test = document.createTextNode( "("+ ref2.course_id +  ") " + ref2.department_code + " " + ref2.course_number + " " + ref2.course_title + " " + ref2.location + " " + ref2.room + " " + ref2.term + " " + ref2.time + "instructor: " + ref2.instructor );
-     // list.appendChild(course1Test);
-     // list.appendChild(course2Test);
-     //
-     // document.getElementById("course-list").appendChild(list);
+  db.collection("courseDatabase").doc("courses").set(coursesDatabase).then(function() {
+      console.log("User InfoDocument successfully written!");
+  });
 
 }
 
-function getCourseTest(info){
-   var userRef = info.userInfo
-   var ref = info.courses.course1
-   var ref2 = info.courses.course2
-
-     document.getElementById("user-info").innerHTML = "User Info: </br>"+ "Name: " + userRef.name  + "</br>Email: " + userRef.email + "</br>UID: " + userRef.uid + "</br>";
-   document.getElementById("course1-info").innerHTML = "Courses Info: </br>"+ "("+ ref.course_id +  ") " + ref.department_code + " " + ref.course_number + " " + ref.course_title + " " + ref.location + " " + ref.room + " " + ref.term + " " + ref.time + "instructor: " + ref.instructor ;
-   document.getElementById("course2-info").innerHTML = "("+ ref2.course_id +  ") " + ref2.department_code + " " + ref2.course_number + " " + ref2.course_title + " " + ref2.location + " " + ref2.room + " " + ref2.term + " " + ref2.time + "instructor: " + ref2.instructor ;
-
-
-}//end getCourseTest(info)
 
 
 function getUserInfoRealTime(user){
     var db = firebase.firestore();
-    db.collection("user").doc(user.email)
+    var count = 1;
+    db.collection("user").doc(user.email).collection("account").doc("userInfo")
     .onSnapshot(function(doc) {
+          var userRef = doc.data();
           console.log("Current data: ", doc.data());
-          getCourseTest(doc.data());
-
+          document.getElementById("user-info").innerHTML = "User Info: </br>"+ "Name: " + userRef.name  + "</br>Email: " + userRef.email + "</br>UID: " + userRef.uid + "</br>";
       });
 
-}
+    db.collection("user").doc(user.email).collection("courses")
+    .onSnapshot(function(querySnapshot) {
+       var count = 1;
+       querySnapshot.forEach(function(doc) {
+           ref = doc.data();
+           document.getElementById("course" + count + "-info").innerHTML = "Courses Info: " + "("+ ref.course_id + ") " + ref.department_code + " " + ref.course_number + " " + ref.course_title + " " + ref.location + " " + ref.room + " " + ref.term + " " + ref.time + "instructor: " + ref.instructor ;
+           count++;
+       });
+   });
+
+   // not real time query courses
+   // db.collection("user").doc(user.email).collection("courses")
+   // .get()
+   // .then(function(querySnapshot) {
+   //     querySnapshot.forEach(function(doc) {
+   //         // doc.data() is never undefined for query doc snapshots
+   //         console.log(doc.id, " => ", doc.data());
+   //         ref = doc.data();
+   //         document.getElementById("course" + count + "-info").innerHTML = "Courses Info: " + "("+ ref.course_id + ") " + ref.department_code + " " + ref.course_number + " " + ref.course_title + " " + ref.location + " " + ref.room + " " + ref.term + " " + ref.time + "instructor: " + ref.instructor ;
+   //         count++;
+   //     });
+   // })
+   // .catch(function(error) {
+   //     console.log("Error getting documents: ", error);
+   // });
+
+}//end getUserInfoRealTime(user)
 
 function getUserCountAdmin(){
    var size = 0;
@@ -126,10 +132,22 @@ function getUserCountAdmin(){
    size = snap.size // will return the collection size
 });
 
-}
+}//end getUserCountAdmin()
 
 
-
+// function getCourseTest(info){
+//    var userRef = info.userInfo;
+//
+//   document.getElementById("user-info").innerHTML = "User Info: </br>"+ "Name: " + userRef.name  + "</br>Email: " + userRef.email + "</br>UID: " + userRef.uid + "</br>";
+//   var count = 1;
+//   console.log(info.courses);
+//
+//   for(let z of Object.keys(info.courses))
+//   {
+//     var ref = info.courses[z];
+//     document.getElementById("course" + count + "-info").innerHTML = "Courses Info: </br>"+ "("+ ref.course_id +  ") " + ref.department_code + " " + ref.course_number + " " + ref.course_title + " " + ref.location + " " + ref.room + " " + ref.term + " " + ref.time + "instructor: " + ref.instructor ;
+//     count++;
+//   }
 
 // //get user info once, will not update data if website is not refreshed.
 // function getUserInfo(user){
