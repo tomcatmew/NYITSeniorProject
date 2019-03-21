@@ -21,6 +21,40 @@ db.collection("user").doc(user.email).collection("account").doc("userInfo").set(
 
 }//end  SaveUserInfo(user)
 
+
+
+function courseDescription(room,location,time){
+
+  var rooms  = [];
+  var locations = [];
+  var times = [];
+  var result;
+
+  var tempRoomString = room.split(" ");
+  var tempLocationString = location.split(" ");
+  var tempTimesString = time.split(",");
+
+  for(var i = 0; i < tempRoomString.length; i++){
+    rooms.push(tempRoomString[i]);
+  }
+  for(var i = 0; i < tempLocationString.length; i++){
+    locations.push(tempLocationString[i]);
+  }
+  for(var i = 0; i < tempTimesString.length; i++){
+    times.push(tempTimesString[i]);
+  }
+  if (times.length == 3){
+    result = locations[0] + " " + rooms[0] + " " + times[0] + " " + locations[1] + " " + rooms[1] + " " + times[1] + locations[2] + " " + rooms[2] + " " + times[2];
+  }
+  else if (times.length == 2){
+    result = locations[0] + " " + rooms[0] + " " + times[0] + " " + locations[1] + " " + rooms[1] + " " + times[1];
+  }else{
+    result = locations[0] + " " + rooms[0] + " " + times[0];
+  }
+
+  return result;
+}
+
 function addCourse(user){
   var db = firebase.firestore();
   db.collection("user").doc(user.email).collection("courses").add({
@@ -43,10 +77,7 @@ function addCourse(user){
 });
 }
 
-function courseDescription(info){
 
-
-}
 
 function coursesDatabase(){
     var db = firebase.firestore();
@@ -90,6 +121,9 @@ function coursesDatabase(){
 function getUserInfoRealTime(user){
     var db = firebase.firestore();
     var count = 1;
+
+    var courseDetail = [];
+
     db.collection("user").doc(user.email).collection("account").doc("userInfo")
     .onSnapshot(function(doc) {
           var userRef = doc.data();
@@ -100,10 +134,16 @@ function getUserInfoRealTime(user){
     db.collection("user").doc(user.email).collection("courses")
     .onSnapshot(function(querySnapshot) {
        querySnapshot.forEach(function(doc) {
-           ref = doc.data();
-           document.getElementById("course" + count + "-info").innerHTML = "Courses Info: " + "("+ ref.course_id + ") " + ref.department_code + " " + ref.course_number + " " + ref.course_title + " " + ref.location + " " + ref.room + " " + ref.term + " " + ref.time + "instructor: " + ref.instructor ;
+            ref = doc.data();
+            courseDetail.push(courseDescription(ref.room,ref.location,ref.time));
+
+          // document.getElementById("course" + count + "-info").innerHTML = "Courses Info: " + "("+ ref.course_id + ") " + ref.department_code + " " + ref.course_number + " " + ref.course_title + " " + ref.location + " " + ref.room + " " + ref.term + " " + ref.time + "instructor: " + ref.instructor ;
            count++;
        });
+       console.log("hhhhhhhh", courseDetail);
+
+
+
    });
 
    // not real time query courses
