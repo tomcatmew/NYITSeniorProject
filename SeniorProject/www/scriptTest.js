@@ -99,7 +99,6 @@ function getUserInfoRealTime(user){
 
     db.collection("user").doc(user.email).collection("courses")
     .onSnapshot(function(querySnapshot) {
-       var count = 1;
        querySnapshot.forEach(function(doc) {
            ref = doc.data();
            document.getElementById("course" + count + "-info").innerHTML = "Courses Info: " + "("+ ref.course_id + ") " + ref.department_code + " " + ref.course_number + " " + ref.course_title + " " + ref.location + " " + ref.room + " " + ref.term + " " + ref.time + "instructor: " + ref.instructor ;

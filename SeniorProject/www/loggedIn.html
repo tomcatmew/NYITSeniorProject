@@ -60,12 +60,12 @@
     var mydata = JSON.parse(data);
     //document.body.innerHTML = '<h1> Hello ' + user.displayName + ' </h1> <h2> Your email address is: ' + user.email + ' <h/2> <h4> 1:' + load() + '</h4>';
 
-    //saveUserInfo(user); //   save data!!
+    saveUserInfo(user); //   save data!!
     //getUserInfo(user)
     //getUserInfoRealTime(user);
-    //addCourse(user);
-    //getUserInfoRealTime(user);
-    coursesDatabase();
+    addCourse(user);
+    getUserInfoRealTime(user);
+    //coursesDatabase();
    } else {
     // Sign out operation. Reset the current user UID.
     currentUid = null;
