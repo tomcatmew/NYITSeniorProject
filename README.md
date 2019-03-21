@@ -23,7 +23,8 @@
         term: "Fall 2018",
         instructor: "Dr. Li",
         time: "time"
-      }
+      }，
+      
 
 # NYITSeniorProject
 NYIT Senior Project - Web App
