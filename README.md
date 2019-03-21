@@ -52,7 +52,7 @@
         room: "601",
         term: "Spring 2019",
         instructor: "Michael Kadri",
-        time: "Tu 5:30PM - 9:10PM"
+        time: "2 17:30 19:10"
       },
       
       CSCI125-M05:{
@@ -66,7 +66,7 @@
         room: "601",
         term: "Spring 2019",
         instructor: "Felix Fischman",
-        time: "Fr 5:30PM - 9:10PM"
+        time: "5 17:30 21:10"
       },
       
       CSCI125-M07:{
@@ -80,7 +80,7 @@
         room: "601",
         term: "Spring 2019",
         instructor: "Hakan Pekcan",
-        time: "Mo 2:00PM - 4:50PM We 3:30PM - 4:50PM"
+        time: "1 14:00 16:50 3 15:30 16:50"
       },
       
       CSCI130-M01:{
@@ -94,7 +94,7 @@
         room: "723",
         term: "Spring 2019",
         instructor: "Simon Ben-Avi",
-        time: "Fr 5:30PM - 8:10PM"
+        time: "5 5:30 8:10"
       },
       CSCI130-M02:{
         course_id: "3669",
@@ -107,7 +107,7 @@
         room: "11",
         term: "Spring 2019",
         instructor: "Nabi Sertac Artan",
-        time: "Tu 3:30PM - 4:50PM Th 3:30PM - 4:50PM"
+        time: "2 15:30 16:50 4 15:30 16:50"
       },
       CSCI130-M03:{
         course_id: "3670",
