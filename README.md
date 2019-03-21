@@ -23,7 +23,7 @@
         term: "Fall 2018",
         instructor: "Dr. Li",
         time: "time"
-      }，
+      },
       
 
 # NYITSeniorProject
