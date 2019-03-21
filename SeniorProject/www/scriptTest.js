@@ -44,12 +44,12 @@ function courseDescription(room,location,time){
     times.push(tempTimesString[i]);
   }
   if (times.length == 3){
-    result = locations[0] + " " + rooms[0] + " " + times[0] + " " + locations[1] + " " + rooms[1] + " " + times[1] + locations[2] + " " + rooms[2] + " " + times[2];
+    result = `${locations[0]} ${rooms[0]} ${times[0]} ${locations[1]} ${rooms[1]} ${times[1]} ${locations[2]} ${rooms[2]} ${times[2]}`;
   }
   else if (times.length == 2){
-    result = locations[0] + " " + rooms[0] + " " + times[0] + " " + locations[1] + " " + rooms[1] + " " + times[1];
+    result = `${locations[0]} ${rooms[0]} ${times[0]} ${locations[1]} ${rooms[1]} ${times[1]}`;
   }else{
-    result = locations[0] + " " + rooms[0] + " " + times[0];
+    result = `${locations[0]} ${rooms[0]} ${times[0]}`;
   }
 
   return result;
