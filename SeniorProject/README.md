@@ -1,6 +1,6 @@
 # Get Special Format from database
 
-# 1 course  : "3 14:00 16:20,5 14:00 16:20"
+# 1 course  : "1 14:00 16:20"
 # 2 courses : "3 14:00 16:20,5 14:00 16:20"
 # 3 course  : "2 18:00 20:20,4 18:00 20:20,3 9:00 11:00"
 # Error Prevention: locations are not check!! not checking: meet 3 times with 2 rooms or meet 3 times with 1 rooms.
