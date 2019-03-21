@@ -1,26 +1,24 @@
 课程数据库格式：
 
-      CSCI101:{
+      CSCI101-M01:{
         course_id: "1235",
         department_code: "CSCI",
         course_number: "101",
         course_title: "Coursetitle",
         capmus: "Manhattan Campus",
         location: "Guiliano Global Center",
-        section: "M01",
         room: "601",
         term: "Fall 2018",
         instructor: "Dr. Li",
         time: "time"
       },
-      CSCI108:{
+      CSCI108-M02:{
         course_id: "1235",
         department_code: "CSCI",
         course_number: "108",
         course_title: "Coursetitle",
         capmus: "Manhattan Campus",
         location: "Guiliano Global Center",
-        section: "M01",
         room: "601",
         term: "Fall 2018",
         instructor: "Dr. Li",
