@@ -1,29 +1,46 @@
-课程数据库格式：
-
-      CSCI101:{
+# 课程数据库格式：
+# 0-6 0代表周日， 1代表周一，2代表周二...
+# 时间是24小时制
+# 例子：同1个教室上课
+      
+      CSCI101-M01:{
         course_id: "1235",
         department_code: "CSCI",
         course_number: "101",
         course_title: "Coursetitle",
         capmus: "Manhattan Campus",
         location: "Guiliano Global Center",
-        room: "601",
         term: "Fall 2018",
         instructor: "Dr. Li",
-        time: "time"
+        schedule: "GGC 601 2 14:00 16:20 GGC 601 4 14:00 16:20"
       },
-      CSCI108:{
+      
+# 例子：两个不同教室上课      
+      CSCI108-M02:{
         course_id: "1235",
         department_code: "CSCI",
         course_number: "108",
         course_title: "Coursetitle",
         capmus: "Manhattan Campus",
         location: "Guiliano Global Center",
-        room: "601",
         term: "Fall 2018",
         instructor: "Dr. Li",
-        time: "time"
+        schedule: "GGC 601 1 12:00 16:20 16W 701 3 12:00 16:20"
       },
+ # 例子：3个教室上课    
+      CSCI108-M02:{
+        course_id: "1235",
+        department_code: "CSCI",
+        course_number: "108",
+        course_title: "Coursetitle",
+        capmus: "Manhattan Campus",
+        location: "Guiliano Global Center",
+        term: "Fall 2018",
+        instructor: "Dr. Li",
+        schedule: "GGC 601 1 12:00 16:20 16W 701 3 12:00 16:20 26W 312 4 12:00 13:00"
+      },
+      
+#=================================================================================          
       
       
        CSCI125-M01:{
