@@ -43,13 +43,145 @@
 #=================================================================================          
       
       
+      MATH101-M01:{
+        course_id: "1815",
+        department_code: "MATH",
+        course_number: "101",
+        course_title: "Developmental Mathematics I/II",
+        capmus: "Manhattan Campus",
+        location: "26W",
+        term: "Spring 2019",
+        instructor: "Marcus Johnson",
+        time: "26W 314 1 12:30 13:55 26W 314 3 12:30 13:55 26W 314 5 12:30 13:55"
+      },
+      
+      MATH115-M01:{
+        course_id: "1817",
+        department_code: "MATH",
+        course_number: "115",
+        course_title: "Introductory Concepts of Mathematics",
+        capmus: "Manhattan Campus",
+        location: "Guiliano Global Center",
+        term: "Spring 2019",
+        instructor: "Carol Bilsky-Bieniek",
+        time: "GGC 401 1 15:30 16:50 GGC 401 3 15:30 16:50"
+      },
+      
+      MATH125-M01:{
+        course_id: "1818",
+        department_code: "MATH",
+        course_number: "125",
+        course_title: "Finite Mathematics",
+        capmus: "Manhattan Campus",
+        location: "26W",
+        term: "Spring 2019",
+        instructor: "Xiaoyan Yang",
+        time: "26W 312 2 9:30 10:50 26W 312 4 9:30 10:50"
+      },
+      
+      MATH135-M01:{
+        course_id: "2568",
+        department_code: "MATH",
+        course_number: "135",
+        course_title: "Fundamentals of Precalculus I",
+        capmus: "Manhattan Campus",
+        location: "26W",
+        term: "Spring 2019",
+        instructor: "Owen Johnson",
+        time: "26W 312 2 17:30 19:45 26W 312 4 17:30 19:45"
+      },
+      
+      MATH136-M01:{
+        course_id: "2569",
+        department_code: "MATH",
+        course_number: "136",
+        course_title: "Fundamentals of Precalculus II",
+        capmus: "Manhattan Campus",
+        location: "16W",
+        term: "Spring 2019",
+        instructor: "John Gordon",
+        time: "16W 723 1 15:30 17:45 16W 723 3 15:30 17:45"
+      },
+      
+      MATH136-M02:{
+        course_id: "2688",
+        department_code: "MATH",
+        course_number: "136",
+        course_title: "Fundamentals of Precalculus II",
+        capmus: "Manhattan Campus",
+        location: "16W",
+        term: "Spring 2019",
+        instructor: "Carol Bilsky-Bieniek",
+        time: "16W 721 1 11:00 12:20 16W 721 3 11:00 12:20 16W 721 4 11:00 12:20"
+      },
+      MATH136-M03:{
+        course_id: "2689",
+        department_code: "MATH",
+        course_number: "136",
+        course_title: "Fundamentals of Precalculus II",
+        capmus: "Manhattan Campus",
+        location: "16W 26W",
+        term: "Spring 2019",
+        instructor: "Chatur Advani",
+        time: "16W 822 1 9:30 10:50 16W 822 3 9:30 10:50 26W 11 4 9:30 10:50"
+      },
+      
+      MATH141-M01:{
+        course_id: "1819",
+        department_code: "MATH",
+        course_number: "141",
+        course_title: "Precalculus",
+        capmus: "Manhattan Campus",
+        location: "26W 16W",
+        term: "Spring 2019",
+        instructor: "Laihan Luo",
+        time: "26W 11 1 10:55 12:25 16W 11 3 10:55 12:25 16W 822 4 9:30 10:50"
+      },
+      
+      MATH141-M02:{
+        course_id: "1820",
+        department_code: "MATH",
+        course_number: "141",
+        course_title: "Precalculus",
+        capmus: "Manhattan Campus",
+        location: "26W 16W",
+        term: "Spring 2019",
+        instructor: "Julius Chini",
+        time: "26W 312 2 14:00 15:30 16W 723 4 14:00 15:30 26W 312 5 14:00 15:20"
+      },
+      
+      MATH151-M01:{
+        course_id: "1821",
+        department_code: "MATH",
+        course_number: "151",
+        course_title: "Fundamentals of Calculus",
+        capmus: "Manhattan Campus",
+        location: "Guiliano Global Center 16W",
+        term: "Spring 2019",
+        instructor: "John Gordon",
+        time: "GGC 409 1 14:00 15:20 16W 821 3 14:00 15:20"
+      },
+      
+      MATH151-M02:{
+        course_id: "1822",
+        department_code: "MATH",
+        course_number: "151",
+        course_title: "Fundamentals of Calculus",
+        capmus: "Manhattan Campus",
+        location: "16W",
+        term: "Spring 2019",
+        instructor: "Theodore Preston",
+        time: "16W 723 17:30 20:10"
+      },
+      
+      
        CSCI125-M01:{
         course_id: "1884",
         department_code: "CSCI",
         course_number: "125",
         course_title: "Computer Programming I",
         capmus: "Manhattan Campus",
-        location: "Guiliano Global",
+        location: "Guiliano Global Center",
         term: "Spring 2019",
         instructor: "Felix Fischman",
         time: "GGC 601 2 14:00 16:20 GGC 601 4 14:00 15:20"
@@ -62,7 +194,7 @@
         course_number: "125",      
         course_title: "Computer Programming I",
         capmus: "Manhattan Campus",
-        location: "Guiliano Global",
+        location: "Guiliano Global Center",
         term: "Spring 2019",
         instructor: "Michael Kadri",
         time: "GGC 601 2 17:30 19:10"
@@ -74,7 +206,7 @@
         course_number: "125",
         course_title: "Computer Programming I",
         capmus: "Manhattan Campus",
-        location: "Guiliano Global",        
+        location: "Guiliano Global Center",        
         term: "Spring 2019",
         instructor: "Felix Fischman",
         time: "GGC 601 5 17:30 21:10"
@@ -86,7 +218,7 @@
         course_number: "125",
         course_title: "Computer Programming I",
         capmus: "Manhattan Campus",
-        location: "Guiliano Global",
+        location: "Guiliano Global Center",
         term: "Spring 2019",
         instructor: "Hakan Pekcan",
         time: "GGC 601 1 14:00 16:50 GGC 601 3 15:30 16:50"
@@ -120,7 +252,7 @@
         course_number: "130",
         course_title: "Computer Organization",
         capmus: "Manhattan Campus",
-        location: "Guiliano Global",
+        location: "Guiliano Global Center",
         term: "Spring 2019",
         instructor: "Steven Billis",
         time: "GGC 405 1 14:00 15:20 GGC 405 3 14:00 15:20"
@@ -156,7 +288,7 @@
         course_number: "135",
         course_title: "Digital Logic Design Fundamentals ",
         capmus: "Manhattan Campus",
-        location: "Guiliano Global",
+        location: "Guiliano Global Center",
         term: "Spring 2019",
         instructor: "Nabi Sertac Artan",
         time: "GGC 606 1 14:00 15:20 GGC 606 3 14:00 15:20"
@@ -200,7 +332,7 @@
         course_number: "185",
         course_title: "Computer Programming II",
         capmus: "Manhattan Campus",
-        location: "Guiliano Global",
+        location: "Guiliano Global Center",
         term: "Spring 2019",
         instructor: "Michael Kadri",
         time: "GGC 312 1 17:30 21:10"
@@ -213,7 +345,7 @@
         course_number: "185",
         course_title: "Computer Programming II",
         capmus: "Manhattan Campus",
-        location: "Guiliano Global",
+        location: "Guiliano Global Center",
         term: "Spring 2019",
         instructor: "Wenjia Li",
         time: "GGC 601 2 9:00 10:50 GGC 601 4 9:00 10:50"
