@@ -47,111 +47,95 @@
         course_id: "1884",
         department_code: "CSCI",
         course_number: "125",
-        section:"M01"
         course_title: "Computer Programming I",
         capmus: "Manhattan Campus",
         location: "Guiliano Global",
-        room: "601",
         term: "Spring 2019",
         instructor: "Felix Fischman",
-        time: "2 14:00 16:20 4 14:00 15:20"
+        time: "GGC 601 2 14:00 16:20 GGC 601 4 14:00 15:20"
       },
       
       
       CSCI125-M03:{
         course_id: "1886",
         department_code: "CSCI",
-        course_number: "125",
-        section:"M03"
+        course_number: "125",      
         course_title: "Computer Programming I",
         capmus: "Manhattan Campus",
         location: "Guiliano Global",
-        room: "601",
         term: "Spring 2019",
         instructor: "Michael Kadri",
-        time: "2 17:30 19:10"
+        time: "GGC 601 2 17:30 19:10"
       },
       
       CSCI125-M05:{
         course_id: "2253",
         department_code: "CSCI",
         course_number: "125",
-        section:"M05"
         course_title: "Computer Programming I",
         capmus: "Manhattan Campus",
-        location: "Guiliano Global",
-        room: "601",
+        location: "Guiliano Global",        
         term: "Spring 2019",
         instructor: "Felix Fischman",
-        time: "5 17:30 21:10"
+        time: "GGC 601 5 17:30 21:10"
       },
       
       CSCI125-M07:{
         course_id: "2743",
         department_code: "CSCI",
         course_number: "125",
-        section:"M07"
         course_title: "Computer Programming I",
         capmus: "Manhattan Campus",
         location: "Guiliano Global",
-        room: "601",
         term: "Spring 2019",
         instructor: "Hakan Pekcan",
-        time: "1 14:00 16:50 3 15:30 16:50"
+        time: "GGC 601 1 14:00 16:50 GGC 601 3 15:30 16:50"
       },
       
       CSCI130-M01:{
         course_id: "3660",
         department_code: "CSCI",
         course_number: "130",
-        section:"M01"
         course_title: "Computer Organization",
         capmus: "Manhattan Campus",
         location: "16W",
-        room: "723",
         term: "Spring 2019",
         instructor: "Simon Ben-Avi",
-        time: "5 5:30 8:10"
+        time: "16W 723 5 5:30 8:10"
       },
       CSCI130-M02:{
         course_id: "3669",
         department_code: "CSCI",
         course_number: "130",
-        section:"M02"
         course_title: "Computer Organization",
         capmus: "Manhattan Campus",
         location: "26W",
-        room: "11",
         term: "Spring 2019",
         instructor: "Nabi Sertac Artan",
-        time: "2 15:30 16:50 4 15:30 16:50"
+        time: "26W 11 2 15:30 16:50 26W 11 4 15:30 16:50"
       },
       CSCI130-M03:{
         course_id: "3670",
         department_code: "CSCI",
         course_number: "130",
-        section:"M03"
         course_title: "Computer Organization",
         capmus: "Manhattan Campus",
         location: "Guiliano Global",
-        room: "405",
         term: "Spring 2019",
         instructor: "Steven Billis",
-        time: "1 14:00 15:20 3 14:00 15:20"
+        time: "GGC 405 1 14:00 15:20 GGC 405 3 14:00 15:20"
       },
       
       CSCI135-M01:{
         course_id: "2871",
         department_code: "CSCI",
         course_number: "135",
-        section:"M01"
         course_title: "Digital Logic Design Fundamentals ",
         capmus: "Manhattan Campus",
         location: "16W",
-        room: "723",
         term: "Spring 2019",
         instructor: "Simon Ben-Avi",
-        time: "5 17:30 20:10"
+        time: "16W 723 5 17:30 20:10"
       },
       CSCI135-M02:{
         course_id: "3671",
@@ -164,98 +148,114 @@
         room: "11",
         term: "Spring 2019",
         instructor: "Nabi Sertac Artan",
-        time: "2 15:30 16:50 4 15:30 16:50"
+        time: "26W 11 2 15:30 16:50 26W 11 4 15:30 16:50"
       },
       CSCI135-M03:{
         course_id: "3672",
         department_code: "CSCI",
         course_number: "135",
-        section:"M03"
         course_title: "Digital Logic Design Fundamentals ",
         capmus: "Manhattan Campus",
         location: "Guiliano Global",
-        room: "606",
         term: "Spring 2019",
         instructor: "Nabi Sertac Artan",
-        time: "1 14:00 15:20 3 14:00 15:20"
+        time: "GGC 606 1 14:00 15:20 GGC 606 3 14:00 15:20"
       },
       CSCI155-M01:{
         course_id: "2454",
         department_code: "CSCI",
         course_number: "155",
-        section:"M01"
         course_title: "Computer Organization and Architecture",
         capmus: "Manhattan Campus",
         location: "16W",
-        room: "822",
         term: "Spring 2019",
         instructor: "Maharshi Shah",
-        time: "4 17:30 21:10"
+        time: "16W 822 4 17:30 21:10"
       },
       CSCI155-M03:{
         course_id: "1888",
         department_code: "CSCI",
         course_number: "155",
-        section:"M03"
         course_title: "Computer Organization and Architecture",
         capmus: "Manhattan Campus",
         location: "26W",
-        room: "312",
         term: "Spring 2019",
         instructor: "Simon Ben-Avi",
-        time: "2 17:30 20:10"
+        time: "26W 312 2 17:30 20:10"
       },
       CSCI155-M05:{
         course_id: "2752",
         department_code: "CSCI",
         course_number: "155",
-        section:"M05"
         course_title: "Computer Organization and Architecture",
         capmus: "Manhattan Campus",
         location: "26W",
-        room: "312",
         term: "Spring 2019",
         instructor: "Simon Ben-Avi",
-        time: "2 15:30 16:50 4 15:30 16:50"
+        time: "26W 312 2 15:30 16:50 26W 312 4 15:30 16:50"
       },
       CSCI185-M03:{
         course_id: "1892",
         department_code: "CSCI",
         course_number: "185",
-        section:"M03"
         course_title: "Computer Programming II",
         capmus: "Manhattan Campus",
         location: "Guiliano Global",
-        room: "312",
         term: "Spring 2019",
         instructor: "Michael Kadri",
-        time: "1 17:30 21:10"
+        time: "GGC 312 1 17:30 21:10"
       },
-      CSCI185-M04:{
-        course_id: "1994",
+
+      
+      CSCI185-M05:{
+        course_id: "2755",
         department_code: "CSCI",
         course_number: "185",
-        section:"M02"
         course_title: "Computer Programming II",
         capmus: "Manhattan Campus",
         location: "Guiliano Global",
-        room: "312",
         term: "Spring 2019",
-        instructor: "Michael Kadri",
-        time: "1 17:30 21:10"
+        instructor: "Wenjia Li",
+        time: "GGC 601 2 9:00 10:50 GGC 601 4 9:00 10:50"
       },
+      
+      CSCI235-M01:{
+        course_id: "1893",
+        department_code: "CSCI",
+        course_number: "235",
+        course_title: "Computer Programming II",
+        capmus: "Manhattan Campus",
+        location: "26W",
+        term: "Spring 2019",
+        instructor: "Felix Fischman",
+        time: "26W 11 2 17:30 20:10"
+      },
+      
+      CSCI235-M03:{
+        course_id: "2759",
+        department_code: "CSCI",
+        course_number: "235",
+        course_title: "Computer Programming II",
+        capmus: "Manhattan Campus",
+        location: "16W",
+        term: "Spring 2019",
+        instructor: "Susan Gass",
+        time: "16W 723 1 9:30 10:50 16W 723 2 9:30 10:50"
+      },
+      
+      
+      
+      
       CSCI445-M02:{
         course_id: "2449",
         department_code: "CSCI",
         course_number: "445",
-        section:"M01"
         course_title: "Operating System Security",
         capmus: "Manhattan Campus",
         location: "16W",
-        room: "624",
         term: "Spring 2019",
         instructor: "Li",
-        time: "5 09:30  12:10"
+        time: "16W 624 5 09:30  12:10"
       },
       
 
