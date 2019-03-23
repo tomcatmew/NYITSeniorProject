@@ -174,6 +174,198 @@
         time: "16W 723 17:30 20:10"
       },
       
+      MATH161-M01:{
+        course_id: "1823",
+        department_code: "MATH",
+        course_number: "161",
+        course_title: "Basic Applied Calculus",
+        capmus: "Manhattan Campus",
+        location: "Guiliano Global Center 16W",
+        term: "Spring 2019",
+        instructor: "John Gordon",
+        time: "GGC 409 1 14:00 15:20 16W 821 14:00 15:20"
+      },
+      
+      MATH161-M02:{
+        course_id: "1824",
+        department_code: "MATH",
+        course_number: "161",
+        course_title: "Basic Applied Calculus",
+        capmus: "Manhattan Campus",
+        location: "Guiliano Global Center 16W",
+        term: "Spring 2019",
+        instructor: "John Gordon",
+        time: "16W 723 3 17:30 20:10"
+      },
+      
+      MATH171-M01:{
+        course_id: "1825",
+        department_code: "MATH",
+        course_number: "171",
+        course_title: "Calculus I",
+        capmus: "Manhattan Campus",
+        location: "Guiliano Global Center 16W",
+        term: "Spring 2019",
+        instructor: "Taposh Gayen",
+        time: "GGC 401 2 14:00 16:30 GGC 401 4 14:00 16:30"
+      },
+      
+      MATH171-M02:{
+        course_id: "1826",
+        department_code: "MATH",
+        course_number: "171",
+        course_title: "Calculus I",
+        capmus: "Manhattan Campus",
+        location: "16W",
+        term: "Spring 2019",
+        instructor: "Julius Chini",
+        time: "16W 721 1 14:00 16:30 16W 822 14:00 16:30"
+      },
+      
+      MATH171-M03:{
+        course_id: "1827",
+        department_code: "MATH",
+        course_number: "171",
+        course_title: "Calculus I",
+        capmus: "Manhattan Campus",
+        location: "16W",
+        term: "Spring 2019",
+        instructor: "Laihan Luo",
+        time: "16W 820 1 17:30 19:45 16W 822 17:30 19:45"
+      },
+      
+      MATH180-M01:{
+        course_id: "1828",
+        department_code: "MATH",
+        course_number: "180",
+        course_title: "Calculus II",
+        capmus: "Manhattan Campus",
+        location: "26W",
+        term: "Spring 2019",
+        instructor: "Changiz Alizadeh",
+        time: "26W 312 1 14:00 16:30 26W 11 14:00 16:30"
+      },
+      
+      MATH180-M02:{
+        course_id: "1829",
+        department_code: "MATH",
+        course_number: "180",
+        course_title: "Calculus II",
+        capmus: "Manhattan Campus",
+        location: "26W",
+        term: "Spring 2019",
+        instructor: "Klara Lagrance",
+        time: "26W 207 2 17:30 19:45 26W 313 17:30 19:45"
+      },
+      
+      MATH180-M03:{
+        course_id: "2686",
+        department_code: "MATH",
+        course_number: "180",
+        course_title: "Calculus II",
+        capmus: "Manhattan Campus",
+        location: "16W",
+        term: "Spring 2019",
+        instructor: "Vitaly Katsnelson",
+        time: "16W 624 1 14:00 16:30 16W 721 14:00 16:30"
+      },
+      
+      MATH180-M04:{
+        course_id: "2687",
+        department_code: "MATH",
+        course_number: "180",
+        course_title: "Calculus II",
+        capmus: "Manhattan Campus",
+        location: "16W",
+        term: "Spring 2019",
+        instructor: "Robert Bell",
+        time: "GGC 405 2 14:00 16:30 16W 722 14:00 16:30"
+      },
+      
+      MATH235-M01:{
+        course_id: "2317",
+        department_code: "MATH",
+        course_number: "235",
+        course_title: "Applied Statistics",
+        capmus: "Manhattan Campus",
+        location: "Guiliano Global Center",
+        term: "Spring 2019",
+        instructor: "Owen Johnson",
+        time: "GGC 409 1 15:30 16:50 GGC 409 15:30 16:50"
+      },
+      
+      MATH260-M01:{
+        course_id: "1830",
+        department_code: "MATH",
+        course_number: "260",
+        course_title: "Calculus III",
+        capmus: "Manhattan Campus",
+        location: "Guiliano Global Center",
+        term: "Spring 2019",
+        instructor: "Robert Bell",
+        time: "26W 312 1 9:00 10:50 26W 312 9:00 10:50"
+      },
+      
+      MATH260-M02:{
+        course_id: "3489",
+        department_code: "MATH",
+        course_number: "180",
+        course_title: "Calculus III",
+        capmus: "Manhattan Campus",
+        location: "Guiliano Global Center",
+        term: "Spring 2019",
+        instructor: "Robert Bell",
+        time: "26W 312 1 9:00 10:50 26W 312 9:00 10:50"
+      },
+      
+      MATH310-M01:{
+        course_id: "1831",
+        department_code: "MATH",
+        course_number: "310",
+        course_title: "Linear Algebra",
+        capmus: "Manhattan Campus",
+        location: "26W",
+        term: "Spring 2019",
+        instructor: "Changiz Alizadeh",
+        time: "26W 312 1 9:00 10:50 26W 312 9:00 10:50"
+      },
+      
+      MATH310-M02:{
+        course_id: "2434",
+        department_code: "MATH",
+        course_number: "310",
+        course_title: "Linear Algebra",
+        capmus: "Manhattan Campus",
+        location: "16W",
+        term: "Spring 2019",
+        instructor: "Vitaly Katsnelson",
+        time: "16W 624 1 12:30 13:50 16W 624 12:30 13:50"
+      },
+      
+      MATH320-M01:{
+        course_id: "1832",
+        department_code: "MATH",
+        course_number: "320",
+        course_title: "Differential Equations",
+        capmus: "Manhattan Campus",
+        location: "16W",
+        term: "Spring 2019",
+        instructor: "Robert Bell",
+        time: "16W 821 1 12:30 13:50 16W 721 12:30 13:50"
+      },
+      
+      MATH350-M01:{
+        course_id: "3488",
+        department_code: "MATH",
+        course_number: "350",
+        course_title: "Advanced Calculus",
+        capmus: "Manhattan Campus",
+        location: "Guiliano Global Center",
+        term: "Spring 2019",
+        instructor: "Ranja Roy",
+        time: "GGC 702 1 15:30 16:50 GGC 702 15:30 16:50"
+      },
+      
       
        CSCI125-M01:{
         course_id: "1884",
