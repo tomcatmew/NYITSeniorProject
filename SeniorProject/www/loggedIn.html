@@ -10,6 +10,8 @@
 
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script>
       // Initialize Firebase
 
@@ -28,8 +30,8 @@
 
     </script>
 
-    <script type="text/javascript" src="data.json"></script>
-    <script type="text/javascript" src="scriptTest.js"></script>
+    <script type="text/javascript" src="database.js"></script>
+    <script type="text/javascript" src="courseDatabase.js"></script>
 
 </head>
 
@@ -57,15 +59,12 @@
     currentUid = user.uid;
 
 
-    var mydata = JSON.parse(data);
-    //document.body.innerHTML = '<h1> Hello ' + user.displayName + ' </h1> <h2> Your email address is: ' + user.email + ' <h/2> <h4> 1:' + load() + '</h4>';
-
     saveUserInfo(user); //   save data!!
-    //getUserInfo(user)
-    //getUserInfoRealTime(user);
-    //addCourse(user);
     getUserInfoRealTime(user);
-    //coursesDatabase();
+    //addCourse(user);
+    coursesDatabase(); //add courses to the database
+    getDatabaseCourseInfo(); // get database data
+
    } else {
     // Sign out operation. Reset the current user UID.
     currentUid = null;
