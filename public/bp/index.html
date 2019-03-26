@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Senior Project</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, minimum-scale=1.0, maximum-scale=4.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Senior Project">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="https://unpkg.com/@material-ui/core/umd/material-ui.production.min.js" crossorigin="anonymous"></script>
+
+    <script src="main.js"></script>
+    <script src="class.js"></script>
+
+    <link rel="apple-touch-icon" href="AVAS1.jpg">
+    <link rel="apple-touch-icon" href="touch-icon-iphone.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="touch-icon-ipad.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="touch-icon-iphone-retina.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="touch-icon-ipad-retina.png">
+    <link rel="apple-touch-startup-image" href="apple-launch-828x1792.jpg">
+    <!-- iPhone Xs Max (1242px x 2688px) -->
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="apple-launch-1242x2688.jpg">
+    <!-- iPhone Xr (828px x 1792px) -->
+    <link rel="apple-touch-startup-image" media="(device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="apple-launch-828x1792.jpg">
+    <!-- iPhone X, Xs (1125px x 2436px) -->
+    <link rel="apple-touch-startup-image" media="(device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="apple-launch-1125x2436.jpg">
+
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- material-UI -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+</head>
+
+<body>
+
+<button id="by1" onclick="goback();"> Back YEAH !</button>
+  <div id = "titleA"><p>26 West 61 St</p></div>
+  <div id = "titleB"><p>16 West 61 St</p></div>
+  <div id = "titleC"><p>Edward Gulliano Global Center</p></div>
+
+  <div id = "floortitle">Select Your Floor</div>
+  <div id = "titleSA"><p>26 West 61 St</p></div>
+  <div id = "titleSB"><p>16 West 61 St</p></div>
+  <div id = "titleSC"><p>Edward Gulliano Global Center</p></div>
+
+  <div id="buildingt" class="buildingz">
+
+    <div class="floor floor-ground">
+        <span class="face shadow"></span>
+        <span class="face bottom"></span>
+    </div>
+  </div>
+
+  <div id="world" class="world" >
+
+  	<h1 class="ground">ground</h1>
+
+  	<ul class="building block-8" onclick="b1_trigger(0);" onmouseover="titela_fin();" >Building
+  		<li class="top">roof</li>
+  		<li class="west">west wall</li>
+  		<li class="north">north wall</li>
+  		<li class="east">east wall</li>
+  		<li class="south" >south wall</li>
+  	</ul>
+
+  	<ul class="building block-10" onclick="b1_trigger(1);" onmouseover="titelb_fin();" >Building
+  		<li class="top">roof</li>
+  		<li class="west">west wall</li>
+  		<li class="north">north wall</li>
+  		<li class="east">east wall</li>
+  		<li class="south"  >south wall</li>
+  	</ul>
+
+  	<ul class="building block-11" onclick="b1_trigger(2);" onmouseover="titelc_fin();" >Building
+  		<li class="top">roof</li>
+  		<li class="west">west wall</li>
+  		<li class="north">north wall</li>
+  		<li class="east">east wall</li>
+  		<li class="south" >south wall</li>
+  	</ul>
+
+  	<ul class="car car-1">Car
+  		<li class="roof">roof</li>
+  		<li class="door-left">door left</li>
+  		<li class="front">front</li>
+  		<li class="door-right">door right</li>
+  		<li class="trunk">trunk</li>
+  	</ul>
+
+  	<ul class="car car-2">Car
+  		<li class="roof">roof</li>
+  		<li class="door-left">door left</li>
+  		<li class="front">front</li>
+  		<li class="door-right">door right</li>
+  		<li class="trunk">trunk</li>
+  	</ul>
+
+  	<ul class="car car-3">Car
+  		<li class="roof">roof</li>
+  		<li class="door-left">door left</li>
+  		<li class="front">front</li>
+  		<li class="door-right">door right</li>
+  		<li class="trunk">trunk</li>
+  	</ul>
+
+  	<p class="road road-1">road</p>
+  	<p class="road road-2">road</p>
+  	<p class="road road-3">road</p>
+
+  </div>
+
+  <div id="textbox">
+  Room Information
+  </div>
+
+  <div id="hold5">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:se="http://svg-edit.googlecode.com" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="777" height="480" style="">
+     <title>my vector image</title>
+     <!-- Created with Vector Paint - http://www.vectorpaint.yaks.com/ https://chrome.google.com/webstore/detail/hnbpdiengicdefcjecjbnjnoifekhgdo -->
+     <rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="#FFFFFF" stroke="none"/>
+     <g class="currentLayer" style="">
+        <title>Layer 1</title>
+        <rect fill="none" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" id="svg_1" x="197.34104106232917" y="20.02311897277832" width="450.0000228881836" height="449.99999475479126" style="color: rgb(0, 0, 0);" class=""/>
+        <rect fill="#ff8c00" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" id="svg_3" x="494" y="414" width="57" height="46" style="color: rgb(255, 140, 0);" class=""/>
+        <rect fill="#ff8c00" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="564.2890014648438" y="414.3468322753906" width="57" height="46" style="color: rgb(255, 140, 0);" class="" id="svg_2"/>
+        <rect fill="#0bd50b" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" onmouseover="c501();"  id="svg_501" x="515.8323669433594" y="251.54335021972656" width="122" height="90" style="color: rgb(255, 140, 0);" class=""/>
+        <rect fill="#0bd50b" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="215.768798828125" y="144.03468322753906" width="122" height="90" style="color: rgb(255, 140, 0);" onmouseover="c505();" class="" id="svg_505"/>
+        <rect fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="216.11561584472656" y="38.02312469482422" width="122" height="90" style="color: rgb(255, 140, 0);" onmouseover="c506();" class="" id="svg_506" fill-opacity="1"/>
+        <rect fill="#eb1a1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="515.768798828125" y="142.3005828857422" width="122" height="90" style="color: rgb(255, 140, 0);" class="" onmouseover="c502();" id="svg_502" fill-opacity="1"/>
+        <rect fill="#dadada" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="214.95956420898438" y="247.84971618652344" width="122" height="90" style="color: rgb(255, 140, 0);" class="" fill-opacity="1" onmouseover="c504();" id="svg_504"/>
+        <rect fill="#eb1a1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="515.53759765625" y="39.757232666015625" width="122" height="90" style="color: rgb(255, 140, 0);" class="" fill-opacity="1" onmouseover="c503();" id="svg_503"/>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg_10" x="530" y="267" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">501</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg_11" x="530" y="167" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">502</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg_12" x="530" y="67" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">503</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg_12" x="230" y="267" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">504</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg_12" x="230" y="167" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">505</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg_12" x="230" y="67" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">506</p>
+        </foreignObject>
+     </g>
+   </svg>
+  </div>
+
+  <div id="hold6">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:se="http://svg-edit.googlecode.com" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="777" height="480" style="">
+     <title>my vector image</title>
+     <!-- Created with Vector Paint - http://www.vectorpaint.yaks.com/ https://chrome.google.com/webstore/detail/hnbpdiengicdefcjecjbnjnoifekhgdo -->
+     <!-- <rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="#FFFFFF" stroke="none"/> -->
+     <g class="currentLayer" style="">
+        <title>Layer 1</title>
+        <rect fill="none" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" id="svg6_1" x="197.34104106232917" y="20.02311897277832" width="450.0000228881836" height="449.99999475479126" style="color: rgb(0, 0, 0);" class=""/>
+        <rect fill="#ff8c00" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" id="svg6_3" x="494" y="414" width="57" height="46" style="color: rgb(255, 140, 0);" class=""/>
+        <rect fill="#ff8c00" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="564.2890014648438" y="414.3468322753906" width="57" height="46" style="color: rgb(255, 140, 0);" class="" id="svg6_2"/>
+        <rect fill="#0bd50b" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" onmouseover="c601();" id="svg6_601" x="515.8323669433594" y="251.54335021972656" width="122" height="90" style="color: rgb(255, 140, 0);" class=""/>
+        <rect fill="#0bd50b" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="215.768798828125" y="144.03468322753906" width="122" height="90" style="color: rgb(255, 140, 0);" onmouseover="c605();" class="" id="svg6_605"/>
+        <rect fill="#0bd50b" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="216.11561584472656" y="38.02312469482422" width="122" height="90" style="color: rgb(255, 140, 0);" onmouseover="c606();" class="" id="svg6_606" fill-opacity="1"/>
+        <rect fill="#0bd50b" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="515.768798828125" y="142.3005828857422" width="122" height="90" style="color: rgb(255, 140, 0);" onmouseover="c602();" class="" id="svg6_602" fill-opacity="1"/>
+        <rect fill="#dadada" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="214.95956420898438" y="247.84971618652344" width="122" height="90" style="color: rgb(255, 140, 0);" class="" fill-opacity="1" onmouseover="c604();" id="svg6_604"/>
+        <rect fill="#eb1a1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="515.53759765625" y="39.757232666015625" width="122" height="90" style="color: rgb(255, 140, 0);" class="" fill-opacity="1"onmouseover="c603();"  id="svg6_603"/>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg6_10" x="530" y="267" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">601</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg6_11" x="530" y="167" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">602</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg6_12" x="530" y="67" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">603</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg6_13" x="230" y="267" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">604</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg6_14" x="230" y="167" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">605</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg6_15" x="230" y="67" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">606</p>
+        </foreignObject>
+     </g>
+   </svg>
+  </div>
+
+  <div id="hold7">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:se="http://svg-edit.googlecode.com" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="777" height="480" style="">
+     <title>my vector image</title>
+     <!-- Created with Vector Paint - http://www.vectorpaint.yaks.com/ https://chrome.google.com/webstore/detail/hnbpdiengicdefcjecjbnjnoifekhgdo -->
+     <!-- <rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="#FFFFFF" stroke="none"/> -->
+     <g class="currentLayer" style="">
+        <title>Layer 1</title>
+        <rect fill="none" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" id="sv7_1" x="197.34104106232917" y="20.02311897277832" width="450.0000228881836" height="449.99999475479126" style="color: rgb(0, 0, 0);" class=""/>
+        <rect fill="#ff8c00" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" id="svg7_3" x="494" y="414" width="57" height="46" style="color: rgb(255, 140, 0);" class=""/>
+        <rect fill="#ff8c00" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="564.2890014648438" y="414.3468322753906" width="57" height="46" style="color: rgb(255, 140, 0);" class="" id="svg7_2"/>
+        <rect fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" onmouseover="c701();" id="svg7_701" x="515.8323669433594" y="251.54335021972656" width="122" height="90" style="color: rgb(255, 140, 0);" class=""/>
+        <rect fill="#0bd50b" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="215.768798828125" y="144.03468322753906" width="122" height="90" style="color: rgb(255, 140, 0);" onmouseover="c705();" class="" id="svg7_705"/>
+        <rect fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="216.11561584472656" y="38.02312469482422" width="122" height="90" style="color: rgb(255, 140, 0);" class="" onmouseover="c706();" id="svg7_706" fill-opacity="1"/>
+        <rect fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="515.768798828125" y="142.3005828857422" width="122" height="90" style="color: rgb(255, 140, 0);" class="" onmouseover="c702();" id="svg7_702" fill-opacity="1"/>
+        <rect fill="#dadada" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="214.95956420898438" y="247.84971618652344" width="122" height="90" style="color: rgb(255, 140, 0);" class="" fill-opacity="1" onmouseover="c704();" id="svg7_704"/>
+        <rect fill="#eb1a1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="515.53759765625" y="39.757232666015625" width="122" height="90" style="color: rgb(255, 140, 0);" class="" fill-opacity="1" onmouseover="c703();" id="svg7_703"/>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg7_10" x="530" y="267" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">701</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg7_11" x="530" y="167" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">702</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg7_12" x="530" y="67" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">703</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg7_13" x="230" y="267" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">704</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg7_14" x="230" y="167" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">705</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg7_15" x="230" y="67" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">706</p>
+        </foreignObject>
+     </g>
+   </svg>
+  </div>
+
+  <div id="hold8">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:se="http://svg-edit.googlecode.com" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="777" height="480" style="">
+     <title>my vector image</title>
+     <!-- Created with Vector Paint - http://www.vectorpaint.yaks.com/ https://chrome.google.com/webstore/detail/hnbpdiengicdefcjecjbnjnoifekhgdo -->
+     <!-- <rect id="backgroundrect" width="100%" height="100%" x="0" y="0" fill="#FFFFFF" stroke="none"/> -->
+     <g class="currentLayer" style="">
+        <title>Layer 1</title>
+        <rect fill="none" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" id="svg8_1" x="197.34104106232917" y="20.02311897277832" width="450.0000228881836" height="449.99999475479126" style="color: rgb(0, 0, 0);" class=""/>
+        <rect fill="#ff8c00" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" id="svg8_3" x="494" y="414" width="57" height="46" style="color: rgb(255, 140, 0);" class=""/>
+        <rect fill="#ff8c00" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="564.2890014648438" y="414.3468322753906" width="57" height="46" style="color: rgb(255, 140, 0);" class="" id="svg8_2"/>
+        <rect fill="#0bd50b" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" onmouseover="c801();" id="svg7_801" x="515.8323669433594" y="251.54335021972656" width="122" height="90" style="color: rgb(255, 140, 0);" class=""/>
+        <rect fill="#0bd50b" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="215.768798828125" y="144.03468322753906" width="122" height="90" style="color: rgb(255, 140, 0);" class="" onmouseover="c805();" id="svg7_805"/>
+        <rect fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="216.11561584472656" y="38.02312469482422" width="122" height="90" style="color: rgb(255, 140, 0);" class="" onmouseover="c806();" id="svg7_806" fill-opacity="1"/>
+        <rect fill="#eb1a1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="515.768798828125" y="142.3005828857422" width="122" height="90" style="color: rgb(255, 140, 0);" class="" onmouseover="c802();" id="svg7_802" fill-opacity="1"/>
+        <rect fill="#dadada" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="214.95956420898438" y="247.84971618652344" width="122" height="90" style="color: rgb(255, 140, 0);" class="" fill-opacity="1" onmouseover="c804();" id="svg7_804"/>
+        <rect fill="#eb1a1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" x="515.53759765625" y="39.757232666015625" width="122" height="90" style="color: rgb(255, 140, 0);" class="" fill-opacity="1" onmouseover="c803();" id="svg7_803"/>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg8_10" x="530" y="267" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">801</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg8_11" x="530" y="167" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">802</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg8_12" x="530" y="67" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">803</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg8_13" x="230" y="267" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">804</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg8_14" x="230" y="167" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">805</p>
+        </foreignObject>
+        <foreignObject fill="#ebeb1a" stroke="#222222" stroke-width="2" stroke-linejoin="round" stroke-dashoffset="" fill-rule="nonzero" font-size="40" font-family="Georgia, serif" letter-spacing="0" word-spacing="0" marker-start="" marker-mid="" marker-end="" id="svg8_15" x="230" y="67" width="73" height="40" style="color: rgb(0, 0, 0);" class="">
+           <p xmlns="http://www.w3.org/1999/xhtml" style="border: none;outline: none;font-size: inherit;line-height: 1em;padding:0;margin:0;">806</p>
+        </foreignObject>
+     </g>
+   </svg>
+  </div>
+
+</body>
+</html>

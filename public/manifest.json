@@ -1,0 +1,16 @@
+{
+  "short_name": "NYIT AR",
+  "name": "NYIT Around",
+  "icons": [
+    {
+      "src": "AVAS1.jpg",
+      "type": "image/jpg",
+      "sizes": "626x626"
+    }
+  ],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#3367D6",
+  "display": "standalone",
+  "scope": "",
+  "theme_color": "#3367D6"
+}
