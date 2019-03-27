@@ -11,7 +11,7 @@ function getDatabaseCourseInfo(){
 
   }
 
-function courseInfoList(info){
+function courseInfoList(info){ //helper function
   var count = 1;
   for(let z of Object.keys(info))
     {
