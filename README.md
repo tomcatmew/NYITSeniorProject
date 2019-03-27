@@ -28,7 +28,8 @@ var uiConfig = {
       };
 
 ```
-
+#=================================================================================  
+# database part
 ```
 var list = [];
 function getDatabaseCourseInfo(){
