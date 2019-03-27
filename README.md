@@ -27,6 +27,7 @@ function courseInfoList(info){ //helper function
 
 ```
 # function: getDatabaseCourseInfo() output:
+
 0: "(1884)CSCI125 Computer Programming I GGC 601 2 14:00 16:20 GGC 601 4 14:00 15:20 Spring 2019 Instructor: Felix Fischman"
 1: "(1886)CSCI125 Computer Programming I GGC 601 2 17:30 19:10 Spring 2019 Instructor: Michael Kadri"
 2: "(2253)CSCI125 Computer Programming I GGC 601 5 17:30 21:10 Spring 2019 Instructor: Felix Fischman"
