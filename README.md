@@ -1,47 +1,36 @@
-# 课程数据库格式：
-# 0-6 0代表周日， 1代表周一，2代表周二...
-# 时间是24小时制
-# 例子：同1个教室上课
-      
-      CSCI101-M01:{
-        course_id: "1235",
-        department_code: "CSCI",
-        course_number: "101",
-        course_title: "Coursetitle",
-        capmus: "Manhattan Campus",
-        location: "Guiliano Global Center",
-        term: "Fall 2018",
-        instructor: "Dr. Li",
-        schedule: "GGC 601 2 14:00 16:20 GGC 601 4 14:00 16:20"
-      },
-      
-# 例子：两个不同教室上课      
-      CSCI108-M02:{
-        course_id: "1235",
-        department_code: "CSCI",
-        course_number: "108",
-        course_title: "Coursetitle",
-        capmus: "Manhattan Campus",
-        location: "Guiliano Global Center",
-        term: "Fall 2018",
-        instructor: "Dr. Li",
-        schedule: "GGC 601 1 12:00 16:20 16W 701 3 12:00 16:20"
-      },
- # 例子：3个教室上课    
-      CSCI108-M02:{
-        course_id: "1235",
-        department_code: "CSCI",
-        course_number: "108",
-        course_title: "Coursetitle",
-        capmus: "Manhattan Campus",
-        location: "Guiliano Global Center",
-        term: "Fall 2018",
-        instructor: "Dr. Li",
-        schedule: "GGC 601 1 12:00 16:20 16W 701 3 12:00 16:20 26W 312 4 12:00 13:00"
-      },
+```
+var list = [];
+function getDatabaseCourseInfo(){
+    var db = firebase.firestore();
+
+    db.collection("courseDatabase").doc("courses")
+    .onSnapshot(function(doc) {
+          courseInfoList(doc.data()); //retrieve data from courseDatabase
+          console.log("courses Database: ", doc.data());
+      });
+
+  }
+
+function courseInfoList(info){
+  var count = 1;
+  for(let z of Object.keys(info))
+    {
+      var ref = info[z];
+      list.push(`(${ref.course_id})${ref.department_code}${ref.course_number} ${ref.course_title} ${ref.schedule} ${ref.term} Instructor: ${ref.instructor}`);
+      count++;
+    }
+      console.log("List: ",list);
+}
+
+
+
+
+```
+# function: getDatabaseCourseInfo() output:
+List:  (65) ["(1884)CSCI125 Computer Programming I GGC 601 2 14:…4:00 15:20 Spring 2019 Instructor: Felix Fischman", "(1886)CSCI125 Computer Programming I GGC 601 2 17:30 19:10 Spring 2019 Instructor: Michael Kadri", "(2253)CSCI125 Computer Programming I GGC 601 5 17:30 21:10 Spring 2019 Instructor: Felix Fischman", "(2743)CSCI125 Computer Programming I GGC 601 1 14:… 15:30 16:50 Spring 2019 Instructor: Hakan Pekcan", "(3660)CSCI130 Computer Organization 16W 723 5 5:30 8:10 Spring 2019 Instructor: Simon Ben-Avi", "(3669)CSCI130 Computer Organization 26W 11 2 15:30…0 16:50 Spring 2019 Instructor: Nabi Sertac Artan", "(3670)CSCI130 Computer Organization GGC 405 1 14:0…14:00 15:20 Spring 2019 Instructor: Steven Billis", "(2871)CSCI135 Digital Logic Design Fundamentals  1…17:30 20:10 Spring 2019 Instructor: Simon Ben-Avi", "(3671)CSCI135 Digital Logic Design Fundamentals  2…0 16:50 Spring 2019 Instructor: Nabi Sertac Artan", "(3672)CSCI135 Digital Logic Design Fundamentals  G…0 15:20 Spring 2019 Instructor: Nabi Sertac Artan", "(2454)CSCI155 Computer Organization and Architectu…17:30 21:10 Spring 2019 Instructor: Maharshi Shah", "(1888)CSCI155 Computer Organization and Architectu…17:30 20:10 Spring 2019 Instructor: Simon Ben-Avi", "(2752)CSCI155 Computer Organization and Architectu…15:30 16:50 Spring 2019 Instructor: Simon Ben-Avi", "(1892)CSCI185 Computer Programming II GGC 312 1 17:30 21:10 Spring 2019 Instructor: Michael Kadri", "(2755)CSCI185 Computer Programming II GGC 601 2 9:…01 4 9:00 10:50 Spring 2019 Instructor: Wenjia Li", "(1893)CSCI235 Computer Programming II 26W 11 2 17:30 20:10 Spring 2019 Instructor: Felix Fischman", "(2759)CSCI235 Computer Programming II 16W 723 1 9:…3 2 9:30 10:50 Spring 2019 Instructor: Susan Gass", "(1895)CSCI260  Data Structures  1 14:00 15:20 3 14:00 15:20  Spring 2019 Instructor: Huanying Gu", "(2447)CSCI260  Data Structures 3 17:30 20:10 Spring 2019 Instructor: Altion Simo", "(2762)CSCI260  Data Structures 2 09:30 10:50 4 09:30 10:50 Spring 2019 Instructor: Michael Kadri", "(1897)CSCI270 Probability and Statistics for Compu…5:30 16:50 Spring 2019 Instructor: Herbert Taylor", "(1898)CSCI300 Database Management 26W 11 2 14:00 1… 4 14:00 15:20 Spring 2019 Instructor: Houwei Cao", "(2969)CSCI300 Database Management 2 17:30 20:10 Spring 2019 Instructor:  Felix Fischman", "(1899)CSCI312 Theory of Computation  2 11:00 12:20 4 11:00 12:20 Spring 2019 Instructor: Paolo Gasti", "(1900)CSCI318 Programming Language Concepts 2 14:0…4 14:00 15:20  Spring 2019 Instructor:  Wenjia Li", "(1901)CSCI330 Operating Systems  1 17:30 20:10 Spring 2019 Instructor: Susan Gass", "(2764)CSCI330 Operating Systems 2 15:30 16:50 4 15:30 16:50  Spring 2019 Instructor: Susan Gass", "(1903)CSCI335 Design and Analysis of Algorithms 1 17:45 20:25 Spring 2019 Instructor: Herbert Taylor", "(1904)CSCI345 Computer Networks 3 17:30 20:10 Spring 2019 Instructor: Anand Santhanakrishnan", "(3753)CSCI345 Computer Networks 1 17:30 20:10 Spring 2019 Instructor: Damon Bruccoleri", "(1905)CSCI355 Artificial Intelligence I 3 20:20 23:00 Spring 2019 Instructor:  Altion Simo", "(2188)CSCI357 Cisco Academy Level I 1 14:00 16:50 Spring 2019 Instructor: Michael Silva ", "(2242)CSCI362 Information System Security Engineer…35 23:15  Spring 2019 Instructor:  Michael Nizich", "(1906)CSCI380 Introduction to Software Engineering…0 13:50  Spring 2019 Instructor:  Maherukh Akhtar", "(1991)CSCI405 Distributed Database Systems 5 17:30 20:10 Spring 2019 Instructor:  Sandra Kopecky", "(1907)CSCI415  Introduction to Data Mining 1 12:30… 12:30 13:50 Spring 2019 Instructor:  Huanying Gu", "(2827)CSCI436 Big Data Management & Analytics  2 17:45  20:25 Spring 2019 Instructor: Qian Wang", "(2449)CSCI445 Operating System Security 16W 624 5 09:30  12:10 Spring 2019 Instructor: Li", "(1815)MATH101 Developmental Mathematics I/II 26W 3…2:30 13:55 Spring 2019 Instructor: Marcus Johnson", "(1817)MATH115 Introductory Concepts of Mathematics…6:50 Spring 2019 Instructor: Carol Bilsky_Bieniek", "(1818)MATH125 Finite Mathematics 26W 312 2 9:30 10…4 9:30 10:50 Spring 2019 Instructor: Xiaoyan Yang", "(2568)MATH135 Fundamentals of Precalculus I 26W 31… 17:30 19:45 Spring 2019 Instructor: Owen Johnson", "(2569)MATH136 Fundamentals of Precalculus II 16W 7…3 15:30 17:45 Spring 2019 Instructor: John Gordon", "(2688)MATH136 Fundamentals of Precalculus II 16W 7…2:20 Spring 2019 Instructor: Carol Bilsky-Bieniek", "(2689)MATH136 Fundamentals of Precalculus II 16W 8… 9:30 10:50 Spring 2019 Instructor: Chatur Advani", "(1819)MATH141 Precalculus 26W 11 1 10:55 12:25 16W…2 4 9:30 10:50 Spring 2019 Instructor: Laihan Luo", "(1820)MATH141 Precalculus 26W 312 2 14:00 15:30 16… 14:00 15:20 Spring 2019 Instructor: Julius Chini", "(1821)MATH151 Fundamentals of Calculus GGC 409 1 1…3 14:00 15:20 Spring 2019 Instructor: John Gordon", "(1822)MATH151 Fundamentals of Calculus 16W 723 17:30 20:10 Spring 2019 Instructor: Theodore Preston", "(1823)MATH161 Basic Applied Calculus GGC 409 1 14:…1 14:00 15:20 Spring 2019 Instructor: John Gordon", "(1824)MATH161 Basic Applied Calculus 16W 723 3 17:30 20:10 Spring 2019 Instructor: John Gordon", "(1825)MATH171 Calculus I GGC 401 2 14:00 16:30 GGC… 14:00 16:30 Spring 2019 Instructor: Taposh Gayen", "(1826)MATH171 Calculus I 16W 721 1 14:00 16:30 16W… 14:00 16:30 Spring 2019 Instructor: Julius Chini", "(1827)MATH171 Calculus I 16W 820 1 17:30 19:45 16W…22 17:30 19:45 Spring 2019 Instructor: Laihan Luo", "(1828)MATH180 Calculus II 26W 312 1 14:00 16:30 26…00 16:30 Spring 2019 Instructor: Changiz Alizadeh", "(1829)MATH180 Calculus II 26W 207 2 17:30 19:45 26…7:30 19:45 Spring 2019 Instructor: Klara Lagrance", "(2686)MATH180 Calculus II 16W 624 1 14:00 16:30 16…0 16:30 Spring 2019 Instructor: Vitaly Katsnelson", "(2687)MATH180 Calculus II GGC 405 2 14:00 16:30 16…2 14:00 16:30 Spring 2019 Instructor: Robert Bell", "(2317)MATH235 Applied Statistics GGC 409 1 15:30 1… 15:30 16:50 Spring 2019 Instructor: Owen Johnson", "(1830)MATH260 Calculus III 26W 312 1 9:00 10:50 26…12 9:00 10:50 Spring 2019 Instructor: Robert Bell", "(3489)MATH180 Calculus III 26W 312 1 9:00 10:50 26…12 9:00 10:50 Spring 2019 Instructor: Robert Bell", "(1831)MATH310 Linear Algebra 26W 312 1 9:00 10:50 …00 10:50 Spring 2019 Instructor: Changiz Alizadeh", "(2434)MATH310 Linear Algebra 16W 624 1 12:30 13:50…0 13:50 Spring 2019 Instructor: Vitaly Katsnelson", "(1832)MATH320 Differential Equations 16W 821 1 12:…1 12:30 13:50 Spring 2019 Instructor: Robert Bell", "(3488)MATH350 Advanced Calculus GGC 702 1 15:30 16…702 15:30 16:50 Spring 2019 Instructor: Ranja Roy"]
       
 #=================================================================================          
-      
+# Courses Data    
       
        MATH101_M01:{
              course_id: "1815",
