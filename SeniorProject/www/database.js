@@ -89,17 +89,50 @@ function addCourse(user){
 });
 }
 
-
+  var list = [];
 function getDatabaseCourseInfo(){
     var db = firebase.firestore();
 
     db.collection("courseDatabase").doc("courses")
     .onSnapshot(function(doc) {
-
+          courseInfoList(doc.data());
           console.log("courses Database: ", doc.data());
       });
 
   }
+
+function courseInfoList(info){
+  var count = 1;
+  for(let z of Object.keys(info))
+    {
+      var ref = info[z];
+      list.push(`(${ref.course_id})${ref.department_code}${ref.course_number} ${ref.course_title} ${ref.schedule} ${ref.term} Instructor: ${ref.instructor}`);
+      count++;
+    }
+
+      console.log("List: ",list);
+}
+
+
+Vue.component("v-select", VueSelect.VueSelect);
+
+new Vue({
+  el: "#app",
+  data: {
+    options: [
+      { countryCode: "AU", countryName: "Australia" },
+      { countryCode: "CA", countryName: "Canada" },
+      { countryCode: "CN", countryName: "China" },
+      { countryCode: "DE", countryName: "Germany" },
+      { countryCode: "JP", countryName: "Japan" },
+      { countryCode: "MX", countryName: "Mexico" },
+      { countryCode: "CH", countryName: "Switzerland" },
+      { countryCode: "US", countryName: "United States" }
+    ]
+  }
+});
+
+
 
 function getUserInfoRealTime(user){
     var db = firebase.firestore();
@@ -118,14 +151,12 @@ function getUserInfoRealTime(user){
     .onSnapshot(function(querySnapshot) {
        querySnapshot.forEach(function(doc) {
             ref = doc.data();
-            courseDetail.push(courseDescription(ref.room,ref.location,ref.time));
+            //courseDetail.push(courseDescription(ref.room,ref.location,ref.time));
 
            document.getElementById("course" + count + "-info").innerHTML = "Courses Info: " + "("+ ref.course_id + ") " + ref.department_code + " " + ref.course_number + " " + ref.course_title + " " + ref.location + " " + ref.room + " " + ref.term + " " + ref.time + "instructor: " + ref.instructor ;
            count++;
        });
        console.log("hhhhhhhh", courseDetail);
-
-
 
    });
 
