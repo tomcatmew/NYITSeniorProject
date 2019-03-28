@@ -1,1 +1,0 @@
-data = '[{"departmentCode" : "CSCI", "courseNumber" : "101", "courseTitle" : "Computer Concept", "term": "Fall 2019", "location": "Manhattan Campus", "time":"8:00AM-10:AM", "credits": "(3 credits)","instructor":"Dr. Li"}]';
