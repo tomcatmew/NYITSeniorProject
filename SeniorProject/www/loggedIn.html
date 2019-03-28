@@ -11,12 +11,14 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
-    <script src="https://unpkg.com/vue-select@latest"></script> 
+
+
+
 
     <script>
       // Initialize Firebase
-
 
 
       var config = {
@@ -34,6 +36,7 @@
 
     <script type="text/javascript" src="database.js"></script>
     <script type="text/javascript" src="courseDatabase.js"></script>
+    <script type="text/javascript" src="authentication.js"></script>
 
 
 
@@ -67,8 +70,12 @@
    //  getUserInfoRealTime(user);
     //addCourse(user);
     //coursesDatabase(); //add courses to the database
-    getDatabaseCourseInfo(); // get database data
+    //getDatabaseCourseInfo(); // get database data
 
+    courseArrayInfo();
+    courseList();
+    //signOut();
+    //coursesDatabase();
    } else {
     // Sign out operation. Reset the current user UID.
     currentUid = null;
@@ -83,14 +90,17 @@
   <h1 id = "user-info"> </h1>
   <h1 id = "course1-info"> </h1>
   <h1 id = "course2-info"> </h1>
+  <button onclick = "signOut()"> SignOut </button>
 
 
-
-  <div id="app">
-    <h1>Vue Select - Custom Labels</h1>
-    <v-select label="countryName" :options="options"></v-select>
-  </div>
-
+<div id = "test">
+  <select v-model="selected">
+    <option v-for="option in options" v-bind:value="option.value">
+      {{ option.text }}
+    </option>
+  </select>
+  <span>Selected: {{ selected }}</span>
+</div>
 
 
 

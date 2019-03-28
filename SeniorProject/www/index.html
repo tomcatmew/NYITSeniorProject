@@ -53,6 +53,8 @@
     <script type="text/javascript">
       // FirebaseUI config.
       var uiConfig = {
+        credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM,
+        'credentialHelper': firebaseui.auth.CredentialHelper.NONE,
         signInSuccessUrl: 'loggedIn.html',
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
@@ -72,6 +74,10 @@
         privacyPolicyUrl: function() {
           window.location.assign('<your-privacy-policy-url>');
         }
+
+
+
+
       };
 
       // Initialize the FirebaseUI Widget using Firebase.

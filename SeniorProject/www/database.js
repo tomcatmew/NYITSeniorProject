@@ -1,11 +1,6 @@
-// function load() {
-//   var mydata = JSON.parse(data);
-//   return mydata[0].departmentCode + "&nbsp" +  mydata[0].courseNumber + "&nbsp" + mydata[0].courseTitle + "&nbsp" + mydata[0].term + "&nbsp" + mydata[0].location + "-----"+ mydata[0].time + mydata[0].credits + "<br /> Instructor:&nbsp" +  mydata[0].instructor ;
-// }
 
 
 function saveUserInfo(user){
-
   var db = firebase.firestore();
 
   var userInfoData = {
@@ -113,24 +108,51 @@ function courseInfoList(info){
       console.log("List: ",list);
 }
 
-
-Vue.component("v-select", VueSelect.VueSelect);
-
-new Vue({
-  el: "#app",
+function courseList(){
+  new Vue({
+  el: '#test',
   data: {
+    selected: courseArray[0],
     options: [
-      { countryCode: "AU", countryName: "Australia" },
-      { countryCode: "CA", countryName: "Canada" },
-      { countryCode: "CN", countryName: "China" },
-      { countryCode: "DE", countryName: "Germany" },
-      { countryCode: "JP", countryName: "Japan" },
-      { countryCode: "MX", countryName: "Mexico" },
-      { countryCode: "CH", countryName: "Switzerland" },
-      { countryCode: "US", countryName: "United States" }
+        { text: courseArray[0], value: courseArray[0] },
+        { text: courseArray[1], value: courseArray[1] },
+        { text: courseArray[2], value: courseArray[2] },
+        { text: courseArray[3], value: courseArray[3] },
+        { text: courseArray[4], value: courseArray[4] },
+        { text: courseArray[5], value: courseArray[5] },
+        { text: courseArray[6], value: courseArray[6] },
+        { text: courseArray[7], value: courseArray[7] },
+        { text: courseArray[8], value: courseArray[8] },
+        { text: courseArray[9], value: courseArray[9] },
+
+        { text: courseArray[10], value: courseArray[10] },
+        { text: courseArray[11], value: courseArray[11] },
+        { text: courseArray[12], value: courseArray[12] },
+        { text: courseArray[13], value: courseArray[13] },
+        { text: courseArray[14], value: courseArray[14] },
+        { text: courseArray[15], value: courseArray[15] },
+        { text: courseArray[16], value: courseArray[16] },
+        { text: courseArray[17], value: courseArray[17] },
+        { text: courseArray[18], value: courseArray[18] },
+        { text: courseArray[19], value: courseArray[19] },
+
+        { text: courseArray[20], value: courseArray[20] },
+        { text: courseArray[21], value: courseArray[21] },
+        { text: courseArray[22], value: courseArray[22] },
+        { text: courseArray[23], value: courseArray[23] },
+        { text: courseArray[24], value: courseArray[24] },
+        { text: courseArray[25], value: courseArray[25] },
+        { text: courseArray[26], value: courseArray[26] },
+        { text: courseArray[27], value: courseArray[27] },
+        { text: courseArray[28], value: courseArray[28] },
+        { text: courseArray[29], value: courseArray[29] }
+
+
     ]
   }
-});
+})
+
+}
 
 
 
