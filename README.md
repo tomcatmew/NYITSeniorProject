@@ -1,32 +1,14 @@
-修改uiConfig 在index.html里面
+# authentication.js   ->user logout
+
 ```
-var uiConfig = {
-        credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM,
-        'credentialHelper': firebaseui.auth.CredentialHelper.NONE,
-        signInSuccessUrl: 'loggedIn.html',
-        signInOptions: [
-          // Leave the lines as is for the providers you want to offer your users.
-          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-          //firebase.auth.TwitterAuthProvider.PROVIDER_ID,
-          //firebase.auth.GithubAuthProvider.PROVIDER_ID,
-          firebase.auth.EmailAuthProvider.PROVIDER_ID,
-          //firebase.auth.PhoneAuthProvider.PROVIDER_ID,
-          //firebaseui.auth.AnonymousAuthProvider.PROVIDER_ID
-        ],
-        // tosUrl and privacyPolicyUrl accept either url string or a callback
-        // function.
-        // Terms of service url/callback.
-        tosUrl: '<your-tos-url>',
-        // Privacy policy url/callback.
-        privacyPolicyUrl: function() {
-          window.location.assign('<your-privacy-policy-url>');
-        }
-
-
-
-      };
-
+function signOut(){
+  firebase.auth().signOut().then(function() {
+    // Sign-out successful.
+    window.location.href = "index.html";
+  }).catch(function(error) {
+    // An error happened.
+  });
+}
 ```
 #=================================================================================  
 # database part
