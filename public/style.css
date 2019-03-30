@@ -88,26 +88,26 @@ section, footer, header, aside, nav{
 
 #select1{
 	position: absolute;
-	width:40px;
-	height: 40px;
-	top:230px;
-	left:235px;
+	width: 85px;
+	height: 160px;
+	top: 270px;
+	left: 205px;
 }
 
 #select2{
 	position: absolute;
-	width:40px;
-	height: 40px;
-	top:190px;
-	left:173px;
+	width: 74px;
+	height: 175px;
+	top: 241px;
+	left: 133px;
 }
 
 #select3{
 	position: absolute;
-	width:40px;
-	height: 40px;
-	top:90px;
-	left:100px;
+	width: 85px;
+	height: 120px;
+	top: 120px;
+	left: 70px;
 }
 
 nav{
