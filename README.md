@@ -1,3 +1,11 @@
+```
+
+  var ref = doc.data();
+          list.push(`(${ref.course_id})${ref.department_code}${ref.course_number} ${ref.course_title} ${ref.schedule} ${ref.term} Instructor: ${ref.instructor}`);
+          });
+
+
+```
 # authentication.js   ->user logout
 
 ```
