@@ -32,6 +32,60 @@ section, footer, header, aside, nav{
   border-box: box-sizing;
 }
 
+#coursetest{
+	display:block;
+	position:absolute;
+	top:300px;
+	color:red;
+	font-size: 30px;
+}
+#floorselect{
+	display: none;
+z-index: 400;
+}
+#eggc4{
+	position: absolute;
+	top:100px;
+	left:40px;
+	width:50px;
+	height:50px;
+	border: 1px solid black;
+	font-weight:normal;
+	font-size:40px;
+	text-align: center;
+	color:#f44242;
+	z-index: 400;
+
+}
+#eggc6{
+	position: absolute;
+	top:100px;
+	left:110px;
+	width:50px;
+	height:50px;
+	border: 1px solid black;
+	font-weight:normal;
+	font-size:40px;
+	text-align: center;
+	color:#000000;
+	z-index: 400;
+
+}
+#eggc8{
+	position: absolute;
+	top:100px;
+	left:180px;
+	width:50px;
+	height:50px;
+	border: 1px solid black;
+	font-weight:normal;
+	font-size:40px;
+	text-align: center;
+	color:#000000;
+	z-index: 400;
+
+}
+
 #botdiv{
 	position:absolute;
 	top:700px;
@@ -54,6 +108,30 @@ section, footer, header, aside, nav{
 	border: 1px solid black;
 }
 
+#accountinfo
+{
+	position:absolute;
+	display: none;
+	top:70px;
+	width:400px;
+	font-weight:normal;
+	font-size:10px;
+}
+
+#user-info
+{
+
+}
+
+#course1-info
+{
+
+}
+
+#course2-info
+{
+
+}
 /* #butback{
 	position:absolute;
 	display:inline-block;
@@ -305,9 +383,10 @@ p b{
 
 #floortitle{
 	position: absolute;
-	top:100px;
-	left:40%;
-	font-size: 24px;
+	top:60px;
+	left:10px;
+	width: 400px;
+	font-size: 18px;
 	font-family: "Arial Black", Gadget, sans-serif;
 	color:#f48942;
 	z-index: 2;
@@ -316,27 +395,33 @@ p b{
 
 #titleSA{
 	position: absolute;
-	top:200px;
-	left:200%;
+	top:60px;
+	left:200px;
+	width: 400px;
 	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 18px;
 	z-index: 2;
 	display:none;
 }
 
 #titleSB{
 	position: absolute;
-	top:200px;
-	left:200%;
+	top:60px;
+	left:200px;
+	width: 400px;
 	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 18px;
 	z-index: 2;
 	display:none;
 }
 
 #titleSC{
 	position: absolute;
-	top:200px;
-	left:200%;
+	top:60px;
+	left:200px;
+	width: 400px;
 	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 18px;
 	z-index: 2;
 	display:none;
 }
@@ -626,12 +711,54 @@ p b{
 
 .buildingz {
   position: absolute;
-  top: 200px;
-  left:200px;
-  width: 200px;
-  margin: 0 auto 0 auto;
+  top: 100px;
+  left:100px;
+  width: 400px;
+	zoom:0.6;
 }
 
+#MAP26W{
+	position: absolute;
+	top:500px;
+	left:-300px;
+	zoom:0.5;
+	display: none;
+	transform: rotate(270deg);
+	z-index: 1;
+}
+
+#MAP16W{
+	position: absolute;
+	left:-490px;
+	top:170px;
+	zoom:0.9;
+	display: none;
+	z-index: 1;
+}
+
+#centerMAP4{
+	position: absolute;
+	left:-390px;
+	top:-480px;
+	zoom:0.9;
+	display: none;
+}
+#centerMAP6{
+	position: absolute;
+	left:-390px;
+	top:-480px;
+	zoom:0.9;
+	display: none;
+	z-index: 1;
+}
+#centerMAP8{
+	position: absolute;
+	left:-390px;
+	top:-480px;
+	zoom:0.9;
+	display: none;
+	z-index: 1;
+}
 .floor {
   position: relative;
 }
