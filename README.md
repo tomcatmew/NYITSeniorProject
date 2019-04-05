@@ -1,4 +1,10 @@
 ```
+  credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM,
+        'credentialHelper': firebaseui.auth.CredentialHelper.NONE,
+        signInSuccessUrl: 'loggedIn.html',
+
+```
+```
 
 function getDatabaseCourseInfo(){
     db.collection("courseDatabase").where("course_number", ">=", "100")
