@@ -88,18 +88,19 @@ function addCourse(user){
 });
 }
 
-function addcoursefromdatabase(user,a,b,c,d,e,f,g,h,i){
+
+function addcoursefromdatabase(user_mail,input_campus,input_id,input_number,input_Ttitle,input_code,input_prof,input_locat,input_schedule,input_terms){
   var db = firebase.firestore();
-  db.collection("user").doc(user.email).collection("courses").add({
-  course_id: a,
-  department_code: b,
-  course_number: c,
-  course_title: d,
-  capmus:e,
-  location: f,
-  term: g,
-  instructor:h,
-  schedule: i
+  db.collection("user").doc(user_mail).collection("courses").add({
+  course_id: input_id,
+  department_code: input_code,
+  course_number: input_number,
+  course_title: input_Ttitle,
+  capmus:input_campus,
+  location: input_locat,
+  term: input_terms,
+  instructor:input_prof,
+  schedule: input_schedule
 })
 .then(function() {
     console.log("course successfully written!");
@@ -109,7 +110,7 @@ function addcoursefromdatabase(user,a,b,c,d,e,f,g,h,i){
 });
 }
 
-var list_transfer = [];
+var list_transfer_final = [];
 
 function getDatabaseCourseInfo(){
     var db = firebase.firestore();
@@ -118,10 +119,20 @@ function getDatabaseCourseInfo(){
         querySnapshot.forEach(function(doc) {
             //courseInfoList(doc.data());
             var ref = doc.data();
-            list_transfer.push(`${ref.capmus} ${ref.course_id} ${ref.course_number} ${ref.course_title} ${ref.department_code} ${ref.instructor} ${ref.location} ${ref.schedule} ${ref.term}`);
+            var list_transfer  = [];
+            list_transfer.push(`${ref.capmus}`);
+            list_transfer.push(`${ref.course_id}`);
+            list_transfer.push(`${ref.course_number}`);
+            list_transfer.push(`${ref.course_title}`);
+            list_transfer.push(`${ref.department_code}`);
+            list_transfer.push(`${ref.instructor}`);
+            list_transfer.push(`${ref.location}`);
+            list_transfer.push(`${ref.schedule}`);
+            list_transfer.push(`${ref.term}`);
+            list_transfer_final.push(list_transfer);
             });
-            console.log("courses Database: ", list_transfer);
-            courseList(list_transfer);
+            console.log("courses Database: ", list_transfer_final);
+            courseList(list_transfer_final);
         });
     }
 
@@ -141,16 +152,21 @@ function getUserInfoRealTime(user){
 
     db.collection("user").doc(user.email).collection("courses")
     .onSnapshot(function(querySnapshot) {
+            var tempt = document.getElementById("course1-info");
+            tempt.innerHTML = '';
        querySnapshot.forEach(function(doc) {
             ref = doc.data();
-             courseDetail.push(ref.room,ref.location,ref.time);
-             $("course1-info").innerHTML = "Course Info: </br>"+ "Name: " + ref.room  + "</br>Email: " + ref.location + "</br>UID: " + ref.time + "</br>";
+             courseDetail.push(ref.department_code,ref.course_number,ref.schedule);
+             var x = document.getElementById("course1-info");
+             var g = document.createElement('div');
+             g.innerHTML = "Course Info: </br>"+ "Name: " + ref.department_code  + " " + ref.course_number + "</br>Schedule: " + ref.schedule + "</br>" + "</br>";
+             g.setAttribute("id", "Div1");
+             x.appendChild(g);
+
+             // $("#course1-info").html("Course Info: </br>"+ "Name: " + ref.department_code  + " " + ref.course_number + "</br>Schedule: " + ref.schedule + "</br>");
            count++;
        });
-       console.log("hhhhhhhh", courseDetail);
-
-
-
+       // console.log("hhhhhhhh", courseDetail);
    });
 
 

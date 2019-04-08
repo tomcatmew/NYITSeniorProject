@@ -125,7 +125,10 @@ z-index: 400;
 
 #course1-info
 {
-
+	position: absolute;
+	width:400px;
+	height:450px;
+	overflow: scroll;
 }
 
 #course2-info

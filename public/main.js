@@ -1,7 +1,8 @@
 var current = 0;
 
+var current_user_email;
 
-
+var course_list_global;
 
 // function displayf5()
 // {
@@ -78,7 +79,26 @@ var current = 0;
 //   $('#coursetest').html(position);
 
 
+
 function courseList(lista){
+  course_list_global = lista;
+  for(var i = 0 ; i < lista.length; i++)
+  {
+    var x = document.getElementById("course_select");
+    var option = document.createElement("option");
+    option.value = i;
+    option.text = lista[i][4] + "  "+ lista[i][2];
+    x.add(option,i);
+  }
+}
+
+function course_add(){
+  var tempt = $("#course_select").val();
+  addcoursefromdatabase(current_user_email,course_list_global[tempt][0],course_list_global[tempt][1],course_list_global[tempt][2],course_list_global[tempt][3],course_list_global[tempt][4],course_list_global[tempt][5],course_list_global[tempt][6],course_list_global[tempt][7],course_list_global[tempt][8]);
+}
+
+
+function courseList_vue(lista){
 
   var vm2 = new Vue({
   el: '#test',
@@ -119,19 +139,6 @@ function courseList(lista){
         { text: lista[29], value: lista[29] }
     ]
   },
-  // methods:{
-  //   onSelect : function(vm2){
-  //     console.log("ZZZZZZ");
-  //     var position = this.selected;
-  //       for(i = 0; i< 10; i++){
-  //         if (this.selected == this.options[i].text)
-  //         position = this.options[i].value;
-  //       }
-  //     console.log("zzzzz" + position);
-  //   }
-  // }
-  console.log("zzzzzzz"+ vm2.selected.indexOf);
-
 })
 
 }
@@ -267,6 +274,7 @@ function showacc()
     $('#hold').css("display", "none" );
     $('#textbox').css("display", "none" );
     $('#floortitle').css("display", "none" );
+    $('#floorselect').css("display","none");
     alloutS();
   }
   $('#accountinfo').css("display", "block" );

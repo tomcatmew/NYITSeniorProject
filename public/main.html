@@ -71,11 +71,12 @@
     // Otherwise ignore if this is a token refresh.
     // Update the current user UID.
     currentUid = user.uid;
-
+    current_user_email = user.email;
     // saveUserInfo(user);
     getUserInfoRealTime(user);
-
+    // addCourse(user);
     getDatabaseCourseInfo();
+
     // addCourse(user);
     // courseArrayInfo();
     // coursesDatabase();
@@ -2342,23 +2343,25 @@
   <div id="accountinfo">
 
     <div id = "test">
-      <select v-model="selected" @select = "onSelect">
+        <select id = "course_select" name="course_pick">
+        </select>
+        <input type="submit" value="Enroll" onclick="course_add();">
+      <!-- <select v-model="selected" @select = "onSelect">
         <option v-for="option in options" v-bind:value="option.value">
           {{ option.text }}
         </option>
       </select>
-      <span id = "the_position" >Selected: {{ selected }}</span>
+      <span id = "the_position" >Selected: {{ selected }}</span> -->
     </div>
 
     <h1 id = "user-info"> </h1>
     <br></br>
     <h1 id = "course1-info"> </h1>
     <br></br>
-    <h1 id = "course2-info"> </h1>
-    <div id = "coursetest"> xvnjkd</div>
   </div>
 
   <div id="botdiv" class="page v1">
+        <div> Version 1.0 </div>
         <div id="goback" onclick="goback()"><p>Back</p></div>
         <div id="account" onclick="showacc()"><p>Account</p></div>
   </div>
@@ -2378,6 +2381,8 @@
   </div>
 
   <script>
+    screen.lockOrientation('portrait');
+
       var demo = new Vue({
     el: '#mainnav',
     data: {
@@ -2394,6 +2399,10 @@
 
   <!-- service worker -->
   <script>
+  self.addEventListener('fetch', function(event) {
+  event.respondWith(fetch(event.request));
+});
+
   if ('serviceWorker' in navigator) {
     console.log("Will the service worker register?");
     navigator.serviceWorker.register('service-worker.js')
