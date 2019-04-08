@@ -94,18 +94,22 @@ z-index: 400;
 }
 
 #goback{
-	position:absolute;
-	width:60px;
-	height:30px;
-	border: 1px solid black;
-}
-
-#account{
-	left:200px;
+	background: #ffbf16;
+	text-align: center;
 	position:absolute;
 	width:100px;
 	height:30px;
-	border: 1px solid black;
+	border: 1px solid #4068d4;
+}
+
+#account{
+	background: #ffbf16;
+	left:300px;
+	position:absolute;
+	text-align: center;
+	width:100px;
+	height:30px;
+	border: 1px solid #4068d4;
 }
 
 #accountinfo
@@ -192,12 +196,13 @@ z-index: 400;
 }
 
 nav{
+	margin: 0px;
     display:inline-block;
-    background-color:#5597b4;
+    background-color: #ffbf16;
     box-shadow:0 1px 1px #ccc;
     border-radius:1px;
 		z-index: 200;
-		width:420px;
+		width:414px;
 }
 
 nav a{
