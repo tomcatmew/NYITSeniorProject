@@ -1,3 +1,24 @@
+# message collection
+```
+function addMessageToDatable(email,course_id,message,time){
+    var db = firebase.firestore();
+  db.collection("message").add({
+    user_email: email,
+    course_id: course_id,
+    message: message,
+    time: time
+})
+.then(function() {
+    console.log("course successfully written!");
+})
+.catch(function(error) {
+    console.error("Error writing document: ", error);
+});
+}
+
+```
+
+
 ```
   credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM,
         'credentialHelper': firebaseui.auth.CredentialHelper.NONE,
