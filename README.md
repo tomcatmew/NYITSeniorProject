@@ -9,7 +9,7 @@ function addMessageToDatable(email,course_id,message,time){
     time: time
 })
 .then(function() {
-    console.log("course successfully written!");
+    console.log("message successfully written!");
 })
 .catch(function(error) {
     console.error("Error writing document: ", error);
