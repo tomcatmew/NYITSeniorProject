@@ -2,14 +2,19 @@
 //   var mydata = JSON.parse(data);
 //   return mydata[0].departmentCode + "&nbsp" +  mydata[0].courseNumber + "&nbsp" + mydata[0].courseTitle + "&nbsp" + mydata[0].term + "&nbsp" + mydata[0].location + "-----"+ mydata[0].time + mydata[0].credits + "<br /> Instructor:&nbsp" +  mydata[0].instructor ;
 // }
+var course_enrolled = [];
 
-function addMessageToDatable(email,course_id,message,time){
+
+function addMessageToDatable(email){
     var db = firebase.firestore();
+    var message = document.getElementById("textbar").value;
+    var d = new Date();
+    var tempt_id = $("#message_select").val();
   db.collection("message").add({
     user_email: email,
-    course_id: course_id,
+    course_id: tempt_id,
     message: message,
-    time: time
+    time: d
 })
 .then(function() {
     console.log("message successfully written!");
@@ -176,7 +181,7 @@ function getUserInfoRealTime(user){
              var x = document.getElementById("course1-info");
              var g = document.createElement('div');
              g.innerHTML = "Course Info " + count + ": </br>"+ "Name: " + ref.department_code  + " " + ref.course_number + "</br>CourseID: " + ref.course_id  + "</br>Schedule: " + ref.schedule + "</br>" + "</br>";
-             g.setAttribute("id", "Div1");
+             g.setAttribute("id", "Div" + count);
              x.appendChild(g);
 
              // $("#course1-info").html("Course Info: </br>"+ "Name: " + ref.department_code  + " " + ref.course_number + "</br>Schedule: " + ref.schedule + "</br>");
@@ -184,7 +189,49 @@ function getUserInfoRealTime(user){
        });
        // console.log("hhhhhhhh", courseDetail);
    });
+}
 
+function getUserCourseMessageRealTime(usermail){
+  var db = firebase.firestore();
+  var count = 1;
+
+  // var course_enrolled = [];
+
+  db.collection("user").doc(usermail).collection("courses")
+  .onSnapshot(function(querySnapshot) {
+     querySnapshot.forEach(function(doc) {
+           ref_tempt = doc.data();
+           course_enrolled.push(ref_tempt.course_id);
+         });
+         for(var i = 0 ; i < course_enrolled.length; i++)
+         {
+           var x = document.getElementById("message_select");
+           var option = document.createElement("option");
+           option.value = course_enrolled[i];
+           option.text = course_enrolled[i];
+           x.add(option,i);
+         }
+    console.log(course_enrolled);
+  });
+
+  db.collection("message")
+  .onSnapshot(function(querySnapshot) {
+    var tempt = document.getElementById("message_info");
+    tempt.innerHTML = '';
+     querySnapshot.forEach(function(doc) {
+           ref = doc.data();
+           if((course_enrolled.includes(ref.course_id))&&(ref.course_id == $("#message_select").val()))
+           {
+             var t =document.getElementById("message_info");
+             var z = document.createElement('div');
+             z.innerHTML = "Course ID : " + ref.course_id + "</br>" + "Message : " + ref.message + "</br>" + "From : " + ref.user_email + "</br>" + "</br>";
+             z.setAttribute("id","message" + count);
+             t.appendChild(z);
+           }
+           count++;
+     });
+ });
+}
 
 
    // not real time query courses
@@ -203,7 +250,7 @@ function getUserInfoRealTime(user){
    //     console.log("Error getting documents: ", error);
    // });
 
-}//end getUserInfoRealTime(user)
+//end getUserInfoRealTime(user)
 
 function getUserCountAdmin(){
    var size = 0;

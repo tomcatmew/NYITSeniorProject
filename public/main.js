@@ -15,6 +15,8 @@ fetch('examples/example.json')
 });
 
 
+
+
 var current = 0;
 
 var current_user_email;
@@ -109,6 +111,7 @@ function courseList(lista){
   }
 }
 
+
 function course_add(){
   var tempt = $("#course_select").val();
   addcoursefromdatabase(current_user_email,course_list_global[tempt][0],course_list_global[tempt][1],course_list_global[tempt][2],course_list_global[tempt][3],course_list_global[tempt][4],course_list_global[tempt][5],course_list_global[tempt][6],course_list_global[tempt][7],course_list_global[tempt][8]);
@@ -182,7 +185,8 @@ function goback()
     else if (current ==2)
     {
       $('#map').fadeIn();
-      current = 0;
+      $('#message_section').css("display","none");
+        current = 0;
     }
     else if(current == 5)
     {
@@ -298,6 +302,9 @@ function showacc()
     $('#floortitle').css("display", "none" );
     $('#floorselect').css("display","none");
     alloutS();
+  }
+  else if(current == 2){
+    $('#message_section').css("display","none");
   }
   $('#accountinfo').css("display", "block" );
   $('#map').css("display", "none" );
