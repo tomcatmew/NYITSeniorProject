@@ -4,6 +4,8 @@
 ```
 最上面的： var course_enrolled = new Set();
 
+main.html  line 2410 :  if((course_enrolled.has(ref.course_id))&&(ref.course_id == $("#message_select").val()))
+
 function getUserCourseMessageRealTime(usermail){
   var db = firebase.firestore();
   var count = 1;
