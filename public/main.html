@@ -2361,9 +2361,9 @@
   </div>
 
   <div id="botdiv" class="page v1">
-        <div> Version 1.0 </div>
-        <div id="goback" onclick="goback()"><p style="color:#4068d4">Back</p></div>
-        <div id="account" onclick="showacc()"><p style="color:#4068d4">Account</p></div>
+        <div> Version 1.2 </div>
+        <div id="goback" onclick="goback()"><p>Back</p></div>
+        <div id="account" onclick="showacc()"><p>Account</p></div>
   </div>
 
   <div id="map">
@@ -2376,12 +2376,20 @@
     <img src="map2.png">
   </div>
 
+  <div id = "message_section">
+    <p>Send a post to the class</p>
+    <textarea rows="4" cols="50">
+    </textarea>
+    <input type="submit" value="Send" onclick="course_add();">
+  </div>
+
+
+
   <div id="textbox">
     Room Information
   </div>
 
   <script>
-    screen.lockOrientation('portrait');
 
       var demo = new Vue({
     el: '#mainnav',
@@ -2391,6 +2399,24 @@
     methods: {
       makeActive: function(item){
           this.active = item;
+          if(item == "projects")
+          {
+            current = 0;
+            $('#map').fadeIn();
+            $('#message_section').fadeOut();
+
+          }
+          if(item == "projects2")
+          {
+            current = 2;
+            $('#map').fadeOut();
+            $('#message_section').fadeIn();
+          }
+          if(item == "projects3")
+          {
+            current = 3;
+            $('#map').fadeOut();
+          }
       }
     }
     })
@@ -2414,11 +2440,11 @@
   }
 </script>
 
-<script>
+<!-- <script>
 document.addEventListener('touchmove', function(e) {
     e.preventDefault();
 }, { passive: false });
-</script>
+</script> -->
 
 
 </body>

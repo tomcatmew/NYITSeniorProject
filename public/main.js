@@ -1,3 +1,20 @@
+fetch('examples/example.json')
+.then(function(response) {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  // Read the response as json.
+  return response.json();
+})
+.then(function(responseAsJson) {
+  // Do stuff with the JSON
+  console.log(responseAsJson);
+})
+.catch(function(error) {
+  console.log('Looks like there was a problem: \n', error);
+});
+
+
 var current = 0;
 
 var current_user_email;
@@ -160,6 +177,11 @@ function goback()
       $('#floorselect').fadeOut();
       // turnoff_f(0);
       alloutS();
+      current = 0;
+    }
+    else if (current ==2)
+    {
+      $('#map').fadeIn();
       current = 0;
     }
     else if(current == 5)

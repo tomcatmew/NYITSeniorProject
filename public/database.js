@@ -3,6 +3,22 @@
 //   return mydata[0].departmentCode + "&nbsp" +  mydata[0].courseNumber + "&nbsp" + mydata[0].courseTitle + "&nbsp" + mydata[0].term + "&nbsp" + mydata[0].location + "-----"+ mydata[0].time + mydata[0].credits + "<br /> Instructor:&nbsp" +  mydata[0].instructor ;
 // }
 
+function addMessageToDatable(email,course_id,message,time){
+    var db = firebase.firestore();
+  db.collection("message").add({
+    user_email: email,
+    course_id: course_id,
+    message: message,
+    time: time
+})
+.then(function() {
+    console.log("message successfully written!");
+})
+.catch(function(error) {
+    console.error("Error writing document: ", error);
+});
+}
+
 
 function saveUserInfo(user){
 
@@ -159,7 +175,7 @@ function getUserInfoRealTime(user){
              courseDetail.push(ref.department_code,ref.course_number,ref.schedule);
              var x = document.getElementById("course1-info");
              var g = document.createElement('div');
-             g.innerHTML = "Course Info: </br>"+ "Name: " + ref.department_code  + " " + ref.course_number + "</br>Schedule: " + ref.schedule + "</br>" + "</br>";
+             g.innerHTML = "Course Info " + count + ": </br>"+ "Name: " + ref.department_code  + " " + ref.course_number + "</br>CourseID: " + ref.course_id  + "</br>Schedule: " + ref.schedule + "</br>" + "</br>";
              g.setAttribute("id", "Div1");
              x.appendChild(g);
 

@@ -5,9 +5,9 @@ body
 	width:414;
 	height:896;
 	position: fixed;
-	overflow: hidden;
-	-webkit-transform-style: preserve-3d;
-	-webkit-perspective: 1000;
+	overflow: auto;
+	/* -webkit-transform-style: preserve-3d; */
+	/* -webkit-perspective: 1000; */
 }
 html {
   /* overflow-x: hidden; */
@@ -30,6 +30,64 @@ section, footer, header, aside, nav{
 
 *{
   border-box: box-sizing;
+}
+
+textarea{
+	resize: none;
+}
+
+#coursetest{
+	display:block;
+	position:absolute;
+	top:300px;
+	color:red;
+	font-size: 30px;
+}
+#floorselect{
+	display: none;
+z-index: 400;
+}
+#eggc4{
+	position: absolute;
+	top:100px;
+	left:40px;
+	width:50px;
+	height:50px;
+	border: 1px solid black;
+	font-weight:normal;
+	font-size:40px;
+	text-align: center;
+	color:#f44242;
+	z-index: 400;
+
+}
+#eggc6{
+	position: absolute;
+	top:100px;
+	left:110px;
+	width:50px;
+	height:50px;
+	border: 1px solid black;
+	font-weight:normal;
+	font-size:40px;
+	text-align: center;
+	color:#000000;
+	z-index: 400;
+
+}
+#eggc8{
+	position: absolute;
+	top:100px;
+	left:180px;
+	width:50px;
+	height:50px;
+	border: 1px solid black;
+	font-weight:normal;
+	font-size:40px;
+	text-align: center;
+	color:#000000;
+	z-index: 400;
+
 }
 
 #botdiv{
@@ -71,7 +129,10 @@ section, footer, header, aside, nav{
 
 #course1-info
 {
-
+	position: absolute;
+	width:400px;
+	height:450px;
+	overflow: scroll;
 }
 
 #course2-info
@@ -96,6 +157,13 @@ section, footer, header, aside, nav{
 	z-index: 200;
 }
 
+#message_section{
+	position: absolute;
+	display:none;
+	bottom:-650px;
+}
+
+
 #botnav{
 	position: absolute;
 	display:inline-block;
@@ -112,26 +180,26 @@ section, footer, header, aside, nav{
 
 #select1{
 	position: absolute;
-	width:40px;
-	height: 40px;
-	top:230px;
-	left:235px;
+	width: 85px;
+	height: 160px;
+	top: 270px;
+	left: 205px;
 }
 
 #select2{
 	position: absolute;
-	width:40px;
-	height: 40px;
-	top:190px;
-	left:173px;
+	width: 74px;
+	height: 175px;
+	top: 241px;
+	left: 133px;
 }
 
 #select3{
 	position: absolute;
-	width:40px;
-	height: 40px;
-	top:90px;
-	left:100px;
+	width: 85px;
+	height: 120px;
+	top: 120px;
+	left: 70px;
 }
 
 nav{
@@ -670,6 +738,7 @@ p b{
 	zoom:0.5;
 	display: none;
 	transform: rotate(270deg);
+	z-index: 1;
 }
 
 #MAP16W{
@@ -678,17 +747,32 @@ p b{
 	top:170px;
 	zoom:0.9;
 	display: none;
+	z-index: 1;
 }
 
-#centerMAP{
+#centerMAP4{
 	position: absolute;
-	left:-590px;
-	top:-100px;
-	zoom:0.8;
-	transform: rotate(270deg);
+	left:-390px;
+	top:-480px;
+	zoom:0.9;
 	display: none;
 }
-
+#centerMAP6{
+	position: absolute;
+	left:-390px;
+	top:-480px;
+	zoom:0.9;
+	display: none;
+	z-index: 1;
+}
+#centerMAP8{
+	position: absolute;
+	left:-390px;
+	top:-480px;
+	zoom:0.9;
+	display: none;
+	z-index: 1;
+}
 .floor {
   position: relative;
 }
