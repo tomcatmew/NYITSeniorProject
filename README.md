@@ -1,20 +1,52 @@
-# message collection
+# SET
+
+
 ```
-function addMessageToDatable(email,course_id,message,time){
-    var db = firebase.firestore();
-  db.collection("message").add({
-    user_email: email,
-    course_id: course_id,
-    message: message,
-    time: time
-})
-.then(function() {
-    console.log("message successfully written!");
-})
-.catch(function(error) {
-    console.error("Error writing document: ", error);
-});
+最上面的： var course_enrolled = new Set();
+
+function getUserCourseMessageRealTime(usermail){
+  var db = firebase.firestore();
+  var count = 1;
+
+  // var course_enrolled = [];
+
+  db.collection("user").doc(usermail).collection("courses")
+  .onSnapshot(function(querySnapshot) {
+     querySnapshot.forEach(function(doc) {
+           ref_tempt = doc.data();
+           if(!course_enrolled.has(ref_tempt.course_id))
+           course_enrolled.add(ref_tempt.course_id);
+         });
+         for(let value of course_enrolled)
+         {
+           var x = document.getElementById("message_select");
+           var option = document.createElement("option");
+           option.value = value
+           option.text = value;
+           x.add(option,value);
+         }
+    console.log(course_enrolled);
+  });
+
+  db.collection("message")
+  .onSnapshot(function(querySnapshot) {
+    var tempt = document.getElementById("message_info");
+    tempt.innerHTML = '';
+     querySnapshot.forEach(function(doc) {
+           ref = doc.data();
+           if((course_enrolled.has(ref.course_id))&&(ref.course_id == $("#message_select").val()))
+           {
+             var t =document.getElementById("message_info");
+             var z = document.createElement('div');
+             z.innerHTML = "Course ID : " + ref.course_id + "</br>" + "Message : " + ref.message + "</br>" + "From : " + ref.user_email + "</br>" + "</br>";
+             z.setAttribute("id","message" + count);
+             t.appendChild(z);
+           }
+           count++;
+     });
+ });
 }
+
 
 ```
 
