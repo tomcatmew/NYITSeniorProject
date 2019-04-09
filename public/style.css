@@ -6,6 +6,8 @@ body
 	height:896;
 	position: fixed;
 	overflow: auto;
+	font-family: source_code_pro, monospace;
+
 	/* -webkit-transform-style: preserve-3d; */
 	/* -webkit-perspective: 1000; */
 }
@@ -101,15 +103,48 @@ z-index: 400;
 	position:absolute;
 	width:60px;
 	height:30px;
-	border: 1px solid black;
+	border: 2px solid #F7A800;
+	color:#000000;
+	text-align: center;
+	font-size: 22px;
+
+}
+#goback:hover{
+	position:absolute;
+	width:60px;
+	height:30px;
+	border: 2px solid #F7A800;
+	color:#407CCA;
+	font-weight: bold;
+	background-color: #F7A800;
+	text-align: center;
+	font-size: 22px;
+
 }
 
+
 #account{
-	left:200px;
+	left:300px;
 	position:absolute;
 	width:100px;
 	height:30px;
-	border: 1px solid black;
+	border: 2px solid #F7A800;
+	text-align: center;
+	font-size: 22px;
+}
+
+#account:hover{
+	left:300px;
+	position:absolute;
+	width:100px;
+	height:30px;
+	border: 1px solid #F7A800;
+	text-align: center;
+	color:#407CCA;
+	font-weight: bold;
+	background-color: #F7A800;
+	font-size: 22px;
+
 }
 
 #accountinfo
@@ -204,18 +239,17 @@ z-index: 400;
 
 nav{
     display:inline-block;
-    background-color:#5597b4;
+    background-color:#ffffff;
     box-shadow:0 1px 1px #ccc;
     border-radius:1px;
 		z-index: 200;
-		width:420px;
+		width:414px;
 }
 
 nav a{
     display:inline-block;
-    padding: 21px 33px;
-    color:#fff !important;
-    font-weight:bold;
+    padding: 21px 35px;  /* used to be 33px*/
+    color:#000000 !important;
     font-size:16px;
     text-decoration:none !important;
     line-height:1;
@@ -224,6 +258,11 @@ nav a{
     -webkit-transition:background-color 0.25s;
     -moz-transition:background-color 0.25s;
     transition:background-color 0.25s;
+		letter-spacing: 0.035em;
+		font-style: normal;
+
+
+
 }
 
 nav a:first-child{
@@ -241,7 +280,14 @@ nav.projects3 .projects3,
 nav.projects4 .projects4,
 nav.services .services,
 nav.contact .contact{
-    background-color:#e35885;
+
+color:#407CCA !important;
+background-color: #F7A800;
+font-weight: bold;
+
+
+
+
 }
 
 p{
