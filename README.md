@@ -1,3 +1,24 @@
+# More than 6 courses
+
+main.js
+```
+function course_add(){
+  var tempt = $("#course_select").val();
+  var db = firebase.firestore();
+
+  db.collection('user').doc(current_user_email).collection('courses').get().then(snap => {
+  if(snap.size < 6) // will return the collection size
+  addcoursefromdatabase(current_user_email,course_list_global[tempt][0],course_list_global[tempt][1],course_list_global[tempt][2],course_list_global[tempt][3],course_list_global[tempt][4],course_list_global[tempt][5],course_list_global[tempt][6],course_list_global[tempt][7],course_list_global[tempt][8]);
+  else{
+    alert("More than 6 courses are not allowed. ")
+  }
+});
+
+
+}
+
+```
+
 # Course Conflict
 top add global: var userAddcourses = new Set();
 ```
