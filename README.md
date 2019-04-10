@@ -50,9 +50,9 @@ function timeConflict(current_user_email,selectedValue){
 
 In main.html manually input course id:           deleteCourse(user,'1817');
 ```
-function deleteCourse(user,course_id){
+function deleteCourse(current_user_email,course_id){
   var db = firebase.firestore();
-    db.collection("user").doc(user.email).collection('courses').where("course_id", "==", course_id)
+    db.collection("user").doc(current_user_email).collection('courses').where("course_id", "==", course_id)
     .onSnapshot(function(querySnapshot) {
       querySnapshot.forEach(function(doc) {
            doc.ref.delete();
@@ -60,7 +60,6 @@ function deleteCourse(user,course_id){
           console.log("DELETE course Id :  " +  course_id  );
       });
 }
-
 ```
 
 # SET
