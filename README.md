@@ -1,3 +1,29 @@
+# Course Conflict
+```
+function timeConflict(current_user_email,selectedValue){
+  var db = firebase.firestore();
+
+ db.collection("user").doc(current_user_email).collection("courses")
+ .onSnapshot(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+          let ref = doc.data();
+          userAddcourses.add(`${ref.department_code} ${ref.course_number}`);
+        });
+        console.log(userAddcourses);
+ });
+
+ console.log(userAddcourses);
+ if(userAddcourses.has(`${department_code} ${ref.course_number}`) == selectedValue ){
+   alert(`Conflict Course Found!!! --> ${department_code}${ref.course_number}`);
+ }else{
+   alert("Successfully Added Course");
+ }
+
+}
+
+
+
+```
 # DELETE COURSE
 
 In main.html manually input course id:           deleteCourse(user,'1817');
