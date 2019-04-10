@@ -55,7 +55,6 @@ function timeConflict(current_user_email,selectedValue){
 }
 
 
-
 ```
 # DELETE COURSE
 
