@@ -1,4 +1,5 @@
 # Course Conflict
+top add global: var userAddcourses = new Set();
 ```
 function timeConflict(current_user_email,selectedValue){
   var db = firebase.firestore();
