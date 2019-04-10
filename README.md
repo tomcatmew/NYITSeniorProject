@@ -95,7 +95,7 @@ function getUserCourseMessageRealTime(usermail){
 
 ```
 
-#Disable Account Chooser
+# Disable Account Chooser
 ```
   credentialHelper: firebaseui.auth.CredentialHelper.ACCOUNT_CHOOSER_COM,
         'credentialHelper': firebaseui.auth.CredentialHelper.NONE,
