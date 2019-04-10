@@ -102,23 +102,7 @@ function getUserCourseMessageRealTime(usermail){
         signInSuccessUrl: 'loggedIn.html',
 
 ```
-```
 
-function getDatabaseCourseInfo(){
-    db.collection("courseDatabase").where("course_number", ">=", "100")
-    .onSnapshot(function(querySnapshot) {
-      querySnapshot.forEach(function(doc) {
-          //courseInfoList(doc.data());
-          var ref = doc.data();
-          list.push(`(${ref.course_id})${ref.department_code}${ref.course_number} ${ref.course_title} ${ref.schedule} ${ref.term} Instructor: ${ref.instructor}`);
-          });
-          console.log("courses Database: ", list.join(", "));
-      });
-
-  }
-
-
-```
 # authentication.js   ->user logout
 
 ```
