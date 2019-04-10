@@ -1,5 +1,21 @@
-# SET
+# DELETE COURSE
 
+In main.html manually input course id:           deleteCourse(user,'1817');
+```
+function deleteCourse(user,course_id){
+  var db = firebase.firestore();
+    db.collection("user").doc(user.email).collection('courses').where("course_id", "==", course_id)
+    .onSnapshot(function(querySnapshot) {
+      querySnapshot.forEach(function(doc) {
+           doc.ref.delete();
+          });
+          console.log("DELETE course Id :  " +  course_id  );
+      });
+}
+
+```
+
+# SET
 
 ```
 最上面的： var course_enrolled = new Set();
