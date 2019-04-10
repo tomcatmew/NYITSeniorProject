@@ -1,21 +1,32 @@
-# More than 6 courses
+#  Add Course Alert
 
 main.js
 ```
 function course_add(){
-  var tempt = $("#course_select").val();
+  var tempt = document.getElementById("course_select");
+  var tempt_value = tempt.value;
+  var tempt_text = tempt.options[tempt_value].text;
   var db = firebase.firestore();
 
   db.collection('user').doc(current_user_email).collection('courses').get().then(snap => {
   if(snap.size < 6) // will return the collection size
-  addcoursefromdatabase(current_user_email,course_list_global[tempt][0],course_list_global[tempt][1],course_list_global[tempt][2],course_list_global[tempt][3],course_list_global[tempt][4],course_list_global[tempt][5],course_list_global[tempt][6],course_list_global[tempt][7],course_list_global[tempt][8]);
-  else{
-    alert("More than 6 courses are not allowed. ")
+  {
+    let action = confirm("Do you really want to add " + tempt_text);
+    if(action == true){
+      addcoursefromdatabase(current_user_email,course_list_global[tempt_value][0],course_list_global[tempt_value][1],course_list_global[tempt_value][2],course_list_global[tempt_value][3],course_list_global[tempt_value][4],course_list_global[tempt_value][5],course_list_global[tempt_value][6],course_list_global[tempt_value][7],course_list_global[tempt_value][8]);
+      alert("You have successfully added " + tempt_text);
+    }else{
+      console.log("cancel course");
+    }
   }
+  else{
+    alert("More than 6 courses are not allowed. ");
+  }
+
 });
 
 
-}
+}//end course_add()
 
 ```
 
