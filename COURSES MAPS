@@ -10,7 +10,7 @@
        room: "314",
        term: "Spring 2019",
        instructor: "Marcus Johnson",
-       schedule: "1 12:30 13:55 3 12:30 13:55  5 12:30 13:55"
+       schedule: "1 12:30 13:55 3 12:30 13:55 5 12:30 13:55"
      },
 
      MATH115_M01:{
