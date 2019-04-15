@@ -1,4 +1,4 @@
-# Database format: 
+# Database Format &#x1F34E;:
 ```
 CSCI445-M02:{
         course_id: "2449",
