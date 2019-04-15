@@ -35,6 +35,7 @@
        course_title: "Finite Mathematics",
        capmus: "Manhattan Campus",
        location: "26W",
+       room: "312",
        term: "Spring 2019",
        instructor: "Xiaoyan Yang",
        schedule: "26W 312 2 9:30 10:50 26W 312 4 9:30 10:50"
@@ -48,6 +49,7 @@
        course_title: "Fundamentals of Precalculus I",
        capmus: "Manhattan Campus",
        location: "26W",
+       room: "312",
        term: "Spring 2019",
        instructor: "Owen Johnson",
        schedule: "26W 312 2 17:30 19:45 26W 312 4 17:30 19:45"
@@ -61,6 +63,7 @@
        course_title: "Fundamentals of Precalculus II",
        capmus: "Manhattan Campus",
        location: "16W",
+       room: "723",
        term: "Spring 2019",
        instructor: "John Gordon",
        schedule: "16W 723 1 15:30 17:45 16W 723 3 15:30 17:45"
@@ -74,6 +77,7 @@
        course_title: "Fundamentals of Precalculus II",
        capmus: "Manhattan Campus",
        location: "16W",
+       room: "721",
        term: "Spring 2019",
        instructor: "Carol Bilsky-Bieniek",
        schedule: "16W 721 1 11:00 12:20 16W 721 3 11:00 12:20 16W 721 4 11:00 12:20"
@@ -86,9 +90,10 @@
        course_title: "Fundamentals of Precalculus II",
        capmus: "Manhattan Campus",
        location: "16W 26W",
+       room: "822 11",
        term: "Spring 2019",
        instructor: "Chatur Advani",
-       schedule: "16W 822 1 9:30 10:50 16W 822 3 9:30 10:50 26W 11 4 9:30 10:50"
+       schedule: "16W 822 1 9:30 10:50 26W 11 3 9:30 10:50"
      },
 
      MATH141_M01:{
@@ -99,9 +104,10 @@
        course_title: "Precalculus",
        capmus: "Manhattan Campus",
        location: "26W 16W",
+       room: "11 822",
        term: "Spring 2019",
        instructor: "Laihan Luo",
-       schedule: "26W 11 1 10:55 12:25 16W 11 3 10:55 12:25 16W 822 4 9:30 10:50"
+       schedule: "26W 11 1 10:55 12:25 16W 822 4 9:30 10:50"
      },
 
      MATH141_M02:{
@@ -112,9 +118,10 @@
        course_title: "Precalculus",
        capmus: "Manhattan Campus",
        location: "26W 16W",
+       room: "312 723",
        term: "Spring 2019",
        instructor: "Julius Chini",
-       schedule: "26W 312 2 14:00 15:30 16W 723 4 14:00 15:30 26W 312 5 14:00 15:20"
+       schedule: "26W 312 2 14:00 15:30 16W 723 4 14:00 15:30"
      },
 
      MATH151_M01:{
@@ -124,7 +131,8 @@
        section:"M01",
        course_title: "Fundamentals of Calculus",
        capmus: "Manhattan Campus",
-       location: "Guiliano Global Center 16W",
+       location: "GGC 16W",
+       room: "409 821",
        term: "Spring 2019",
        instructor: "John Gordon",
        schedule: "GGC 409 1 14:00 15:20 16W 821 3 14:00 15:20"
@@ -138,6 +146,7 @@
        course_title: "Fundamentals of Calculus",
        capmus: "Manhattan Campus",
        location: "16W",
+       room: "723",
        term: "Spring 2019",
        instructor: "Theodore Preston",
        schedule: "16W 723 17:30 20:10"
@@ -150,7 +159,8 @@
        section:"M01",
        course_title: "Basic Applied Calculus",
        capmus: "Manhattan Campus",
-       location: "Guiliano Global Center 16W",
+       location: "GGC 16W",
+       room: "409 821",
        term: "Spring 2019",
        instructor: "John Gordon",
        schedule: "GGC 409 1 14:00 15:20 16W 821 14:00 15:20"
@@ -163,7 +173,8 @@
        section:"M02",
        course_title: "Basic Applied Calculus",
        capmus: "Manhattan Campus",
-       location: "Guiliano Global Center 16W",
+       location: "16W",
+       room: "723",
        term: "Spring 2019",
        instructor: "John Gordon",
        schedule: "16W 723 3 17:30 20:10"
@@ -176,7 +187,8 @@
        section:"M01",
        course_title: "Calculus I",
        capmus: "Manhattan Campus",
-       location: "Guiliano Global Center 16W",
+       location: "GGC",
+       room: "401",
        term: "Spring 2019",
        instructor: "Taposh Gayen",
        schedule: "GGC 401 2 14:00 16:30 GGC 401 4 14:00 16:30"
@@ -189,7 +201,8 @@
        section:"M02",
        course_title: "Calculus I",
        capmus: "Manhattan Campus",
-       location: "16W",
+       location: "16W 16W",
+       room: "721 822",
        term: "Spring 2019",
        instructor: "Julius Chini",
        schedule: "16W 721 1 14:00 16:30 16W 822 14:00 16:30"
@@ -202,7 +215,8 @@
        section:"M03",
        course_title: "Calculus I",
        capmus: "Manhattan Campus",
-       location: "16W",
+       location: "16W 16W",
+       room: "820 822",
        term: "Spring 2019",
        instructor: "Laihan Luo",
        schedule: "16W 820 1 17:30 19:45 16W 822 17:30 19:45"
@@ -215,7 +229,8 @@
        section:"M01",
        course_title: "Calculus II",
        capmus: "Manhattan Campus",
-       location: "26W",
+       location: "26W 26W",
+       room: "312 11",
        term: "Spring 2019",
        instructor: "Changiz Alizadeh",
        schedule: "26W 312 1 14:00 16:30 26W 11 14:00 16:30"
@@ -228,7 +243,8 @@
        section:"M02",
        course_title: "Calculus II",
        capmus: "Manhattan Campus",
-       location: "26W",
+       location: "26W 26W",
+       room: "207 313",
        term: "Spring 2019",
        instructor: "Klara Lagrance",
        schedule: "26W 207 2 17:30 19:45 26W 313 17:30 19:45"
@@ -241,7 +257,8 @@
        section:"M03",
        course_title: "Calculus II",
        capmus: "Manhattan Campus",
-       location: "16W",
+       location: "16W 16W",
+       room: "624 721",
        term: "Spring 2019",
        instructor: "Vitaly Katsnelson",
        schedule: "16W 624 1 14:00 16:30 16W 721 14:00 16:30"
@@ -254,7 +271,8 @@
        section:"M04",
        course_title: "Calculus II",
        capmus: "Manhattan Campus",
-       location: "16W",
+       location: "GGC 16W",
+       room: "405 722",
        term: "Spring 2019",
        instructor: "Robert Bell",
        schedule: "GGC 405 2 14:00 16:30 16W 722 14:00 16:30"
@@ -268,6 +286,7 @@
        course_title: "Applied Statistics",
        capmus: "Manhattan Campus",
        location: "GGC",
+       room: "409",
        term: "Spring 2019",
        instructor: "Owen Johnson",
        schedule: "GGC 409 1 15:30 16:50 GGC 409 15:30 16:50"
@@ -280,7 +299,8 @@
        section:"M01",
        course_title: "Calculus III",
        capmus: "Manhattan Campus",
-       location: "GGC",
+       location: "26W",
+       room: "312",
        term: "Spring 2019",
        instructor: "Robert Bell",
        schedule: "26W 312 1 9:00 10:50 26W 312 9:00 10:50"
@@ -293,7 +313,8 @@
        section:"M02",
        course_title: "Calculus III",
        capmus: "Manhattan Campus",
-       location: "GGC",
+       location: "26W",
+       room: "312",
        term: "Spring 2019",
        instructor: "Robert Bell",
        schedule: "26W 312 1 9:00 10:50 26W 312 9:00 10:50"
@@ -307,6 +328,7 @@
        course_title: "Linear Algebra",
        capmus: "Manhattan Campus",
        location: "26W",
+       room: "312",
        term: "Spring 2019",
        instructor: "Changiz Alizadeh",
        schedule: "26W 312 1 9:00 10:50 26W 312 9:00 10:50"
@@ -320,6 +342,7 @@
        course_title: "Linear Algebra",
        capmus: "Manhattan Campus",
        location: "16W",
+       room: "624",
        term: "Spring 2019",
        instructor: "Vitaly Katsnelson",
        schedule: "16W 624 1 12:30 13:50 16W 624 12:30 13:50"
@@ -332,7 +355,8 @@
        section:"M01",
        course_title: "Differential Equations",
        capmus: "Manhattan Campus",
-       location: "16W",
+       location: "16W 16W",
+       room: "821 721",
        term: "Spring 2019",
        instructor: "Robert Bell",
        schedule: "16W 821 1 12:30 13:50 16W 721 12:30 13:50"
@@ -346,6 +370,7 @@
        course_title: "Advanced Calculus",
        capmus: "Manhattan Campus",
        location: "GGC",
+       room: "702",
        term: "Spring 2019",
        instructor: "Ranja Roy",
        schedule: "GGC 702 1 15:30 16:50 GGC 702 15:30 16:50"
@@ -360,6 +385,7 @@
        course_title: "Computer Programming I",
        capmus: "Manhattan Campus",
        location: "GGC",
+       room: "601",
        term: "Spring 2019",
        instructor: "Felix Fischman",
        schedule: "GGC 601 2 14:00 16:20 GGC 601 4 14:00 15:20"
@@ -374,6 +400,7 @@
        course_title: "Computer Programming I",
        capmus: "Manhattan Campus",
        location: "GGC",
+       room: "601",
        term: "Spring 2019",
        instructor: "Michael Kadri",
        schedule: "GGC 601 2 17:30 19:10"
@@ -387,6 +414,7 @@
        course_title: "Computer Programming I",
        capmus: "Manhattan Campus",
        location: "GGC",
+       room: "601,
        term: "Spring 2019",
        instructor: "Felix Fischman",
        schedule: "GGC 601 5 17:30 21:10"
@@ -400,6 +428,7 @@
        course_title: "Computer Programming I",
        capmus: "Manhattan Campus",
        location: "GGC",
+       room: "601
        term: "Spring 2019",
        instructor: "Hakan Pekcan",
        schedule: "GGC 601 1 14:00 16:50 GGC 601 3 15:30 16:50"
@@ -413,6 +442,7 @@
        course_title: "Computer Organization",
        capmus: "Manhattan Campus",
        location: "16W",
+       room: "723"
        term: "Spring 2019",
        instructor: "Simon Ben-Avi",
        schedule: "16W 723 5 5:30 8:10"
@@ -425,6 +455,7 @@
        course_title: "Computer Organization",
        capmus: "Manhattan Campus",
        location: "26W",
+       room: "11,
        term: "Spring 2019",
        instructor: "Nabi Sertac Artan",
        schedule: "26W 11 2 15:30 16:50 26W 11 4 15:30 16:50"
@@ -437,6 +468,7 @@
        course_title: "Computer Organization",
        capmus: "Manhattan Campus",
        location: "GGC",
+       room: "405
        term: "Spring 2019",
        instructor: "Steven Billis",
        schedule: "GGC 405 1 14:00 15:20 GGC 405 3 14:00 15:20"
@@ -450,6 +482,7 @@
        course_title: "Digital Logic Design Fundamentals ",
        capmus: "Manhattan Campus",
        location: "16W",
+       room: "723
        term: "Spring 2019",
        instructor: "Simon Ben-Avi",
        schedule: "16W 723 5 17:30 20:10"
@@ -475,6 +508,7 @@
        course_title: "Digital Logic Design Fundamentals ",
        capmus: "Manhattan Campus",
        location: "GGC",
+       room: "606",
        term: "Spring 2019",
        instructor: "Nabi Sertac Artan",
        schedule: "GGC 606 1 14:00 15:20 GGC 606 3 14:00 15:20"
@@ -487,6 +521,7 @@
        course_title: "Computer Organization and Architecture",
        capmus: "Manhattan Campus",
        location: "16W",
+       room: "822
        term: "Spring 2019",
        instructor: "Maharshi Shah",
        schedule: "16W 822 4 17:30 21:10"
@@ -499,6 +534,7 @@
        course_title: "Computer Organization and Architecture",
        capmus: "Manhattan Campus",
        location: "26W",
+       room: "312",
        term: "Spring 2019",
        instructor: "Simon Ben-Avi",
        schedule: "26W 312 2 17:30 20:10"
@@ -511,6 +547,7 @@
        course_title: "Computer Organization and Architecture",
        capmus: "Manhattan Campus",
        location: "26W",
+       room: "312",
        term: "Spring 2019",
        instructor: "Simon Ben-Avi",
        schedule: "26W 312 2 15:30 16:50 26W 312 4 15:30 16:50"
@@ -523,6 +560,7 @@
        course_title: "Computer Programming II",
        capmus: "Manhattan Campus",
        location: "GGC",
+       room: "312",
        term: "Spring 2019",
        instructor: "Michael Kadri",
        schedule: "GGC 312 1 17:30 21:10"
@@ -537,6 +575,7 @@
        course_title: "Computer Programming II",
        capmus: "Manhattan Campus",
        location: "GGC",
+       room: "601",
        term: "Spring 2019",
        instructor: "Wenjia Li",
        schedule: "GGC 601 2 9:00 10:50 GGC 601 4 9:00 10:50"
@@ -550,6 +589,7 @@
        course_title: "Computer Programming II",
        capmus: "Manhattan Campus",
        location: "26W",
+       room: "11"
        term: "Spring 2019",
        instructor: "Felix Fischman",
        schedule: "26W 11 2 17:30 20:10"
@@ -563,6 +603,7 @@
        course_title: "Computer Programming II",
        capmus: "Manhattan Campus",
        location: "16W",
+       room: "723",
        term: "Spring 2019",
        instructor: "Susan Gass",
        schedule: "16W 723 1 9:30 10:50 16W 723 2 9:30 10:50"
@@ -579,6 +620,7 @@
        course_title: "Operating System Security",
        capmus: "Manhattan Campus",
        location: "16W",
+       room: "624
        term: "Spring 2019",
        instructor: "Li",
        schedule: "16W 624 5 09:30  12:10"
