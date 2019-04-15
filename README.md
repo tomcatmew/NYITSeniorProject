@@ -11,11 +11,11 @@ CSCI445_M02:{ // speical character, use _ !!!   NOT -
         section:"M01",  //missing comma
         course_title: "Operating System Security",
         capmus: "Manhattan Campus",
-        location: "16w",
+        location: "16W",  // 16W  NOT 16w
         room: "624",
         term: "Spring 2019",
         instructor: "Li",
-        time: "16w 5 09:30 12:10"  //1 space only, !16W
+        time: "16W 5 09:30 12:10"  //1 space only, !16W
       },
 CSCI380_M01D:{ // speical character, use _ !!!   NOT - 
         course_id: "1906",
@@ -24,7 +24,7 @@ CSCI380_M01D:{ // speical character, use _ !!!   NOT -
         section:"M01D", //missing comma
         course_title: "Introduction to Software Engineering",
         capmus: "Manhattan Campus",
-        location: "GGC,", // 
+        location: "GGC,", //GGC NOT ggc
         room: "702",
         term: "Spring 2019",
         instructor: " Maherukh Akhtar",
