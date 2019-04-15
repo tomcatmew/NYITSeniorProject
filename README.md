@@ -11,7 +11,7 @@ CSCI445_M02:{
         section:"M01",  //MUST CONTAIN SECTION
         course_title: "Operating System Security",
         capmus: "Manhattan Campus",
-        location: "16W",  // 16W  NOT 16w
+        location: "16W",  // 16W  NOT 16w , no space at the end
         room: "624",
         term: "Spring 2019",
         instructor: "Li",
