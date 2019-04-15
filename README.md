@@ -25,7 +25,7 @@ CSCI380_M01D:{
         course_title: "Introduction to Software Engineering",
         capmus: "Manhattan Campus",
         location: "GGC,", //GGC NOT ggc
-        room: "702",
+        room: "702 702",
         term: "Spring 2019",
         instructor: " Maherukh Akhtar",
         time: "1 12:30 13:50 3 12:30 13:50"
