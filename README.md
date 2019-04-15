@@ -1,3 +1,35 @@
+# Database format: 
+```
+CSCI445-M02:{
+        course_id: "2449",
+        department_code: "CSCI",
+        course_number: "445",
+        section:"M01",  //missing comma
+        course_title: "Operating System Security",
+        capmus: "Manhattan Campus",
+        location: "16W",
+        room: "624",
+        term: "Spring 2019",
+        instructor: "Li",
+        time: "5 09:30 12:10"  //1 space only
+      },
+CSCI436-M01:{
+        course_id: "2827",
+        department_code: "CSCI",
+        course_number: "436",
+        section:"M01", //missing comma
+        course_title: "Big Data Management & Analytics ",
+        capmus: "Manhattan Campus",
+        location: "16W",
+        room: "723",
+        term: "Spring 2019",
+        instructor: "Qian Wang",
+        time: "2 17:45 20:25" //1 space only
+      }
+```
+
+# ======================================>
+
 # Day in number to date string 0 -> Sunday, 1 -> Monday
 ```
 function getDayName(dateString) {
