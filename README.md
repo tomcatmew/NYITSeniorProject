@@ -4,31 +4,31 @@
 
 
 ```
-CSCI445-M02:{
+CSCI445_M02:{ // speical character, use _ !!!   NOT - 
         course_id: "2449",
         department_code: "CSCI",
         course_number: "445",
         section:"M01",  //missing comma
         course_title: "Operating System Security",
         capmus: "Manhattan Campus",
-        location: "16W",
+        location: "16w",
         room: "624",
         term: "Spring 2019",
         instructor: "Li",
-        time: "16W 5 09:30 12:10"  //1 space only, !16W
+        time: "16w 5 09:30 12:10"  //1 space only, !16W
       },
-CSCI436-M01:{
-        course_id: "2827",
+CSCI380_M01D:{ // speical character, use _ !!!   NOT - 
+        course_id: "1906",
         department_code: "CSCI",
-        course_number: "436",
-        section:"M01", //missing comma
-        course_title: "Big Data Management & Analytics ",
+        course_number: "380",
+        section:"M01D", //missing comma
+        course_title: "Introduction to Software Engineering",
         capmus: "Manhattan Campus",
-        location: "16W",
-        room: "723",
+        location: "GGC,", // 
+        room: "702",
         term: "Spring 2019",
-        instructor: "Qian Wang",
-        time: "16W 2 17:45 20:25" //1 space only,16W
+        instructor: " Maherukh Akhtar",
+        time: "GGC 1 12:30 13:50 GGC 3 12:30 13:50 "
       }
 ```
 
