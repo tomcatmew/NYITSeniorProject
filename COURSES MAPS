@@ -24,7 +24,7 @@
        room:""401,
        term: "Spring 2019",
        instructor: "Carol Bilsky_Bieniek",
-       schedule: "GGC 401 1 15:30 16:50 GGC 401 3 15:30 16:50"
+       schedule: "1 15:30 16:50 3 15:30 16:50"
      },
 
      MATH125_M01:{
@@ -38,7 +38,7 @@
        room: "312",
        term: "Spring 2019",
        instructor: "Xiaoyan Yang",
-       schedule: "26W 312 2 9:30 10:50 26W 312 4 9:30 10:50"
+       schedule: "2 9:30 10:50 4 9:30 10:50"
      },
 
      MATH135_M01:{
@@ -52,7 +52,7 @@
        room: "312",
        term: "Spring 2019",
        instructor: "Owen Johnson",
-       schedule: "26W 312 2 17:30 19:45 26W 312 4 17:30 19:45"
+       schedule: "2 17:30 19:45 4 17:30 19:45"
      },
 
      MATH136_M01:{
@@ -66,7 +66,7 @@
        room: "723",
        term: "Spring 2019",
        instructor: "John Gordon",
-       schedule: "16W 723 1 15:30 17:45 16W 723 3 15:30 17:45"
+       schedule: "1 15:30 17:45 3 15:30 17:45"
      },
 
      MATH136_M02:{
@@ -80,7 +80,7 @@
        room: "721",
        term: "Spring 2019",
        instructor: "Carol Bilsky-Bieniek",
-       schedule: "16W 721 1 11:00 12:20 16W 721 3 11:00 12:20 16W 721 4 11:00 12:20"
+       schedule: "1 11:00 12:20 3 11:00 12:20"
      },
      MATH136_M03:{
        course_id: "2689",
@@ -93,7 +93,7 @@
        room: "822 11",
        term: "Spring 2019",
        instructor: "Chatur Advani",
-       schedule: "16W 822 1 9:30 10:50 26W 11 3 9:30 10:50"
+       schedule: "1 9:30 10:50 3 9:30 10:50"
      },
 
      MATH141_M01:{
@@ -107,7 +107,7 @@
        room: "11 822",
        term: "Spring 2019",
        instructor: "Laihan Luo",
-       schedule: "26W 11 1 10:55 12:25 16W 822 4 9:30 10:50"
+       schedule: "1 10:55 12:25 4 9:30 10:50"
      },
 
      MATH141_M02:{
@@ -121,7 +121,7 @@
        room: "312 723",
        term: "Spring 2019",
        instructor: "Julius Chini",
-       schedule: "26W 312 2 14:00 15:30 16W 723 4 14:00 15:30"
+       schedule: "2 14:00 15:30 4 14:00 15:30"
      },
 
      MATH151_M01:{
@@ -135,7 +135,7 @@
        room: "409 821",
        term: "Spring 2019",
        instructor: "John Gordon",
-       schedule: "GGC 409 1 14:00 15:20 16W 821 3 14:00 15:20"
+       schedule: "1 14:00 15:20 3 14:00 15:20"
      },
 
      MATH151_M02:{
@@ -149,7 +149,7 @@
        room: "723",
        term: "Spring 2019",
        instructor: "Theodore Preston",
-       schedule: "16W 723 17:30 20:10"
+       schedule: "4 17:30 20:10"
      },
 
      MATH161_M01:{
@@ -163,7 +163,7 @@
        room: "409 821",
        term: "Spring 2019",
        instructor: "John Gordon",
-       schedule: "GGC 409 1 14:00 15:20 16W 821 14:00 15:20"
+       schedule: "1 14:00 15:20 4 14:00 15:20"
      },
 
      MATH161_M02:{
@@ -177,7 +177,7 @@
        room: "723",
        term: "Spring 2019",
        instructor: "John Gordon",
-       schedule: "16W 723 3 17:30 20:10"
+       schedule: "3 17:30 20:10"
      },
 
      MATH171_M01:{
@@ -191,7 +191,7 @@
        room: "401",
        term: "Spring 2019",
        instructor: "Taposh Gayen",
-       schedule: "GGC 401 2 14:00 16:30 GGC 401 4 14:00 16:30"
+       schedule: "2 14:00 16:30 4 14:00 16:30"
      },
 
      MATH171_M02:{
@@ -205,7 +205,7 @@
        room: "721 822",
        term: "Spring 2019",
        instructor: "Julius Chini",
-       schedule: "16W 721 1 14:00 16:30 16W 822 14:00 16:30"
+       schedule: "1 14:00 16:30 3 14:00 16:30"
      },
 
      MATH171_M03:{
@@ -219,7 +219,7 @@
        room: "820 822",
        term: "Spring 2019",
        instructor: "Laihan Luo",
-       schedule: "16W 820 1 17:30 19:45 16W 822 17:30 19:45"
+       schedule: "1 17:30 19:45 3 17:30 19:45"
      },
 
      MATH180_M01:{
@@ -233,7 +233,7 @@
        room: "312 11",
        term: "Spring 2019",
        instructor: "Changiz Alizadeh",
-       schedule: "26W 312 1 14:00 16:30 26W 11 14:00 16:30"
+       schedule: "1 14:00 16:30 3 14:00 16:30"
      },
 
      MATH180_M02:{
@@ -247,7 +247,7 @@
        room: "207 313",
        term: "Spring 2019",
        instructor: "Klara Lagrance",
-       schedule: "26W 207 2 17:30 19:45 26W 313 17:30 19:45"
+       schedule: " 2 17:30 19:45 4 17:30 19:45"
      },
 
      MATH180_M03:{
@@ -261,7 +261,7 @@
        room: "624 721",
        term: "Spring 2019",
        instructor: "Vitaly Katsnelson",
-       schedule: "16W 624 1 14:00 16:30 16W 721 14:00 16:30"
+       schedule: "1 14:00 16:30 3 14:00 16:30"
      },
 
      MATH180_M04:{
@@ -275,7 +275,7 @@
        room: "405 722",
        term: "Spring 2019",
        instructor: "Robert Bell",
-       schedule: "GGC 405 2 14:00 16:30 16W 722 14:00 16:30"
+       schedule: "2 14:00 16:30 4 14:00 16:30"
      },
 
      MATH235_M01:{
@@ -289,7 +289,7 @@
        room: "409",
        term: "Spring 2019",
        instructor: "Owen Johnson",
-       schedule: "GGC 409 1 15:30 16:50 GGC 409 15:30 16:50"
+       schedule: "1 15:30 16:50 3 15:30 16:50"
      },
 
      MATH260_M01:{
@@ -303,7 +303,7 @@
        room: "312",
        term: "Spring 2019",
        instructor: "Robert Bell",
-       schedule: "26W 312 1 9:00 10:50 26W 312 9:00 10:50"
+       schedule: "1 9:00 10:50 3 9:00 10:50"
      },
 
      MATH260_M02:{
@@ -317,7 +317,7 @@
        room: "312",
        term: "Spring 2019",
        instructor: "Robert Bell",
-       schedule: "26W 312 1 9:00 10:50 26W 312 9:00 10:50"
+       schedule: "1 9:00 10:50 3 9:00 10:50"
      },
 
      MATH310_M01:{
@@ -331,7 +331,7 @@
        room: "312",
        term: "Spring 2019",
        instructor: "Changiz Alizadeh",
-       schedule: "26W 312 1 9:00 10:50 26W 312 9:00 10:50"
+       schedule: "1 9:00 10:50 3 9:00 10:50"
      },
 
      MATH310_M02:{
@@ -345,7 +345,7 @@
        room: "624",
        term: "Spring 2019",
        instructor: "Vitaly Katsnelson",
-       schedule: "16W 624 1 12:30 13:50 16W 624 12:30 13:50"
+       schedule: "1 12:30 13:50 3 12:30 13:50"
      },
 
      MATH320_M01:{
@@ -359,7 +359,7 @@
        room: "821 721",
        term: "Spring 2019",
        instructor: "Robert Bell",
-       schedule: "16W 821 1 12:30 13:50 16W 721 12:30 13:50"
+       schedule: "1 12:30 13:50 3 12:30 13:50"
      },
 
      MATH350_M01:{
@@ -373,7 +373,7 @@
        room: "702",
        term: "Spring 2019",
        instructor: "Ranja Roy",
-       schedule: "GGC 702 1 15:30 16:50 GGC 702 15:30 16:50"
+       schedule: "1 15:30 16:50 3 15:30 16:50"
      },
 
 
@@ -388,7 +388,7 @@
        room: "601",
        term: "Spring 2019",
        instructor: "Felix Fischman",
-       schedule: "GGC 601 2 14:00 16:20 GGC 601 4 14:00 15:20"
+       schedule: "2 14:00 16:20 4 14:00 15:20"
      },
 
 
@@ -403,7 +403,7 @@
        room: "601",
        term: "Spring 2019",
        instructor: "Michael Kadri",
-       schedule: "GGC 601 2 17:30 19:10"
+       schedule: "2 17:30 19:10"
      },
 
      CSCI125_M05:{
@@ -417,7 +417,7 @@
        room: "601,
        term: "Spring 2019",
        instructor: "Felix Fischman",
-       schedule: "GGC 601 5 17:30 21:10"
+       schedule: "5 17:30 21:10"
      },
 
      CSCI125_M07:{
@@ -431,7 +431,7 @@
        room: "601
        term: "Spring 2019",
        instructor: "Hakan Pekcan",
-       schedule: "GGC 601 1 14:00 16:50 GGC 601 3 15:30 16:50"
+       schedule: "1 14:00 16:50 3 15:30 16:50"
      },
 
      CSCI130_M01:{
@@ -445,7 +445,7 @@
        room: "723"
        term: "Spring 2019",
        instructor: "Simon Ben-Avi",
-       schedule: "16W 723 5 5:30 8:10"
+       schedule: "5 5:30 8:10"
      },
      CSCI130_M02:{
        course_id: "3669",
@@ -458,7 +458,7 @@
        room: "11,
        term: "Spring 2019",
        instructor: "Nabi Sertac Artan",
-       schedule: "26W 11 2 15:30 16:50 26W 11 4 15:30 16:50"
+       schedule: "2 15:30 16:50 4 15:30 16:50"
      },
      CSCI130_M03:{
        course_id: "3670",
@@ -471,7 +471,7 @@
        room: "405
        term: "Spring 2019",
        instructor: "Steven Billis",
-       schedule: "GGC 405 1 14:00 15:20 GGC 405 3 14:00 15:20"
+       schedule: "1 14:00 15:20 3 14:00 15:20"
      },
 
      CSCI135_M01:{
@@ -485,7 +485,7 @@
        room: "723
        term: "Spring 2019",
        instructor: "Simon Ben-Avi",
-       schedule: "16W 723 5 17:30 20:10"
+       schedule: "5 17:30 20:10"
      },
      CSCI135_M02:{
        course_id: "3671",
@@ -498,7 +498,7 @@
        room: "11",
        term: "Spring 2019",
        instructor: "Nabi Sertac Artan",
-       schedule: "26W 11 2 15:30 16:50 26W 11 4 15:30 16:50"
+       schedule: "2 15:30 16:50 4 15:30 16:50"
      },
      CSCI135_M03:{
        course_id: "3672",
@@ -511,7 +511,7 @@
        room: "606",
        term: "Spring 2019",
        instructor: "Nabi Sertac Artan",
-       schedule: "GGC 606 1 14:00 15:20 GGC 606 3 14:00 15:20"
+       schedule: "1 14:00 15:20 3 14:00 15:20"
      },
      CSCI155_M01:{
        course_id: "2454",
@@ -524,7 +524,7 @@
        room: "822
        term: "Spring 2019",
        instructor: "Maharshi Shah",
-       schedule: "16W 822 4 17:30 21:10"
+       schedule: "4 17:30 21:10"
      },
      CSCI155_M03:{
        course_id: "1888",
@@ -537,7 +537,7 @@
        room: "312",
        term: "Spring 2019",
        instructor: "Simon Ben-Avi",
-       schedule: "26W 312 2 17:30 20:10"
+       schedule: "2 17:30 20:10"
      },
      CSCI155_M05:{
        course_id: "2752",
@@ -550,7 +550,7 @@
        room: "312",
        term: "Spring 2019",
        instructor: "Simon Ben-Avi",
-       schedule: "26W 312 2 15:30 16:50 26W 312 4 15:30 16:50"
+       schedule: "2 15:30 16:50 4 15:30 16:50"
      },
      CSCI185_M03:{
        course_id: "1892",
@@ -563,7 +563,7 @@
        room: "312",
        term: "Spring 2019",
        instructor: "Michael Kadri",
-       schedule: "GGC 312 1 17:30 21:10"
+       schedule: "1 17:30 21:10"
      },
 
 
@@ -578,7 +578,7 @@
        room: "601",
        term: "Spring 2019",
        instructor: "Wenjia Li",
-       schedule: "GGC 601 2 9:00 10:50 GGC 601 4 9:00 10:50"
+       schedule: "2 9:00 10:50 4 9:00 10:50"
      },
 
      CSCI235_M01:{
@@ -592,7 +592,7 @@
        room: "11"
        term: "Spring 2019",
        instructor: "Felix Fischman",
-       schedule: "26W 11 2 17:30 20:10"
+       schedule: "2 17:30 20:10"
      },
 
      CSCI235_M03:{
@@ -606,7 +606,7 @@
        room: "723",
        term: "Spring 2019",
        instructor: "Susan Gass",
-       schedule: "16W 723 1 9:30 10:50 16W 723 2 9:30 10:50"
+       schedule: "1 9:30 10:50 2 9:30 10:50"
      },
 
 
@@ -620,10 +620,10 @@
        course_title: "Operating System Security",
        capmus: "Manhattan Campus",
        location: "16W",
-       room: "624",
+       room: "624
        term: "Spring 2019",
        instructor: "Li",
-       schedule: "16W 624 5 09:30  12:10"
+       schedule: "5 09:30  12:10"
      },
 
 
@@ -706,7 +706,7 @@
        section:"M01",
        course_title: "Cisco Academy Level I",
        capmus: "Manhattan Campus",
-       location: "GGC",
+       location: "GGC ",
        room: "601",
        term: "Spring 2019",
        instructor: "Michael Silva ",
@@ -720,7 +720,7 @@
        section:"M01",
        course_title: "Artificial Intelligence I",
        capmus: "Manhattan Campus",
-       location: "26W",
+       location: "26W ",
        room: "301",
        term: "Spring 2019",
        instructor: " Altion Simo",
@@ -736,7 +736,7 @@
        section:"M01",
        course_title: "Computer Networks",
        capmus: "Manhattan Campus",
-       location: "16W",
+       location: "16W ",
        room: "721",
        term: "Spring 2019",
        instructor: "Anand Santhanakrishnan",
@@ -750,7 +750,7 @@
        section:"M02",
        course_title: "Computer Networks",
        capmus: "Manhattan Campus",
-       location: "16W",
+       location: "16W ",
        room: "821",
        term: "Spring 2019",
        instructor: "Damon Bruccoleri",
@@ -765,7 +765,7 @@
        section:"M01",
        course_title: "Design and Analysis of Algorithms",
        capmus: "Manhattan Campus",
-       location: "16W",
+       location: "16W ",
        room: "624",
        term: "Spring 2019",
        instructor: "Herbert Taylor",
@@ -780,7 +780,7 @@
        section:"M01",
        course_title: "Operating Systems ",
        capmus: "Manhattan Campus",
-       location: "16W",
+       location: "16W ",
        room: "822",
        term: "Spring 2019",
        instructor: "Susan Gass",
@@ -794,7 +794,7 @@
        section:"M01",
        course_title: "Operating Systems",
        capmus: "Manhattan Campus",
-       location: "16W",
+       location: "16W ",
        room: "624",
        term: "Spring 2019",
        instructor: "Susan Gass",
@@ -807,7 +807,7 @@
        section:"M01",
        course_title: "Programming Language Concepts",
        capmus: "Manhattan Campus",
-       location: "16W",
+       location: "16W ",
        room: "624",
        term: "Spring 2019",
        instructor: " Wenjia Li",
@@ -824,7 +824,7 @@
        section:"M01",
        course_title: "Theory of Computation ",
        capmus: "Manhattan Campus",
-       location: "16W",
+       location: "16W ",
        room: "721",
        term: "Spring 2019",
        instructor: "Paolo Gasti",
@@ -838,10 +838,10 @@
        section:"M01",
        course_title: "Database Management",
        capmus: "Manhattan Campus",
-       location: "26W",
+       location: "26W ",
        term: "Spring 2019",
        instructor: "Houwei Cao",
-       schedule: "26W 11 2 14:00 15:20 26W 313 4 14:00 15:20"
+       schedule: "2 14:00 15:20 4 14:00 15:20"
      },
 
     CSCI300_M02:{
@@ -851,7 +851,7 @@
        section:"M02",
        course_title: "Database Management",
        capmus: "Manhattan Campus",
-       location: "16W",
+       location: "16W ",
        room: "623",
        term: "Spring 2019",
        instructor: " Felix Fischman",
@@ -868,7 +868,7 @@
        location: "16W",
        term: "Spring 2019",
        instructor: "Herbert Taylor",
-       schedule: "16W 822 1 15:30 16:50 GGC 706 3 15:30 16:50"
+       schedule: "1 15:30 16:50 3 15:30 16:50"
      },
 
     CSCI260_M01:{
@@ -882,7 +882,7 @@
        room: "723",
        term: "Spring 2019",
        instructor: "Huanying Gu",
-       schedule: " 1 14:00 15:20 3 14:00 15:20 "
+       schedule: "1 14:00 15:20 3 14:00 15:20 "
      },
 
     CSCI260_M03:{
