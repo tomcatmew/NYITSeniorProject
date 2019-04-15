@@ -261,7 +261,7 @@ CSCI260-M05:{
         department_code: "CSCI",
         course_number: "260",
         section:"M05"
-        course_title: " Data Structures",
+        course_title: "Data Structures",
         capmus: "Manhattan Campus",
         location: "Guiliano Global ",
         room: "624",
