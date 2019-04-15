@@ -3,8 +3,8 @@
 function getDayName(dateString) {
      //12/07/2016
     let dayName;
-    var date = new Date(dateString);
-    var dayNumber = date.getDay();
+    let date = new Date(dateString);
+    let dayNumber = date.getDay();
     switch (dayNumber) {
         case 0:  dayName = "Sunday"; break;
         case 1:  dayName = "Monday"; break;
