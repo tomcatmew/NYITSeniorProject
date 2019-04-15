@@ -15,7 +15,7 @@ CSCI445-M02:{
         room: "624",
         term: "Spring 2019",
         instructor: "Li",
-        time: "5 09:30 12:10"  //1 space only
+        time: "16W 5 09:30 12:10"  //1 space only, !16W
       },
 CSCI436-M01:{
         course_id: "2827",
@@ -28,7 +28,7 @@ CSCI436-M01:{
         room: "723",
         term: "Spring 2019",
         instructor: "Qian Wang",
-        time: "2 17:45 20:25" //1 space only
+        time: "16W 2 17:45 20:25" //1 space only,16W
       }
 ```
 
