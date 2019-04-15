@@ -15,6 +15,7 @@ function getDayName(dateString) {
         case 6:  dayName = "Saturday"; break;
         default: return "Error";
     }
+     return dayName;
 
 ```
 
