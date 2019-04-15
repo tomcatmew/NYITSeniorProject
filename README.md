@@ -15,7 +15,7 @@ CSCI445_M02:{
         room: "624",
         term: "Spring 2019",
         instructor: "Li",
-        time: "16W 5 09:30 12:10"  //1 space only, !16W
+        time: "5 09:30 12:10"  //1 space only, !16W
       },
 CSCI380_M01D:{ 
         course_id: "1906",
@@ -28,7 +28,7 @@ CSCI380_M01D:{
         room: "702",
         term: "Spring 2019",
         instructor: " Maherukh Akhtar",
-        time: "GGC 1 12:30 13:50 GGC 3 12:30 13:50"
+        time: "1 12:30 13:50 3 12:30 13:50"
       }
 ```
 
