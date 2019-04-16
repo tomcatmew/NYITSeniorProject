@@ -71,6 +71,219 @@
        schedule: "1 09:00 10:50 3 09:00 10:50"
      },
      
+     PHYS170_M01:{
+       course_id: "1837",
+       department_code: "PHYS",
+       course_number: "170",
+       section:"M01",
+       course_title: "General Physics I",
+       capmus: "Manhattan Campus",
+       location: "GGC",
+       room: "401",
+       term: "Spring 2019",
+       instructor: "Bernard Fryshman",
+       schedule: "1 09:00 10:50 3 09:00 10:50"
+     },
+     
+     PHYS170_M02:{
+       course_id: "1838",
+       department_code: "PHYS",
+       course_number: "170",
+       section:"M02",
+       course_title: "General Physics I",
+       capmus: "Manhattan Campus",
+       location: "GGC GGC",
+       room: "401 405",
+       term: "Spring 2019",
+       instructor: "Kushal Shrestha",
+       schedule: "2 20:20 23:00 4 20:20 23:00"
+     },
+     
+     PHYS170_M03:{
+       course_id: "1839",
+       department_code: "PHYS",
+       course_number: "170",
+       section:"M03",
+       course_title: "General Physics I",
+       capmus: "Manhattan Campus",
+       location: "16W",
+       room: "624",
+       term: "Spring 2019",
+       instructor: "Sophia Domokos",
+       schedule: "1 09:00 10:50 3 09:00 10:50"
+     },
+     
+     PHYS170_M04:{
+       course_id: "1850",
+       department_code: "PHYS",
+       course_number: "170",
+       section:"M04",
+       course_title: "General Physics I",
+       capmus: "Manhattan Campus",
+       location: "16W",
+       room: "812",
+       term: "Spring 2019",
+       instructor: "Chad Andrade",
+       schedule: "4 09:00 10:50"
+     },
+     
+     PHYS170_M05:{
+       course_id: "1851",
+       department_code: "PHYS",
+       course_number: "170",
+       section:"M05",
+       course_title: "General Physics I",
+       capmus: "Manhattan Campus",
+       location: "16W",
+       room: "812",
+       term: "Spring 2019",
+       instructor: "Chad Andrade",
+       schedule: "3 11:00 12:50"
+     },
+     
+     PHYS170_M06:{
+       course_id: "1852",
+       department_code: "PHYS",
+       course_number: "170",
+       section:"M06",
+       course_title: "General Physics I",
+       capmus: "Manhattan Campus",
+       location: "16W",
+       room: "812",
+       term: "Spring 2019",
+       instructor: "Chad Andrade",
+       schedule: "4 17:30 19:20"
+     },
+     
+     PHYS170_M07:{
+       course_id: "1853",
+       department_code: "PHYS",
+       course_number: "170",
+       section:"M07",
+       course_title: "General Physics I",
+       capmus: "Manhattan Campus",
+       location: "16W",
+       room: "812",
+       term: "Spring 2019",
+       instructor: "Chad Andrade",
+       schedule: "4 17:30 19:20"
+     },
+     
+     PHYS170_M08:{
+       course_id: "2107",
+       department_code: "PHYS",
+       course_number: "170",
+       section:"M08",
+       course_title: "General Physics I",
+       capmus: "Manhattan Campus",
+       location: "16W",
+       room: "812",
+       term: "Spring 2019",
+       instructor: "Chad Andrade",
+       schedule: "5 09:00 10:50"
+     },
+     
+     PHYS180_M01:{
+       course_id: "2318",
+       department_code: "PHYS",
+       course_number: "180",
+       section:"M01",
+       course_title: "General Physics II",
+       capmus: "Manhattan Campus",
+       location: "GGC",
+       room: "401",
+       term: "Spring 2019",
+       instructor: "Bernard Fryshman",
+       schedule: "1 11:00 12:50 3 11:00 12:50"
+     },
+     
+     PHYS180_M02:{
+       course_id: "1841",
+       department_code: "PHYS",
+       course_number: "180",
+       section:"M02",
+       course_title: "General Physics II",
+       capmus: "Manhattan Campus",
+       location: "GGC 26W",
+       room: "401 312",
+       term: "Spring 2019",
+       instructor: "Sophia Domokos",
+       schedule: "1 17:30 20:10 3 17:30 20:10"
+     },
+     
+     PHYS180_M03:{
+       course_id: "1840",
+       department_code: "PHYS",
+       course_number: "180",
+       section:"M03",
+       course_title: "General Physics II",
+       capmus: "Manhattan Campus",
+       location: "16W 26W",
+       room: "722 401",
+       term: "Spring 2019",
+       instructor: "Kushal Shrestha",
+       schedule: "1 14:00 15:20 3 14:00 15:20"
+     },
+     
+     PHYS180_M04:{
+       course_id: "1842",
+       department_code: "PHYS",
+       course_number: "180",
+       section:"M04",
+       course_title: "General Physics II",
+       capmus: "Manhattan Campus",
+       location: "16W",
+       room: "812",
+       term: "Spring 2019",
+       instructor: "Chad Andrade",
+       schedule: "2 15:30 17:20"
+     },
+     
+     PHYS180_M05:{
+       course_id: "1843",
+       department_code: "PHYS",
+       course_number: "180",
+       section:"M05",
+       course_title: "General Physics II",
+       capmus: "Manhattan Campus",
+       location: "16W",
+       room: "812",
+       term: "Spring 2019",
+       instructor: "Chad Andrade",
+       schedule: "3 15:30 17:20"
+     },
+     
+     PHYS180_M06:{
+       course_id: "1844",
+       department_code: "PHYS",
+       course_number: "180",
+       section:"M06",
+       course_title: "General Physics II",
+       capmus: "Manhattan Campus",
+       location: "16W",
+       room: "812",
+       term: "Spring 2019",
+       instructor: "Chad Andrade",
+       schedule: "3 18:30 20:20"
+     },
+     
+     PHYS225_M01:{
+       course_id: "1845",
+       department_code: "PHYS",
+       course_number: "180",
+       section:"M01",
+       course_title: "General Physics II",
+       capmus: "Manhattan Campus",
+       location: "26W",
+       room: "313",
+       term: "Spring 2019",
+       instructor: "Roger Yu",
+       schedule: "3 17:30 20:10"
+     },
+     
+     
+     
+     
       
       
       MATH101_M01:{
