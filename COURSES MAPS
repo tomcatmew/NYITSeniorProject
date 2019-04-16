@@ -1,4 +1,93 @@
       ```
+      
+       PHYS115_M01:{
+       course_id: "1833",
+       department_code: "PHYS",
+       course_number: "115",
+       section:"M01",
+       course_title: "Humanity and the Physical Universe",
+       capmus: "Manhattan Campus",
+       location: "GGC",
+       room: "401",
+       term: "Spring 2019",
+       instructor: "Bernard Fryshman",
+       schedule: "1 14:00 15:20 3 14:00 15:20"
+     },
+      
+      
+      PHYS136_M01:{
+       course_id: "1834",
+       department_code: "PHYS",
+       course_number: "136",
+       section:"M01",
+       course_title: "Physics for the Modern Architect",
+       capmus: "Manhattan Campus",
+       location: "26W",
+       room: "207",
+       term: "Spring 2019",
+       instructor: "Roger Yu",
+       schedule: "1 12:30 14:00 3 12:35 14:45"
+     },
+     
+     PHYS150_M01:{
+       course_id: "1835",
+       department_code: "PHYS",
+       course_number: "150",
+       section:"M01",
+       course_title: "Introductory Physics II",
+       capmus: "Manhattan Campus",
+       location: "GGC",
+       room: "405",
+       term: "Spring 2019",
+       instructor: "Kushal Shrestha",
+       schedule: "5 12:30 15:15"
+     },
+     
+     PHYS150_M02:{
+       course_id: "1836",
+       department_code: "PHYS",
+       course_number: "150",
+       section:"M02",
+       course_title: "Introductory Physics II",
+       capmus: "Manhattan Campus",
+       location: "16W",
+       room: "812",
+       term: "Spring 2019",
+       instructor: "Chad Andrade",
+       schedule: "5 15:30 17:20"
+     },
+     
+     PHYS170_M01:{
+       course_id: "1837,
+       department_code: "PHYS",
+       course_number: "17",
+       section:"M02",
+       course_title: "General Physics I",
+       capmus: "Manhattan Campus",
+       location: "GGC",
+       room: "401",
+       term: "Spring 2019",
+       instructor: "Bernard Fryshman",
+       schedule: "1 09:00 10:50 3 09:00 10:50"
+     },
+     
+      
+      
+      MATH101_M01:{
+       course_id: "1815",
+       department_code: "MATH",
+       course_number: "101",
+       section:"M01",
+       course_title: "Developmental Mathematics I/II",
+       capmus: "Manhattan Campus",
+       location: "26W",
+       room: "314",
+       term: "Spring 2019",
+       instructor: "Marcus Johnson",
+       schedule: "1 12:30 13:55 3 12:30 13:55 5 12:30 13:55"
+     },
+      
+      
       MATH101_M01:{
        course_id: "1815",
        department_code: "MATH",
@@ -455,7 +544,7 @@
        course_title: "Computer Organization",
        capmus: "Manhattan Campus",
        location: "26W",
-       room: "11,
+       room: "11",
        term: "Spring 2019",
        instructor: "Nabi Sertac Artan",
        schedule: "2 15:30 16:50 4 15:30 16:50"
@@ -468,7 +557,7 @@
        course_title: "Computer Organization",
        capmus: "Manhattan Campus",
        location: "GGC",
-       room: "405
+       room: "405",
        term: "Spring 2019",
        instructor: "Steven Billis",
        schedule: "1 14:00 15:20 3 14:00 15:20"
@@ -482,7 +571,7 @@
        course_title: "Digital Logic Design Fundamentals ",
        capmus: "Manhattan Campus",
        location: "16W",
-       room: "723
+       room: "723",
        term: "Spring 2019",
        instructor: "Simon Ben-Avi",
        schedule: "5 17:30 20:10"
@@ -521,7 +610,7 @@
        course_title: "Computer Organization and Architecture",
        capmus: "Manhattan Campus",
        location: "16W",
-       room: "822
+       room: "822",
        term: "Spring 2019",
        instructor: "Maharshi Shah",
        schedule: "4 17:30 21:10"
@@ -589,7 +678,7 @@
        course_title: "Computer Programming II",
        capmus: "Manhattan Campus",
        location: "26W",
-       room: "11"
+       room: "11",
        term: "Spring 2019",
        instructor: "Felix Fischman",
        schedule: "2 17:30 20:10"
@@ -620,7 +709,7 @@
        course_title: "Operating System Security",
        capmus: "Manhattan Campus",
        location: "16W",
-       room: "624
+       room: "624",
        term: "Spring 2019",
        instructor: "Li",
        schedule: "5 09:30  12:10"
@@ -909,6 +998,7 @@
        location: "GGC",
        room: "624",
        term: "Spring 2019",
+       
        instructor: "Michael Kadri",
        schedule: "2 09:30 10:50 4 09:30 10:50"
       }
