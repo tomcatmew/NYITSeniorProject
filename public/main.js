@@ -107,7 +107,7 @@ function courseList(lista){
     var x = document.getElementById("course_select");
     var option = document.createElement("option");
     option.value = i;
-    option.text = lista[i][4] + "  "+ lista[i][2] + " " + lista[i][8];
+    option.text = lista[i][4] + "  "+ lista[i][2] + " " + lista[i][10];
     x.add(option,i);
   }
 }
@@ -121,7 +121,7 @@ function course_add(){
   if(snap.size < 6) // will return the collection size
   {
       global_count = 1;
-      addcoursefromdatabase(current_user_email,course_list_global[tempt][0],course_list_global[tempt][1],course_list_global[tempt][2],course_list_global[tempt][3],course_list_global[tempt][4],course_list_global[tempt][5],course_list_global[tempt][6],course_list_global[tempt][7],course_list_global[tempt][8]);
+      addcoursefromdatabase(current_user_email,course_list_global[tempt][0],course_list_global[tempt][1],course_list_global[tempt][2],course_list_global[tempt][3],course_list_global[tempt][4],course_list_global[tempt][5],course_list_global[tempt][6],course_list_global[tempt][7],course_list_global[tempt][8],course_list_global[tempt][9],course_list_global[tempt][10]);
   }
   else{
     alert("More than 6 courses are not allowed. ")
@@ -230,7 +230,7 @@ function alloutS()
   $('#titleSC').css("display", "none" );
   $('#floorselect').css("display", "none" );
   $('#floortitle').css("display", "none" );
-  
+
   $('#MAP16W').css("display", "none" );
   $('#MAP26W').css("display", "none" );
   mapclose();

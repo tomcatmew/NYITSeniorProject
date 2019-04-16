@@ -113,7 +113,7 @@ function addCourse(user){
 }
 
 
-function addcoursefromdatabase(user_mail,input_campus,input_id,input_number,input_Ttitle,input_code,input_prof,input_locat,input_schedule,input_terms){
+function addcoursefromdatabase(user_mail,input_campus,input_id,input_number,input_Ttitle,input_code,input_prof,input_locat,input_schedule,input_terms,input_room,input_section){
   var db = firebase.firestore();
   db.collection("user").doc(user_mail).collection("courses").add({
   course_id: input_id,
@@ -124,7 +124,9 @@ function addcoursefromdatabase(user_mail,input_campus,input_id,input_number,inpu
   location: input_locat,
   term: input_terms,
   instructor:input_prof,
-  schedule: input_schedule
+  schedule: input_schedule,
+  room: input_room,
+  section: input_section
 })
 .then(function() {
     console.log("course successfully written!");
@@ -153,6 +155,8 @@ function getDatabaseCourseInfo(){
             list_transfer.push(`${ref.location}`);
             list_transfer.push(`${ref.schedule}`);
             list_transfer.push(`${ref.term}`);
+            list_transfer.push(`${ref.room}`);
+            list_transfer.push(`${ref.section}`);
             list_transfer_final.push(list_transfer);
             });
             console.log("courses Database: ", list_transfer_final);
@@ -216,7 +220,7 @@ function getUserCourseMessageRealTime(usermail){
            for(var ind = 0; ind < course_list_global.length; ind ++)
            {
              if(course_list_global[ind][1] == value)
-                option.text = course_list_global[ind][4] + ' ' + course_list_global[ind][2];
+                option.text = course_list_global[ind][4] + ' ' + course_list_global[ind][2] + ' ' + course_list_global[ind][10];
            }
            x.add(option,value);
          }
