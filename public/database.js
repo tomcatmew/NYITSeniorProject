@@ -2,19 +2,22 @@
 //   var mydata = JSON.parse(data);
 //   return mydata[0].departmentCode + "&nbsp" +  mydata[0].courseNumber + "&nbsp" + mydata[0].courseTitle + "&nbsp" + mydata[0].term + "&nbsp" + mydata[0].location + "-----"+ mydata[0].time + mydata[0].credits + "<br /> Instructor:&nbsp" +  mydata[0].instructor ;
 // }
-var course_enrolled = [];
+var course_enrolled = new Set();
+var global_count = 1;
+
 
 
 function addMessageToDatable(email){
     var db = firebase.firestore();
     var message = document.getElementById("textbar").value;
     var d = new Date();
+    var g = Date.now();
     var tempt_id = $("#message_select").val();
   db.collection("message").add({
     user_email: email,
     course_id: tempt_id,
     message: message,
-    time: d
+    time: g
 })
 .then(function() {
     console.log("message successfully written!");
@@ -160,7 +163,6 @@ function getDatabaseCourseInfo(){
 
 function getUserInfoRealTime(user){
     var db = firebase.firestore();
-    var count = 1;
 
     var courseDetail = [];
 
@@ -175,17 +177,18 @@ function getUserInfoRealTime(user){
     .onSnapshot(function(querySnapshot) {
             var tempt = document.getElementById("course1-info");
             tempt.innerHTML = '';
+            global_count = 1;
        querySnapshot.forEach(function(doc) {
-            ref = doc.data();
+             ref = doc.data();
              courseDetail.push(ref.department_code,ref.course_number,ref.schedule);
              var x = document.getElementById("course1-info");
              var g = document.createElement('div');
-             g.innerHTML = "Course Info " + count + ": </br>"+ "Name: " + ref.department_code  + " " + ref.course_number + "</br>CourseID: " + ref.course_id  + "</br>Schedule: " + ref.schedule + "</br>" + "</br>";
-             g.setAttribute("id", "Div" + count);
+             g.innerHTML = "Course Info " + global_count + ": </br>"+ "Name: " + ref.department_code  + " " + ref.course_number + "</br>CourseID: " + ref.course_id  + "</br>Schedule: " + ref.schedule + "</br>" + "</br>";
+             g.setAttribute("id", "Div" + global_count);
              x.appendChild(g);
 
              // $("#course1-info").html("Course Info: </br>"+ "Name: " + ref.department_code  + " " + ref.course_number + "</br>Schedule: " + ref.schedule + "</br>");
-           count++;
+           global_count++;
        });
        // console.log("hhhhhhhh", courseDetail);
    });
@@ -194,22 +197,28 @@ function getUserInfoRealTime(user){
 function getUserCourseMessageRealTime(usermail){
   var db = firebase.firestore();
   var count = 1;
-
   // var course_enrolled = [];
 
   db.collection("user").doc(usermail).collection("courses")
   .onSnapshot(function(querySnapshot) {
-     querySnapshot.forEach(function(doc) {
+           var tt = document.getElementById("message_select");
+           tt.innerHTML = '';
+           course_enrolled.clear();
+     querySnapshot.forEach(function(doc)  {
            ref_tempt = doc.data();
-           course_enrolled.push(ref_tempt.course_id);
+           course_enrolled.add(ref_tempt.course_id);
          });
-         for(var i = 0 ; i < course_enrolled.length; i++)
+         for(let value of course_enrolled)
          {
            var x = document.getElementById("message_select");
            var option = document.createElement("option");
-           option.value = course_enrolled[i];
-           option.text = course_enrolled[i];
-           x.add(option,i);
+           option.value = value;
+           for(var ind = 0; ind < course_list_global.length; ind ++)
+           {
+             if(course_list_global[ind][1] == value)
+                option.text = course_list_global[ind][4] + ' ' + course_list_global[ind][2];
+           }
+           x.add(option,value);
          }
     console.log(course_enrolled);
   });
@@ -220,14 +229,14 @@ function getUserCourseMessageRealTime(usermail){
     tempt.innerHTML = '';
      querySnapshot.forEach(function(doc) {
            ref = doc.data();
-           if((course_enrolled.includes(ref.course_id))&&(ref.course_id == $("#message_select").val()))
-           {
-             var t =document.getElementById("message_info");
-             var z = document.createElement('div');
-             z.innerHTML = "Course ID : " + ref.course_id + "</br>" + "Message : " + ref.message + "</br>" + "From : " + ref.user_email + "</br>" + "</br>";
-             z.setAttribute("id","message" + count);
-             t.appendChild(z);
-           }
+               // if((course_enrolled.has(ref.course_id))&&(ref.course_id == $("#message_select").val()))
+               // {
+               //   var t =document.getElementById("message_info");
+               //   var z = document.createElement('div');
+               //   z.innerHTML = "Course ID : " + ref.course_id + "</br>" + "Message : " + ref.message + "</br>" + "From : " + ref.user_email + "</br>" + "Time :" + ref.time + "</br>" + "</br>";
+               //   z.setAttribute("id","message" + count);
+               //   t.appendChild(z);
+               // }
            count++;
      });
  });
@@ -251,6 +260,7 @@ function getUserCourseMessageRealTime(usermail){
    // });
 
 //end getUserInfoRealTime(user)
+
 
 function getUserCountAdmin(){
    var size = 0;

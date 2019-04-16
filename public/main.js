@@ -101,12 +101,13 @@ var course_list_global;
 
 function courseList(lista){
   course_list_global = lista;
+  lista.sort();
   for(var i = 0 ; i < lista.length; i++)
   {
     var x = document.getElementById("course_select");
     var option = document.createElement("option");
     option.value = i;
-    option.text = lista[i][4] + "  "+ lista[i][2];
+    option.text = lista[i][4] + "  "+ lista[i][2] + " " + lista[i][8];
     x.add(option,i);
   }
 }
@@ -114,54 +115,67 @@ function courseList(lista){
 
 function course_add(){
   var tempt = $("#course_select").val();
-  addcoursefromdatabase(current_user_email,course_list_global[tempt][0],course_list_global[tempt][1],course_list_global[tempt][2],course_list_global[tempt][3],course_list_global[tempt][4],course_list_global[tempt][5],course_list_global[tempt][6],course_list_global[tempt][7],course_list_global[tempt][8]);
+  var db = firebase.firestore();
+
+  db.collection('user').doc(current_user_email).collection('courses').get().then(snap => {
+  if(snap.size < 6) // will return the collection size
+  {
+      global_count = 1;
+      addcoursefromdatabase(current_user_email,course_list_global[tempt][0],course_list_global[tempt][1],course_list_global[tempt][2],course_list_global[tempt][3],course_list_global[tempt][4],course_list_global[tempt][5],course_list_global[tempt][6],course_list_global[tempt][7],course_list_global[tempt][8]);
+  }
+  else{
+    alert("More than 6 courses are not allowed. ")
+  }
+  });
+  // var tempt = $("#course_select").val();
+  // addcoursefromdatabase(current_user_email,course_list_global[tempt][0],course_list_global[tempt][1],course_list_global[tempt][2],course_list_global[tempt][3],course_list_global[tempt][4],course_list_global[tempt][5],course_list_global[tempt][6],course_list_global[tempt][7],course_list_global[tempt][8]);
 }
 
-
-function courseList_vue(lista){
-
-  var vm2 = new Vue({
-  el: '#test',
-  data: {
-    selected: lista[0],
-    options: [
-        { text: lista[0].split(" ")[0], value: 0 },
-        { text: lista[1], value: 1 },
-        { text: lista[2], value: 2 },
-        { text: lista[3], value: 3 },
-        { text: lista[4], value: lista[4] },
-        { text: lista[5], value: lista[5] },
-        { text: lista[6], value: lista[6] },
-        { text: lista[7], value: lista[7] },
-        { text: lista[8], value: lista[8] },
-        { text: lista[9], value: lista[9] },
-
-        { text: lista[10], value: lista[10] },
-        { text: lista[11], value: lista[11] },
-        { text: lista[12], value: lista[12] },
-        { text: lista[13], value: lista[13] },
-        { text: lista[14], value: lista[14] },
-        { text: lista[15], value: lista[15] },
-        { text: lista[16], value: lista[16] },
-        { text: lista[17], value: lista[17] },
-        { text: lista[18], value: lista[18] },
-        { text: lista[19], value: lista[19] },
-
-        { text: lista[20], value: lista[20] },
-        { text: lista[21], value: lista[21] },
-        { text: lista[22], value: lista[22] },
-        { text: lista[23], value: lista[23] },
-        { text: lista[24], value: lista[24] },
-        { text: lista[25], value: lista[25] },
-        { text: lista[26], value: lista[26] },
-        { text: lista[27], value: lista[27] },
-        { text: lista[28], value: lista[28] },
-        { text: lista[29], value: lista[29] }
-    ]
-  },
-})
-
-}
+// Not Using Below anymore
+// function courseList_vue(lista){
+//
+//   var vm2 = new Vue({
+//   el: '#test',
+//   data: {
+//     selected: lista[0],
+//     options: [
+//         { text: lista[0].split(" ")[0], value: 0 },
+//         { text: lista[1], value: 1 },
+//         { text: lista[2], value: 2 },
+//         { text: lista[3], value: 3 },
+//         { text: lista[4], value: lista[4] },
+//         { text: lista[5], value: lista[5] },
+//         { text: lista[6], value: lista[6] },
+//         { text: lista[7], value: lista[7] },
+//         { text: lista[8], value: lista[8] },
+//         { text: lista[9], value: lista[9] },
+//
+//         { text: lista[10], value: lista[10] },
+//         { text: lista[11], value: lista[11] },
+//         { text: lista[12], value: lista[12] },
+//         { text: lista[13], value: lista[13] },
+//         { text: lista[14], value: lista[14] },
+//         { text: lista[15], value: lista[15] },
+//         { text: lista[16], value: lista[16] },
+//         { text: lista[17], value: lista[17] },
+//         { text: lista[18], value: lista[18] },
+//         { text: lista[19], value: lista[19] },
+//
+//         { text: lista[20], value: lista[20] },
+//         { text: lista[21], value: lista[21] },
+//         { text: lista[22], value: lista[22] },
+//         { text: lista[23], value: lista[23] },
+//         { text: lista[24], value: lista[24] },
+//         { text: lista[25], value: lista[25] },
+//         { text: lista[26], value: lista[26] },
+//         { text: lista[27], value: lista[27] },
+//         { text: lista[28], value: lista[28] },
+//         { text: lista[29], value: lista[29] }
+//     ]
+//   },
+// })
+//
+// }
 
 
 
@@ -188,6 +202,12 @@ function goback()
       $('#message_section').css("display","none");
         current = 0;
     }
+    else if (current ==3)
+    {
+      $('#map').fadeIn();
+      $('#book_room').css("display","none");
+      current = 0;
+    }
     else if(current == 5)
     {
       $('#accountinfo').css("display", "none" );
@@ -208,7 +228,9 @@ function alloutS()
   $('#titleSA').css("display", "none" );
   $('#titleSB').css("display", "none" );
   $('#titleSC').css("display", "none" );
-
+  $('#floorselect').css("display", "none" );
+  $('#floortitle').css("display", "none" );
+  
   $('#MAP16W').css("display", "none" );
   $('#MAP26W').css("display", "none" );
   mapclose();
@@ -305,6 +327,9 @@ function showacc()
   }
   else if(current == 2){
     $('#message_section').css("display","none");
+  }
+  else if(current == 3){
+    $('#book_room').css("display","none");
   }
   $('#accountinfo').css("display", "block" );
   $('#map').css("display", "none" );

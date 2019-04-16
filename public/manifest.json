@@ -1,9 +1,9 @@
 {
-  "short_name": "NYIT AR",
-  "name": "NYIT Around",
+  "short_name": "NYIT CTT",
+  "name": "NYIT ClassTime Table",
   "icons": [
     {
-      "src": "AVAS1.jpg",
+      "src": "newicon.jpg",
       "type": "image/jpg",
       "sizes": "626x626"
     }
