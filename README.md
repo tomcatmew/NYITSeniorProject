@@ -1,4 +1,14 @@
-# https://developer.mozilla.org/en-US/docs/Web/API/Element/scrollIntoView
+# Time Converter
+
+```
+function timeConverterMinute(timeString){
+        var time = timeString.split(":");
+        var minutes = parseInt(time[0]) * 60 + parseInt(time[1]);
+        return minutes;
+}
+
+```
+
 # &#x1F534;Database Format&#x1F534;
 
 
