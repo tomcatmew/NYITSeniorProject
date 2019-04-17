@@ -98,9 +98,10 @@ var course_list_global;
 //   $('#coursetest').html(position);
 
 
-
 function courseList(lista){
   course_list_global = lista;
+  console.log("course_list_global : ");
+  console.log(course_list_global);
   lista.sort();
   for(var i = 0 ; i < lista.length; i++)
   {
@@ -129,6 +130,47 @@ function course_add(){
   });
   // var tempt = $("#course_select").val();
   // addcoursefromdatabase(current_user_email,course_list_global[tempt][0],course_list_global[tempt][1],course_list_global[tempt][2],course_list_global[tempt][3],course_list_global[tempt][4],course_list_global[tempt][5],course_list_global[tempt][6],course_list_global[tempt][7],course_list_global[tempt][8]);
+}
+
+function check_if_in_class(){
+  var d = new Date();
+  var z = d.getHours();
+  var n = d.getMinutes();
+  var current_min = z*60 + n;
+  console.log("type of array :");
+  console.log(typeof course_list_global);
+  for(var i = 0; i < course_list_global.length; i++)
+  {
+      var tempt1 = course_list_global[i][7].split(" ")[1];
+      var tempt2 = course_list_global[i][7].split(" ")[2];
+      var start_time = timeConverterMinute(tempt1);
+      var end_time = timeConverterMinute(tempt2);
+      if((start_time < current_min)&&(current_min < end_time))
+      {
+        console.log("Time is in between :");
+        console.log(start_time);
+        console.log(current_min);
+        console.log(end_time);
+        var x = document.getElementById("class_take");
+        var g = document.createElement('div');
+        g.innerHTML = course_list_global[i][4] + " " + course_list_global[i][2] +  " " + course_list_global[i][10] + " is in class";
+        x.appendChild(g);
+      }
+
+  }
+}
+
+function timeConverterMinute(timeString){
+    if(!timeString instanceof String)
+        throw new Error("Input is not string");
+try{
+    var time = timeString.split(":");
+    var minutes = parseInt(time[0]) * 60 + parseInt(time[1]);
+}
+catch(e){
+    console.log(e.message);
+}
+  return minutes
 }
 
 // Not Using Below anymore
@@ -254,18 +296,21 @@ function b1_trigger(number)
     $('#titleSC').css("display", "block" );
     $('#centerMAP4').css("display", "block" );
     $('#floorselect').css("display", "block" );
+    $('#accountinfo').css("display","none");
     allout();
   }
   else if(number == 1)
   {
     $('#titleSB').css("display", "block" );
     $('#MAP26W').css("display", "block" );
+    $('#accountinfo').css("display","none");
     allout();
   }
   else if(number == 2)
   {
     $('#titleSA').css("display", "block" );
     $('#MAP16W').css("display", "block" );
+    $('#accountinfo').css("display","none");
     allout();
   }
 }

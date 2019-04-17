@@ -21,7 +21,11 @@ input, label, textarea, ul, li, label
 
 *
 {
-	-webkit-user-select: none;
+	-webkit-user-select:auto;
+	user-select:auto;
+	-o-user-select:auto;
+	-ms-user-select:auto;
+	/* -webkit-user-select: none; */
 }
 /*  */
 
