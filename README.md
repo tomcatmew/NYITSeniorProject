@@ -6,8 +6,8 @@ function timeConverterMinute(timeString){
     throw new Error("Input is not string");
 }
 try{
-   var time = timeString.split(":");
-   var minutes = parseInt(time[0]) * 60 + parseInt(time[1]);
+    var time = timeString.split(":");
+    var minutes = parseInt(time[0]) * 60 + parseInt(time[1]);
 }
 catch(e){
     console.log(e.message);
