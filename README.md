@@ -2,9 +2,17 @@
 
 ```
 function timeConverterMinute(timeString){
-        const time = timeString.split(":");
-        const minutes = parseInt(time[0]) * 60 + parseInt(time[1]);
-        return minutes;
+    if(!timeString instanceof String){
+    throw new Error("Input is not string");
+}
+try{
+   var time = timeString.split(":");
+   var minutes = parseInt(time[0]) * 60 + parseInt(time[1]);
+}
+catch(e){
+    console.log(e.message);
+}
+  return minutes
 }
 
 ```
