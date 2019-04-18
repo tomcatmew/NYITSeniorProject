@@ -59,11 +59,13 @@ z-index: 400;
 	left:40px;
 	width:50px;
 	height:50px;
-	border: 1px solid black;
-	font-weight:normal;
+	background-image:url('metal.jpg');
+	border: 3px solid black;
+	border-radius: 50%;
+	text-align: center;
 	font-size:40px;
 	text-align: center;
-	color:#f44242;
+	color: #e39c03;
 	z-index: 400;
 
 }
@@ -73,11 +75,13 @@ z-index: 400;
 	left:110px;
 	width:50px;
 	height:50px;
-	border: 1px solid black;
+	background-image:url('metal.jpg');
+	border-radius: 50%;
+	border: 3px solid black;
 	font-weight:normal;
 	font-size:40px;
 	text-align: center;
-	color:#000000;
+	color: #000000;
 	z-index: 400;
 
 }
@@ -87,11 +91,13 @@ z-index: 400;
 	left:180px;
 	width:50px;
 	height:50px;
-	border: 1px solid black;
+	background-image:url('metal.jpg');
+	border-radius: 50%;
+	border: 3px solid black;
 	font-weight:normal;
 	font-size:40px;
 	text-align: center;
-	color:#000000;
+	color: #000000;
 	z-index: 400;
 
 }
