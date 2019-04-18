@@ -392,7 +392,7 @@ function eggcfloorc4()
   $('#centerMAP4').css("display", "block" );
   $('#centerMAP6').css("display", "none" );
   $('#centerMAP8').css("display", "none" );
-  $('#eggc4').css("color", "#f44242" );
+  $('#eggc4').css("color", "#e39c03" );
   $('#eggc6').css("color", "#000000" );
   $('#eggc8').css("color", "#000000" );
 }
@@ -402,7 +402,7 @@ function eggcfloorc6()
   $('#centerMAP6').css("display", "block" );
   $('#centerMAP8').css("display", "none" );
   $('#eggc4').css("color", "#000000" );
-  $('#eggc6').css("color", "#f44242" );
+  $('#eggc6').css("color", "#e39c03" );
   $('#eggc8').css("color", "#000000" );
 }
 function eggcfloorc8()
@@ -412,7 +412,7 @@ function eggcfloorc8()
   $('#centerMAP8').css("display", "block" );
   $('#eggc4').css("color", "#000000" );
   $('#eggc6').css("color", "#000000" );
-  $('#eggc8').css("color", "#f44242" );
+  $('#eggc8').css("color", "#e39c03" );
 }
 $(document).ready(function () {
 });
