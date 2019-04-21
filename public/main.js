@@ -1,27 +1,10 @@
-fetch('examples/example.json')
-.then(function(response) {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  // Read the response as json.
-  return response.json();
-})
-.then(function(responseAsJson) {
-  // Do stuff with the JSON
-  console.log(responseAsJson);
-})
-.catch(function(error) {
-  console.log('Looks like there was a problem: \n', error);
-});
-
-
-
-
 var current = 0;
 
 var current_user_email;
 
 var course_list_global;
+
+var user_name;
 
 // function displayf5()
 // {
@@ -392,7 +375,7 @@ function eggcfloorc4()
   $('#centerMAP4').css("display", "block" );
   $('#centerMAP6').css("display", "none" );
   $('#centerMAP8').css("display", "none" );
-  $('#eggc4').css("color", "#e39c03" );
+  $('#eggc4').css("color", "#f44242" );
   $('#eggc6').css("color", "#000000" );
   $('#eggc8').css("color", "#000000" );
 }
@@ -402,7 +385,7 @@ function eggcfloorc6()
   $('#centerMAP6').css("display", "block" );
   $('#centerMAP8').css("display", "none" );
   $('#eggc4').css("color", "#000000" );
-  $('#eggc6').css("color", "#e39c03" );
+  $('#eggc6').css("color", "#f44242" );
   $('#eggc8').css("color", "#000000" );
 }
 function eggcfloorc8()
@@ -412,7 +395,7 @@ function eggcfloorc8()
   $('#centerMAP8').css("display", "block" );
   $('#eggc4').css("color", "#000000" );
   $('#eggc6').css("color", "#000000" );
-  $('#eggc8').css("color", "#e39c03" );
+  $('#eggc8').css("color", "#f44242" );
 }
 $(document).ready(function () {
 });

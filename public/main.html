@@ -2794,10 +2794,12 @@
   </div>
 
   <script>
+    var db = firebase.firestore();
+
     var selectElement = document.getElementById("message_select");
     selectElement.addEventListener('change',  function() {
       var count  = 0;
-      var db = firebase.firestore();
+
       db.collection("message")
       .onSnapshot(function(querySnapshot) {
         var tempt = document.getElementById("message_info");
@@ -2806,10 +2808,14 @@
                ref = doc.data();
                if((course_enrolled.has(ref.course_id))&&(ref.course_id == $("#message_select").val()))
                {
+
                  let formated_time = new Date(ref.time);
                  var t =document.getElementById("message_info");
                  var z = document.createElement('div');
-                 z.innerHTML = "Course ID : " + ref.course_id + "</br>" + "Message : " + ref.message + "</br>" + "From : " + ref.user_email + "</br>" + "Time : " +  formated_time + "</br>" + "</br>";
+
+                 // z.innerHTML = "Course ID : " + ref.course_id + "</br>" + "Message : " + ref.message + "</br>" + "From : " + ref.user_email + "</br>" + "Time : " +  formated_time + "</br>" + "</br>";
+                 z.innerHTML = "Course ID : " + ref.course_id + "</br>" + user_name + " : "  + ref.message + "</br>" + "Time : " +  formated_time + "</br>" + "</br>";
+
                  z.setAttribute("id","message" + count);
                  t.appendChild(z);
                }
@@ -2863,25 +2869,9 @@
   </script>
 
   <!-- service worker -->
-  <script>
-  self.addEventListener('fetch', function(event) {
-  event.respondWith(fetch(event.request));
-});
 
-  if ('serviceWorker' in navigator) {
-    console.log("Will the service worker register?");
-    navigator.serviceWorker.register('service-worker.js')
-      .then(function(reg){
-        console.log("Yes, it did.");
-      }).catch(function(err) {
-        console.log("No it didn't. This happened: ", err)
-      });
-  }
-</script>
 
-<script>
 
-</script>
 
 <!-- <script>
 document.addEventListener('touchmove', function(e) {

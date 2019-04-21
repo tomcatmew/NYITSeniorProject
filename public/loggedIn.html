@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 
 <html lang = "en">
 <head>
@@ -12,7 +12,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.8.4/firebase.js"></script>
 
     <script>
-      // Initialize Firebase
+
       var config = {
         apiKey: "AIzaSyB316tHcgb4-v6x45uxdufvPshLehallcI",
         authDomain: "delta-chess-735.firebaseapp.com",
@@ -35,35 +35,24 @@
 <body>
 
 
-  <!-- A simple example script to add text to the page that displays the user's Display Name and Email -->
+
   <script>
-  // Track the UID of the current user.
+
 
   var currentUid = null;
 
 
   firebase.auth().onAuthStateChanged(function(user) {
-   // onAuthStateChanged listener triggers every time the user ID token changes.
-   // This could happen when a new user signs in or signs out.
-   // It could also happen when the current user ID token expires and is refreshed.
    if (user && user.uid != currentUid) {
-    // Update the UI when a new user signs in.
-    // Otherwise ignore if this is a token refresh.
-    // Update the current user UID.
     currentUid = user.uid;
 
 
     var mydata = JSON.parse(data);
-    //document.body.innerHTML = '<h1> Hello ' + user.displayName + ' </h1> <h2> Your email address is: ' + user.email + ' <h/2> <h4> 1:' + load() + '</h4>';
 
-    saveUserInfo(user); //   save data!!
-    //getUserInfo(user)
-    //getUserInfoRealTime(user);
+    saveUserInfo(user);
     addCourse(user);
     getUserInfoRealTime(user);
-    //coursesDatabase();
    } else {
-    // Sign out operation. Reset the current user UID.
     currentUid = null;
     console.log("no user signed in");
    }
@@ -77,11 +66,7 @@
   <h1 id = "course1-info"> </h1>
   <h1 id = "course2-info"> </h1>
 
-  <!-- <ul id = "course-list">
 
-    <li id =>  </li>
-
-  </ul> -->
 
 
 
@@ -91,4 +76,4 @@
 
 </body>
 
-</html>
+</html> -->

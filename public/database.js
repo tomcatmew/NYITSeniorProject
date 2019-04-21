@@ -170,10 +170,13 @@ function getUserInfoRealTime(user){
 
     var courseDetail = [];
 
+
+
     db.collection("user").doc(user.email).collection("account").doc("userInfo")
     .onSnapshot(function(doc) {
           var userRef = doc.data();
           console.log("Current data: ", doc.data());
+          user_name = userRef.name;
           document.getElementById("user-info").innerHTML = "User Info: </br>"+ "Name: " + userRef.name  + "</br>Email: " + userRef.email + "</br>UID: " + userRef.uid + "</br>";
       });
 

@@ -1,0 +1,14 @@
+"icons": [
+  {
+    "src": "newicon.jpg",
+    "type": "image/jpg",
+    "sizes": "626x626"
+  }
+],
+"start_url": "index.html",
+"background_color": "#3367D6",
+"display": "standalone",
+"scope": "/",
+"theme_color": "#3367D6",
+"prefer_related_applications": false,
+"orientation" : "portrait"
