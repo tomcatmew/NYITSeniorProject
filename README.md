@@ -1,3 +1,8 @@
+# database.js  
+```
+sort by course_number
+line 182 change to -> db.collection("user").doc(user.email).collection("courses").orderBy("course_number","asc")
+```
 # Message Time Format:
 ```                                                            
 
