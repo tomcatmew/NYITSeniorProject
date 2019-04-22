@@ -1,3 +1,38 @@
+# Schedule Format:
+
+function getDayName(dayNumber) {
+    // 0 -> Sun, 1 -> Mon
+    switch (dayNumber) {
+        case 0:  dayName = "Sun"; break;
+        case 1:  dayName = "Mon"; break;
+        case 2:  dayName = "Tue"; break;
+        case 3:  dayName = "Wed"; break;
+        case 4:  dayName = "Thu"; break;
+        case 5:  dayName = "Fri"; break;
+        case 6:  dayName = "Sat"; break;
+        default: return "Error";
+    }
+     return dayName;
+}
+function scheduleFormat(schedule){
+    //from: 16W 723 1 9:30 10:50 16W 723 2 9:30 10:50
+    //to: 16W Room723 Mon 9:30-10:50,16W Room723 Tue 9:30-10:50
+    const sa = schedule.split(" ");
+    const loopTime = sa.length / 5;
+    let i = 0;
+    let dayIndex = 2;
+    let tempString = "";
+    while(i < loopTime){
+        tempString += `${sa[0]} Room${sa[1]} ${getDayName(parseInt(sa[dayIndex]))} ${sa[3]}-${sa[4]},`;
+        i++;
+        dayIndex += 5;
+    }
+    const finalString = tempString.replace(/.$/,".");
+    return finalString;
+}
+
+
+
 # Time Converter
 
 ```
