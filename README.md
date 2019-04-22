@@ -1,5 +1,5 @@
 # Schedule Format:
-
+```
 function getDayName(dayNumber) {
     // 0 -> Sun, 1 -> Mon
     switch (dayNumber) {
@@ -30,7 +30,7 @@ function scheduleFormat(schedule){
     const finalString = tempString.replace(/.$/,".");
     return finalString;
 }
-
+```
 
 
 # Time Converter
