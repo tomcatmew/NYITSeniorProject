@@ -51,39 +51,6 @@ catch(e){
 
 ```
 
-# &#x1F534;Database Format&#x1F534;
-
-
-
-```
-CSCI445_M02:{ 
-        course_id: "2449",
-        department_code: "CSCI",
-        course_number: "445",
-        section:"M01",  //MUST CONTAIN SECTION
-        course_title: "Operating System Security",
-        capmus: "Manhattan Campus",
-        location: "16W",  // 16W  NOT 16w , no space at the end
-        room: "624",
-        term: "Spring 2019",
-        instructor: "Li",
-        time: "5 09:30 12:10"  //1 space only, !16W
-      },
-CSCI380_M01D:{ 
-        course_id: "1906",
-        department_code: "CSCI",
-        course_number: "380",
-        section:"M01D", //missing comma
-        course_title: "Introduction to Software Engineering",
-        capmus: "Manhattan Campus",
-        location: "GGC,", //GGC NOT ggc
-        room: "702 702",
-        term: "Spring 2019",
-        instructor: " Maherukh Akhtar",
-        time: "1 12:30 13:50 3 12:30 13:50"
-      }
-```
-
 # ======================================>
 
 # Day in number to date string 0 -> Sunday, 1 -> Monday
