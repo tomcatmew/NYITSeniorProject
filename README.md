@@ -35,8 +35,7 @@ function messageTimeFormat(timeInSecond){
         monthString = month;
     
     
-    let finalString = `(${monthString}/${dateString}/${year} ${hourString}:${minuteString})`;
-    return finalString;
+    return `(${monthString}/${dateString}/${year} ${hourString}:${minuteString})`;
 }
 
 ```
