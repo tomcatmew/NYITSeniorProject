@@ -1,3 +1,47 @@
+# Message Format:
+```                                                            
+
+function messageTimeFormat(timeInSecond){
+    //from: 1234567891000
+    //to: (02/13/2009 18:31)
+    let formated_time = new Date(timeInSecond);
+
+    const month = parseInt(formated_time.getMonth() + 1);
+    const date = parseInt(formated_time.getDate());
+    const year = parseInt(formated_time.getFullYear());
+    const hour = parseInt(formated_time.getHours());
+    const minute = parseInt(formated_time.getMinutes())
+    
+    let monthString,hourString,dateString,minuteString;
+
+    if(date < 10)
+        dateString =  "0" + date;
+    else
+        dateString = date;
+
+    if(hour < 10)
+        hourString = "0"+ hour;
+    else
+        hourString = hour;
+
+    if(minute < 10)
+        minuteString = "0"+ minute;
+    else
+        minuteString = minute;
+
+    if(month < 10)
+        monthString = "0" + month;
+    else
+        monthString = month;
+    
+    
+    let finalString = `(${monthString}/${dateString}/${year} ${hourString}:${minuteString})`;
+    return finalString;
+}
+
+```
+
+
 # Schedule Format:
 ```
 function getDayName(dayNumber) {
@@ -71,6 +115,7 @@ function getDayName(dateString) {
         default: return "Error";
     }
      return dayName;
+     }
 
 ```
 
