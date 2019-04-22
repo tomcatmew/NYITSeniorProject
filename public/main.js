@@ -80,12 +80,16 @@ var user_name;
 //
 //   $('#coursetest').html(position);
 
+var second_list = [];
 
 function courseList(lista){
   course_list_global = lista;
   console.log("course_list_global : ");
-  console.log(course_list_global);
+  console.log(typeof course_list_global);
+  console.log(course_list_global.length);
+  console.log(typeof lista);
   lista.sort();
+  console.log(lista.length);
   for(var i = 0 ; i < lista.length; i++)
   {
     var x = document.getElementById("course_select");
@@ -96,52 +100,48 @@ function courseList(lista){
   }
 }
 
-
 function course_add(){
-  var tempt = $("#course_select").val();
+  var tempt = document.getElementById("course_select");
+  var tempt_value = tempt.value;
+  var tempt_text = tempt.options[tempt_value].text;
   var db = firebase.firestore();
 
   db.collection('user').doc(current_user_email).collection('courses').get().then(snap => {
   if(snap.size < 6) // will return the collection size
   {
-      global_count = 1;
-      addcoursefromdatabase(current_user_email,course_list_global[tempt][0],course_list_global[tempt][1],course_list_global[tempt][2],course_list_global[tempt][3],course_list_global[tempt][4],course_list_global[tempt][5],course_list_global[tempt][6],course_list_global[tempt][7],course_list_global[tempt][8],course_list_global[tempt][9],course_list_global[tempt][10]);
+    global_count = 1;
+    let action = confirm("Do you really want to add " + tempt_text);
+    if(action == true){
+      addcoursefromdatabase(current_user_email,course_list_global[tempt_value][0],course_list_global[tempt_value][1],course_list_global[tempt_value][2],course_list_global[tempt_value][3],course_list_global[tempt_value][4],course_list_global[tempt_value][5],course_list_global[tempt_value][6],course_list_global[tempt_value][7],course_list_global[tempt_value][8],course_list_global[tempt_value][9],course_list_global[tempt_value][10]);
+      alert("You have successfully added " + tempt_text);
+    }else{
+      console.log("cancel course");
+    }
   }
   else{
-    alert("More than 6 courses are not allowed. ")
+    alert("More than 6 courses are not allowed. ");
   }
-  });
-  // var tempt = $("#course_select").val();
-  // addcoursefromdatabase(current_user_email,course_list_global[tempt][0],course_list_global[tempt][1],course_list_global[tempt][2],course_list_global[tempt][3],course_list_global[tempt][4],course_list_global[tempt][5],course_list_global[tempt][6],course_list_global[tempt][7],course_list_global[tempt][8]);
-}
 
-function check_if_in_class(){
-  var d = new Date();
-  var z = d.getHours();
-  var n = d.getMinutes();
-  var current_min = z*60 + n;
-  console.log("type of array :");
-  console.log(typeof course_list_global);
-  for(var i = 0; i < course_list_global.length; i++)
-  {
-      var tempt1 = course_list_global[i][7].split(" ")[1];
-      var tempt2 = course_list_global[i][7].split(" ")[2];
-      var start_time = timeConverterMinute(tempt1);
-      var end_time = timeConverterMinute(tempt2);
-      if((start_time < current_min)&&(current_min < end_time))
-      {
-        console.log("Time is in between :");
-        console.log(start_time);
-        console.log(current_min);
-        console.log(end_time);
-        var x = document.getElementById("class_take");
-        var g = document.createElement('div');
-        g.innerHTML = course_list_global[i][4] + " " + course_list_global[i][2] +  " " + course_list_global[i][10] + " is in class";
-        x.appendChild(g);
-      }
+});
 
-  }
+
 }
+// function course_add(){
+//   var tempt = $("#course_select").val();
+//   var db = firebase.firestore();
+//
+//   db.collection('user').doc(current_user_email).collection('courses').get().then(snap => {
+//   if(snap.size < 6) // will return the collection size
+//   {
+//       global_count = 1;
+//       addcoursefromdatabase(current_user_email,course_list_global[tempt][0],course_list_global[tempt][1],course_list_global[tempt][2],course_list_global[tempt][3],course_list_global[tempt][4],course_list_global[tempt][5],course_list_global[tempt][6],course_list_global[tempt][7],course_list_global[tempt][8],course_list_global[tempt][9],course_list_global[tempt][10]);
+//   }
+//   else{
+//     alert("More than 6 courses are not allowed. ")
+//   }
+//   });
+// }
+
 
 function timeConverterMinute(timeString){
     if(!timeString instanceof String)
@@ -217,6 +217,7 @@ function goback()
       $('#textbox').fadeOut();
       $('#floortitle').fadeOut();
       $('#floorselect').fadeOut();
+      $('#floorselect16').fadeOut();
       // turnoff_f(0);
       alloutS();
       current = 0;
@@ -254,9 +255,11 @@ function alloutS()
   $('#titleSB').css("display", "none" );
   $('#titleSC').css("display", "none" );
   $('#floorselect').css("display", "none" );
+  $('#floorselect16').css("display", "none" );
   $('#floortitle').css("display", "none" );
 
-  $('#MAP16W').css("display", "none" );
+  $('#MAP16W_7').css("display", "none" );
+  $('#MAP16W_8').css("display", "none" );
   $('#MAP26W').css("display", "none" );
   mapclose();
 }
@@ -279,20 +282,23 @@ function b1_trigger(number)
     $('#titleSC').css("display", "block" );
     $('#centerMAP4').css("display", "block" );
     $('#floorselect').css("display", "block" );
+    eggcfloorc4();
     $('#accountinfo').css("display","none");
     allout();
   }
   else if(number == 1)
   {
     $('#titleSB').css("display", "block" );
-    $('#MAP26W').css("display", "block" );
+    $('#floorselect16').css("display", "block" );
+    f_select_16_7();
+    $('#MAP16W_7').css("display", "block" );
     $('#accountinfo').css("display","none");
     allout();
   }
   else if(number == 2)
   {
     $('#titleSA').css("display", "block" );
-    $('#MAP16W').css("display", "block" );
+    $('#MAP26W').css("display", "block" );
     $('#accountinfo').css("display","none");
     allout();
   }
@@ -351,6 +357,7 @@ function showacc()
     $('#textbox').css("display", "none" );
     $('#floortitle').css("display", "none" );
     $('#floorselect').css("display","none");
+    $('#floorselect16').css("display","none");
     alloutS();
   }
   else if(current == 2){
@@ -368,34 +375,67 @@ function mapclose()
 {
   $('#centerMAP4').css("display", "none" );
   $('#centerMAP6').css("display", "none" );
+  $('#centerMAP7').css("display", "none" );
   $('#centerMAP8').css("display", "none" );
 }
 function eggcfloorc4()
 {
   $('#centerMAP4').css("display", "block" );
   $('#centerMAP6').css("display", "none" );
+  $('#centerMAP7').css("display", "none" );
   $('#centerMAP8').css("display", "none" );
   $('#eggc4').css("color", "#f44242" );
   $('#eggc6').css("color", "#000000" );
+  $('#eggc7').css("color", "#000000" );
   $('#eggc8').css("color", "#000000" );
 }
 function eggcfloorc6()
 {
   $('#centerMAP4').css("display", "none" );
   $('#centerMAP6').css("display", "block" );
+  $('#centerMAP7').css("display", "none" );
   $('#centerMAP8').css("display", "none" );
   $('#eggc4').css("color", "#000000" );
   $('#eggc6').css("color", "#f44242" );
+  $('#eggc7').css("color", "#000000" );
+  $('#eggc8').css("color", "#000000" );
+}
+function eggcfloorc7()
+{
+  $('#centerMAP4').css("display", "none" );
+  $('#centerMAP6').css("display", "none" );
+  $('#centerMAP7').css("display", "block" );
+  $('#centerMAP8').css("display", "none" );
+  $('#eggc4').css("color", "#000000" );
+  $('#eggc6').css("color", "#000000" );
+  $('#eggc7').css("color", "#f44242" );
   $('#eggc8').css("color", "#000000" );
 }
 function eggcfloorc8()
 {
   $('#centerMAP4').css("display", "none" );
   $('#centerMAP6').css("display", "none" );
+  $('#centerMAP7').css("display", "none" );
   $('#centerMAP8').css("display", "block" );
   $('#eggc4').css("color", "#000000" );
   $('#eggc6').css("color", "#000000" );
+  $('#eggc7').css("color", "#000000" );
   $('#eggc8').css("color", "#f44242" );
 }
+function f_select_16_7()
+{
+  $('#MAP16W_8').css("display", "none" );
+  $('#MAP16W_7').css("display", "block" );
+  $('#ft16_8').css("color", "#000000" );
+  $('#ft16_7').css("color", "#f44242" );
+}
+function f_select_16_8()
+{
+  $('#MAP16W_7').css("display", "none" );
+  $('#MAP16W_8').css("display", "block" );
+  $('#ft16_7').css("color", "#000000" );
+  $('#ft16_8').css("color", "#f44242" );
+}
+
 $(document).ready(function () {
 });

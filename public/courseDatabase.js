@@ -13,7 +13,7 @@ function courseArrayInfo(){
       room: "314",
       term: "Spring 2019",
       instructor: "Marcus Johnson",
-      schedule: "1 12:30 13:55 3 12:30 13:55  5 12:30 13:55"
+      schedule: "1 12:30 13:55 3 12:30 13:55 5 12:30 13:55"
     },
 
     MATH115_M01:{
@@ -250,7 +250,7 @@ function courseArrayInfo(){
       room: "207 313",
       term: "Spring 2019",
       instructor: "Klara Lagrance",
-      schedule: " 2 17:30 19:45 4 17:30 19:45"
+      schedule: "2 17:30 19:45 4 17:30 19:45"
     },
 
     MATH180_M03:{
@@ -612,9 +612,6 @@ function courseArrayInfo(){
       schedule: "1 9:30 10:50 2 9:30 10:50"
     },
 
-
-
-
     CSCI445_M02:{
       course_id: "2449",
       department_code: "CSCI",
@@ -626,7 +623,7 @@ function courseArrayInfo(){
       room: "624",
       term: "Spring 2019",
       instructor: "Li",
-      schedule: "5 09:30  12:10"
+      schedule: "5 09:30 12:10"
     },
 
 
@@ -641,7 +638,7 @@ function courseArrayInfo(){
       room: "723",
       term: "Spring 2019",
       instructor: "Qian Wang",
-      schedule: "2 17:45  20:25"
+      schedule: "2 17:45 20:25"
     },
 
    CSCI415_M01:{
@@ -683,7 +680,7 @@ function courseArrayInfo(){
       room: "702",
       term: "Spring 2019",
       instructor: " Maherukh Akhtar",
-      schedule: "1 12:30 13:50 3 12:30 13:50 "
+      schedule: "1 12:30 13:50 3 12:30 13:50"
     },
 
 
@@ -699,7 +696,7 @@ function courseArrayInfo(){
       room: "624",
       term: "Spring 2019",
       instructor: " Michael Nizich",
-      schedule: "2 20:35 23:15 "
+      schedule: "2 20:35 23:15"
     },
 
    CSCI357_M01:{
@@ -814,7 +811,7 @@ function courseArrayInfo(){
       room: "624",
       term: "Spring 2019",
       instructor: " Wenjia Li",
-      schedule: "2 14:00 15:20 4 14:00 15:20 "
+      schedule: "2 14:00 15:20 4 14:00 15:20"
     },
    CSCI312_M01:{
       course_id: "1899",
@@ -879,7 +876,7 @@ function courseArrayInfo(){
       room: "723",
       term: "Spring 2019",
       instructor: "Huanying Gu",
-      schedule: "1 14:00 15:20 3 14:00 15:20 "
+      schedule: "1 14:00 15:20 3 14:00 15:20"
     },
    CSCI260_M03:{
       course_id: "2447",

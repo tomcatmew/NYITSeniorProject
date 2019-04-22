@@ -136,9 +136,8 @@ function addcoursefromdatabase(user_mail,input_campus,input_id,input_number,inpu
 });
 }
 
-var list_transfer_final = [];
-
 function getDatabaseCourseInfo(){
+    var list_transfer_final = [];
     var db = firebase.firestore();
       db.collection("courseDatabase").where("course_number", ">=", "100")
       .onSnapshot(function(querySnapshot) {
@@ -162,7 +161,7 @@ function getDatabaseCourseInfo(){
             console.log("courses Database: ", list_transfer_final);
             courseList(list_transfer_final);
         });
-    }
+}
 
 
 function getUserInfoRealTime(user){
@@ -199,6 +198,44 @@ function getUserInfoRealTime(user){
        });
        // console.log("hhhhhhhh", courseDetail);
    });
+}
+
+function check_if_in_class(usermail){
+  var db = firebase.firestore();
+  db.collection("user").doc(usermail).collection("courses")
+  .onSnapshot(function(querySnapshot) {
+    var d = new Date();
+    var z = d.getHours();
+    var n = d.getMinutes();
+    var current_min = z*60 + n;
+    console.log("type of array :");
+    console.log(typeof course_list_global);
+    console.log("the of array :");
+
+    for(var i = 0; i < course_list_global.length; i++)
+    {
+        tempt_count = 0;
+        var check_length = course_list_global[i][7].split(" ");
+        console.log("time length: " + i );
+        console.log(check_length);
+        console.log(check_length.length);
+        var tempt1 = course_list_global[i][7].split(" ")[1];
+        var tempt2 = course_list_global[i][7].split(" ")[2];
+        var start_time = timeConverterMinute(tempt1);
+        var end_time = timeConverterMinute(tempt2);
+        if((start_time < current_min)&&(current_min < end_time))
+        {
+          console.log("Time is in between :");
+          console.log(start_time);
+          console.log(current_min);
+          console.log(end_time);
+          var x = document.getElementById("class_take");
+          var g = document.createElement('div');
+          g.innerHTML = course_list_global[i][4] + " " + course_list_global[i][2] +  " " + course_list_global[i][10] + " is in class";
+          x.appendChild(g);
+        }
+    }
+  });
 }
 
 function getUserCourseMessageRealTime(usermail){
@@ -277,34 +314,6 @@ function getUserCountAdmin(){
 });
 
 }//end getUserCountAdmin()
-
-function check_if_in_class(){
-  var d = new Date();
-  var z = d.getHours();
-  var n = d.getMinutes();
-  var current_min = z*60 + n;
-  console.log("type of array :");
-  console.log(typeof course_list_global);
-  for(var i = 0; i < course_list_global.length; i++)
-  {
-      var tempt1 = course_list_global[i][7].split(" ")[1];
-      var tempt2 = course_list_global[i][7].split(" ")[2];
-      var start_time = timeConverterMinute(tempt1);
-      var end_time = timeConverterMinute(tempt2);
-      if((start_time < current_min)&&(current_min < end_time))
-      {
-        console.log("Time is in between :");
-        console.log(start_time);
-        console.log(current_min);
-        console.log(end_time);
-        var x = document.getElementById("class_take");
-        var g = document.createElement('div');
-        g.innerHTML = course_list_global[i][4] + " " + course_list_global[i][2] +  " " + course_list_global[i][10] + " is in class";
-        x.appendChild(g);
-      }
-
-  }
-}
 
 function timeConverterMinute(timeString){
     if(!timeString instanceof String)

@@ -53,6 +53,36 @@ textarea{
 	display: none;
 z-index: 400;
 }
+#floorselect16{
+	display: none;
+z-index: 400;
+}
+#ft16_7{
+	position: absolute;
+	top:100px;
+	left:40px;
+	width:50px;
+	height:50px;
+	border: 1px solid black;
+	font-weight:normal;
+	font-size:40px;
+	text-align: center;
+	color:#f44242;
+	z-index: 400;
+}
+#ft16_8{
+	position: absolute;
+	top:100px;
+	left:110px;
+	width:50px;
+	height:50px;
+	border: 1px solid black;
+	font-weight:normal;
+	font-size:40px;
+	text-align: center;
+	color:#000000;
+	z-index: 400;
+}
 #eggc4{
 	position: absolute;
 	top:100px;
@@ -79,9 +109,8 @@ z-index: 400;
 	text-align: center;
 	color:#000000;
 	z-index: 400;
-
 }
-#eggc8{
+#eggc7{
 	position: absolute;
 	top:100px;
 	left:180px;
@@ -93,7 +122,19 @@ z-index: 400;
 	text-align: center;
 	color:#000000;
 	z-index: 400;
-
+}
+#eggc8{
+	position: absolute;
+	top:100px;
+	left:250px;
+	width:50px;
+	height:50px;
+	border: 1px solid black;
+	font-weight:normal;
+	font-size:40px;
+	text-align: center;
+	color:#000000;
+	z-index: 400;
 }
 
 #botdiv{
@@ -812,19 +853,32 @@ p b{
 
 #MAP26W{
 	position: absolute;
-	top:500px;
-	left:-300px;
-	zoom:0.5;
+	top:200px;
+	left:-500px;
+	zoom:0.9;
+	font-family: "宋体";
+	font-size: 25pt;
 	display: none;
-	transform: rotate(270deg);
 	z-index: 1;
 }
 
-#MAP16W{
+#MAP16W_7{
 	position: absolute;
-	left:-490px;
-	top:170px;
-	zoom:0.9;
+	left:-420px;
+	top:-600px;
+	zoom:0.6;
+	font-family: "宋体";
+	font-size: 30pt;
+	display: none;
+	z-index: 1;
+}
+#MAP16W_8{
+	position: absolute;
+	left:-420px;
+	top:-600px;
+	zoom:0.6;
+	font-family: "宋体";
+	font-size: 30pt;
 	display: none;
 	z-index: 1;
 }
@@ -834,6 +888,8 @@ p b{
 	left:-390px;
 	top:-480px;
 	zoom:0.9;
+	font-family: "宋体";
+	font-size: 25pt;
 	display: none;
 }
 #centerMAP6{
@@ -841,6 +897,18 @@ p b{
 	left:-390px;
 	top:-480px;
 	zoom:0.9;
+	font-family: "宋体";
+	font-size: 25pt;
+	display: none;
+	z-index: 1;
+}
+#centerMAP7{
+	position: absolute;
+	left:-390px;
+	top:-480px;
+	zoom:0.9;
+	font-family: "宋体";
+	font-size: 25pt;
 	display: none;
 	z-index: 1;
 }
@@ -849,6 +917,8 @@ p b{
 	left:-390px;
 	top:-480px;
 	zoom:0.9;
+	font-family: "宋体";
+	font-size: 25pt;
 	display: none;
 	z-index: 1;
 }
