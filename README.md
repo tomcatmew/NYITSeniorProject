@@ -1,4 +1,4 @@
-# Message Format:
+# Message Time Format:
 ```                                                            
 
 function messageTimeFormat(timeInSecond){
