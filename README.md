@@ -16,7 +16,7 @@ function getDayName(dayNumber) {
 }
 function scheduleFormat(schedule){
     //from: 16W 723 1 9:30 10:50 16W 723 2 9:30 10:50
-    //to: 16W Room723 Mon 9:30-10:50,16W Room723 Tue 9:30-10:50
+    //to: 16W Room723 Mon 9:30-10:50,16W Room723 Tue 9:30-10:50.
     const sa = schedule.split(" ");
     const loopTime = sa.length / 5;
     let i = 0;
