@@ -7,10 +7,10 @@ function messageTimeFormat(timeInSecond){
     let formated_time = new Date(timeInSecond);
 
     const month = parseInt(formated_time.getMonth() + 1);
-    const date = parseInt(formated_time.getDate());
-    const year = parseInt(formated_time.getFullYear());
-    const hour = parseInt(formated_time.getHours());
-    const minute = parseInt(formated_time.getMinutes())
+    const date = formated_time.getDate();
+    const year = formated_time.getFullYear();
+    const hour = formated_time.getHours();
+    const minute = formated_time.getMinutes();
     
     let monthString,hourString,dateString,minuteString;
 
