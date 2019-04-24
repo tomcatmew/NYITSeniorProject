@@ -199,6 +199,24 @@ function roomArray_init(){
          location: "16W",
          book_list:[],
          status: ""
+      },
+      B16W_721:{
+         room: "721",
+         location: "16W",
+         book_list:[],
+         status: ""
+      },
+      B16W_722:{
+         room: "722",
+         location: "16W",
+         book_list:[],
+         status: ""
+      },
+      B16W_723:{
+         room: "723",
+         location: "16W",
+         book_list:[],
+         status: ""
       }
 
 };

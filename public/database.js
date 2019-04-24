@@ -200,42 +200,85 @@ function getUserInfoRealTime(user){
    });
 }
 
-function check_if_in_class(usermail){
+function get_class_status(){
   var db = firebase.firestore();
-  db.collection("user").doc(usermail).collection("courses")
+  db.collection("room")
   .onSnapshot(function(querySnapshot) {
-    var d = new Date();
-    var z = d.getHours();
-    var n = d.getMinutes();
-    var current_min = z*60 + n;
-    console.log("type of array :");
-    console.log(typeof course_list_global);
-    console.log("the of array :");
-
-    for(var i = 0; i < course_list_global.length; i++)
-    {
-        tempt_count = 0;
-        var check_length = course_list_global[i][7].split(" ");
-        console.log("time length: " + i );
-        console.log(check_length);
-        console.log(check_length.length);
-        var tempt1 = course_list_global[i][7].split(" ")[1];
-        var tempt2 = course_list_global[i][7].split(" ")[2];
-        var start_time = timeConverterMinute(tempt1);
-        var end_time = timeConverterMinute(tempt2);
-        if((start_time < current_min)&&(current_min < end_time))
-        {
-          console.log("Time is in between :");
-          console.log(start_time);
-          console.log(current_min);
-          console.log(end_time);
-          var x = document.getElementById("class_take");
-          var g = document.createElement('div');
-          g.innerHTML = course_list_global[i][4] + " " + course_list_global[i][2] +  " " + course_list_global[i][10] + " is in class";
-          x.appendChild(g);
-        }
-    }
+    querySnapshot.forEach(function(doc) {
+      var ref = doc.data();
+      switch(`${ref.status}`)
+      {
+        case "red":
+          var locate = 'b'  + `${ref.location}` +   `${ref.room}`;
+          var x = document.getElementById(locate);
+          x.style.fill = 'red';
+          break;
+        case "green":
+          var locate = 'b'  + `${ref.location}` +   `${ref.room}`;
+          var x = document.getElementById(locate);
+          x.style.fill = 'green';
+          break;
+        default:
+      }
+    });
   });
+}
+
+
+function check_if_in_class(){
+  var list_transfer_2 = [];
+
+  var db = firebase.firestore();
+  db.collection("courseDatabase").where("course_number", ">=", "100")
+  .onSnapshot(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+      var ref = doc.data();
+      var list_transfer = [];
+      list_transfer.push(`${ref.capmus}`);
+      list_transfer.push(`${ref.course_id}`);
+      list_transfer.push(`${ref.course_number}`);
+      list_transfer.push(`${ref.course_title}`);
+      list_transfer.push(`${ref.department_code}`);
+      list_transfer.push(`${ref.instructor}`);
+      list_transfer.push(`${ref.location}`);
+      list_transfer.push(`${ref.schedule}`);
+      list_transfer.push(`${ref.term}`);
+      list_transfer.push(`${ref.room}`);
+      list_transfer.push(`${ref.section}`);
+      list_transfer_2.push(list_transfer);
+      });
+      var d = new Date();
+      var z = d.getHours();
+      var n = d.getMinutes();
+      var current_min = z*60 + n;
+      console.log("type of array :");
+      console.log(typeof list_transfer_2);
+      console.log("the of array :");
+      console.log(list_transfer_2.length);
+
+      for(var i = 0; i < list_transfer_2.length; i++)
+      {
+          var check_length = list_transfer_2[i][7].split(" ").length;
+          real_leng = check_length/3;
+          for(var j = 0 ; j < real_leng; j++)
+          {
+          var tempt1 = list_transfer_2[i][7].split(" ")[j*3 + 1];
+          var tempt2 = list_transfer_2[i][7].split(" ")[j*3 + 2];
+          var start_time = timeConverterMinute(tempt1);
+          var end_time = timeConverterMinute(tempt2);
+            if((start_time < current_min)&&(current_min < end_time))
+            {
+              console.log("Time is in between :");
+              console.log(start_time);
+              console.log(current_min);
+              console.log(end_time);
+
+            }
+          }
+      }
+    }
+   );
+
 }
 
 function getUserCourseMessageRealTime(usermail){
