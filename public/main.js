@@ -98,6 +98,7 @@ function courseList(lista){
     option.text = lista[i][4] + "  "+ lista[i][2] + " " + lista[i][10];
     x.add(option,i);
   }
+  return course_list_global;
 }
 
 function course_add(){
