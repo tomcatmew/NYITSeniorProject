@@ -5,7 +5,32 @@ line 182 change to -> db.collection("user").doc(user.email).collection("courses"
 ```
 # Message Time Format:
 ```                                                            
+```
 
+    var delay = ( function() {
+      var timer = 0;
+      return function(callback, ms) {
+          clearTimeout (timer);
+          timer = setTimeout(callback, ms);
+      };
+  })();
+
+    getDatabaseCourseInfo();
+
+    console.log("before Delay:");
+    check_if_in_class();
+
+    delay(function(){
+        console.log("after Delay:");
+        window.setInterval(function(){
+  /// call your function here
+        check_if_in_class();
+}, 5000);
+
+
+  }, 1000 ); // end delay
+
+```
 function messageTimeFormat(timeInSecond){
     //from: 1234567891000
     //to: (02/13/2009 18:31)
