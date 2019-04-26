@@ -1,11 +1,4 @@
-# database.js  
-```
-sort by course_number
-line 182 change to -> db.collection("user").doc(user.email).collection("courses").orderBy("course_number","asc")
-```
-# Message Time Format:
-```                                                            
-```
+
 
     var delay = ( function() {
       var timer = 0;
@@ -30,7 +23,17 @@ line 182 change to -> db.collection("user").doc(user.email).collection("courses"
 
   }, 1000 ); // end delay
 
+
+
 ```
+# database.js  
+```
+sort by course_number
+line 182 change to -> db.collection("user").doc(user.email).collection("courses").orderBy("course_number","asc")
+```
+# Message Time Format:
+```                                                            
+
 function messageTimeFormat(timeInSecond){
     //from: 1234567891000
     //to: (02/13/2009 18:31)
