@@ -98,7 +98,6 @@ function courseList(lista){
     option.text = lista[i][4] + "  "+ lista[i][2] + " " + lista[i][10];
     x.add(option,i);
   }
-  return course_list_global;
 }
 
 function course_add(){
@@ -436,6 +435,44 @@ function f_select_16_8()
   $('#MAP16W_8').css("display", "block" );
   $('#ft16_7').css("color", "#000000" );
   $('#ft16_8').css("color", "#f44242" );
+}
+
+
+function messageTimeFormat(timeInSecond){
+    //from: 1234567891000
+    //to: (02/13/2009 18:31)
+    let formated_time = new Date(timeInSecond);
+
+    const month = parseInt(formated_time.getMonth() + 1);
+    const date = formated_time.getDate();
+    const year = formated_time.getFullYear();
+    const hour = formated_time.getHours();
+    const minute = formated_time.getMinutes();
+
+    let monthString,hourString,dateString,minuteString;
+
+    if(date < 10)
+        dateString =  "0" + date;
+    else
+        dateString = date;
+
+    if(hour < 10)
+        hourString = "0"+ hour;
+    else
+        hourString = hour;
+
+    if(minute < 10)
+        minuteString = "0"+ minute;
+    else
+        minuteString = minute;
+
+    if(month < 10)
+        monthString = "0" + month;
+    else
+        monthString = month;
+
+
+    return `(${monthString}/${dateString}/${year} ${hourString}:${minuteString})`;
 }
 
 $(document).ready(function () {

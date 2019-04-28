@@ -163,7 +163,37 @@ function getDatabaseCourseInfo(){
         });
 }
 
+function message_update(){
+  var db = firebase.firestore();
 
+  var selectElement = document.getElementById("message_select");
+  selectElement.addEventListener('change',  function() {
+    var count  = 0;
+
+    db.collection("message")
+    .onSnapshot(function(querySnapshot) {
+      var tempt = document.getElementById("message_info");
+      tempt.innerHTML = '';
+       querySnapshot.forEach(function(doc) {
+             ref = doc.data();
+             if((course_enrolled.has(ref.course_id))&&(ref.course_id == $("#message_select").val()))
+             {
+
+               let formated_time = new Date(ref.time);
+               var t = document.getElementById("message_info");
+               var z = document.createElement('div');
+
+               // z.innerHTML = "Course ID : " + ref.course_id + "</br>" + "Message : " + ref.message + "</br>" + "From : " + ref.user_email + "</br>" + "Time : " +  formated_time + "</br>" + "</br>";
+               z.innerHTML = "Course ID : " + ref.course_id + "</br>" + user_name + " : "  + ref.message + "</br>" + "Time : " +  messageTimeFormat(formated_time) + "</br>" + "</br>";
+
+               z.setAttribute("id","message" + count);
+               t.appendChild(z);
+             }
+             count++;
+       });
+   });
+  });
+}
 function getUserInfoRealTime(user){
     var db = firebase.firestore();
 
@@ -209,19 +239,14 @@ function get_class_status(){
       switch(`${ref.status}`)
       {
         case "red":
-          console.log("colrrrrrrrrrrrrrrrrr");
-          console.log(`${ref.location}`);
-          console.log(`${ref.room}`);
           var locate = 'b'  + `${ref.location}` +   `${ref.room}`;
           var x = document.getElementById(locate);
-          if( x != null)
-            x.style.fill = 'red';
+          x.style.fill = 'red';
           break;
         case "green":
           var locate = 'b'  + `${ref.location}` +   `${ref.room}`;
           var x = document.getElementById(locate);
-          if( x != null)
-              x.style.fill = 'green';
+          x.style.fill = 'green';
           break;
         default:
       }
@@ -252,7 +277,6 @@ function check_if_in_class(){
       list_transfer.push(`${ref.section}`);
       list_transfer_2.push(list_transfer);
       });
-      // for each wan
       var d = new Date();
       var z = d.getHours();
       var n = d.getMinutes();
@@ -278,24 +302,7 @@ function check_if_in_class(){
               console.log(start_time);
               console.log(current_min);
               console.log(end_time);
-              console.log(list_transfer_2[i][4] + list_transfer_2[i][2]);
-              console.log(list_transfer_2[i][9].split(" ")[j]);
-              console.log(list_transfer_2[i][6].split(" ")[j]);
-              var tempt_room = {
-                room: list_transfer_2[i][9].split(" ")[j],
-                location: list_transfer_2[i][6].split(" ")[j],
-                book_list:[],
-                status: "red"
-              };
 
-              db.collection("room").get().then(function(querySnapshot2)
-              {
-                querySnapshot2.forEach(function(doc)
-                 {
-                   console.log(doc.id, " => ", doc.data());
-                   db.collection("room").doc(doc.id).update(tempt_room).where("location", "==", list_transfer_2[i][6].split(" ")[j]).where("room", "==", list_transfer_2[i][9].split(" ")[j]);
-                 });
-              });
             }
           }
       }
