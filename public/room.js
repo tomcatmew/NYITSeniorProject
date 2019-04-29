@@ -220,9 +220,9 @@ function roomArray_init(){
       }
 
 };
-for(let i of Object.keys(rooms)){
-   roomArray.push(rooms[i]);
-}
+    for(let i of Object.keys(rooms)){
+       roomArray.push(rooms[i]);
+    }
   console.log("Rooms Test: ", roomArray);
 
 }
@@ -230,7 +230,7 @@ for(let i of Object.keys(rooms)){
 function roomDatabase(){
     var db = firebase.firestore();
     for(i = 0; i < roomArray.length; i++){
-      db.collection("room").add(roomArray[i]).then(function() {
+      db.collection("room").doc("b" + roomArray[i]["location"] + roomArray[i]["room"]).set(roomArray[i]).then(function() {
           console.log("room info successfully written!");
       });
     }
