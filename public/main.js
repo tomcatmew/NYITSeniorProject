@@ -6,6 +6,16 @@ var course_list_global;
 
 var user_name;
 
+
+var delay = ( function() {
+  var timer = 0;
+  return function(callback, ms) {
+      clearTimeout (timer);
+      timer = setTimeout(callback, ms);
+  };
+})();
+
+
 // function displayf5()
 // {
 //   $('#floortitle').css('left','42%');

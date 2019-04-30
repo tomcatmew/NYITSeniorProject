@@ -587,6 +587,7 @@ function check_time2(){
   var current_min = z*60 + n;
   for(let i of Object.keys(courseArray_2))
   {
+      var same_c_check = true;
       var check_length = courseArray_2[i]["schedule"].split(" ").length;
       var real_leng = check_length/3;
       for(var j = 0 ; j < real_leng; j++)
@@ -602,30 +603,39 @@ function check_time2(){
             if((c_day == day)&&(start_time < current_min)&&(current_min < end_time))
             {
               console.log("in class ZZZZZZZZZZZZ");
-              var room_data = {
-                room: tempt_room,
-                location: tempt_location,
-                book_list:courseArray_2[i]["department_code"] + " " + courseArray_2[i]["course_number"] + " is in class",
-                status: "red"
-              };
-              db.collection("room").doc("b" + tempt_location + tempt_room).set(room_data);
+              // var room_data = {
+              //   room: tempt_room,
+              //   location: tempt_location,
+              //   book_list:courseArray_2[i]["department_code"] + " " + courseArray_2[i]["course_number"] + " is in class",
+              //   status: "red"
+              // };
+              db.collection("room").doc("b" + courseArray_2[i]["location"].split(" ")[j] + courseArray_2[i]["room"].split(" ")[j]).update({
+                  "book_list" : courseArray_2[i]["department_code"] + " " + courseArray_2[i]["course_number"] + " is in class",
+                  "status": "red"
+              });
+              same_c_check = false;
             }
             else
             {
-                    db.collection("room").doc("b" + tempt_location + tempt_room).onSnapshot(function(doc) {
+                if(same_c_check){
+                    db.collection("room").doc("b" + courseArray_2[i]["location"].split(" ")[j] + courseArray_2[i]["room"].split(" ")[j]).onSnapshot(function(doc) {
                     var userRef = doc.data();
                     if(userRef != null)
                     {
-                          if(userRef.status == "red" )
+                          if((userRef.status == "red")&&(userRef.book_list.split(" ")[0] == courseArray_2[i]["department_code"])&&(userRef.book_list.split(" ")[1] == courseArray_2[i]["course_number"]))
                           {
-                            console.log("Class is over" + "  " + "b" + tempt_location + tempt_room);
-                            db.collection("room").doc("b" + tempt_location + tempt_room).update({
-                                'status': "green"
+                            console.log("Class is over" + "  " + "b" + courseArray_2[i]["location"].split(" ")[j] + courseArray_2[i]["room"].split(" ")[j]);
+                            db.collection("room").doc("b" + courseArray_2[i]["location"].split(" ")[j] + courseArray_2[i]["room"].split(" ")[j]).update({
+                                "book_list" : "Room is free",
+                                "status": "green"
                             });
                           }
                     }
                   });
+              }
             }
+            if(j = real_leng - 1)
+              same_c_check = true;
        }
   }
 }
@@ -642,7 +652,7 @@ var courseArray_2 = {
   room: "314 314 314",
   term: "Spring 2019",
   instructor: "Marcus Johnson",
-  schedule: "1 5:30 8:50 3 12:30 13:55 5 12:30 13:55"
+  schedule: "1 17:30 20:50 3 12:30 13:55 5 12:30 13:55"
 },
 MATH115_M01:{
   course_id: "1817",
@@ -655,7 +665,7 @@ MATH115_M01:{
   room:"401 401",
   term: "Spring 2019",
   instructor: "Carol Bilsky_Bieniek",
-  schedule: "1 15:30 16:50 3 15:30 16:50"
+  schedule: "1 14:30 16:50 3 15:30 16:50"
 },
 
 MATH125_M01:{
