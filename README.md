@@ -1,13 +1,30 @@
-# !!!!!
+# Delete Course Update - confirm box
 ```
-            if(t3a == "red" )
-            {
-              console.log("Class is over" + "  " + "b" + tempt_location + tempt_room);
-              db.collection("room").doc("b" + tempt_location + tempt_room).update({
-                  "status": "green"
-              });
-                
+function delete_course(current_user_email){
+
+
+  var course_id = $("#delete_select").val();
+  var db = firebase.firestore();
+  db.collection("user").doc(current_user_email).collection('courses').where("course_id", "==", course_id)
+  .onSnapshot(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+            const dep = doc.data().department_code;
+            const cn = doc.data().course_number;
+            const sn = doc.data().section;
+
+            const action = confirm("Do you really want to delete " + dep+cn + " " + sn);
+            if(action){
+              doc.ref.delete();
+                alert("You have successfully deleted " + dep+cn + " " + sn);
+                      console.log("DELETE course Id :  " +  course_id  );
+            }else{
+              //do nothing!!!
             }
+
+        });
+
+    });
+}
 ```
 
 
