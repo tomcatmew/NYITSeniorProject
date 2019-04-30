@@ -1,3 +1,15 @@
+# !!!!!
+```
+            if(t3a == "red" )
+            {
+              console.log("Class is over" + "  " + "b" + tempt_location + tempt_room);
+              db.collection("room").doc("b" + tempt_location + tempt_room).update({
+                  status: "green"
+              });
+                
+            }
+```
+
 
 ```
     var delay = ( function() {
