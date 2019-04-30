@@ -134,6 +134,12 @@ function roomArray_init(){
          book_list:[],
          status: ""
       },
+      GGC_408lab:{
+         room: "408lab",
+         location: "GGC",
+         book_list:[],
+         status: ""
+      },
       GGC_404:{
          room: "404",
          location: "GGC",
@@ -178,24 +184,6 @@ function roomArray_init(){
       },
       B16W_822:{
          room: "822",
-         location: "16W",
-         book_list:[],
-         status: ""
-      },
-      B16W_621:{
-         room: "621",
-         location: "16W",
-         book_list:[],
-         status: ""
-      },
-      B16W_622:{
-         room: "622",
-         location: "16W",
-         book_list:[],
-         status: ""
-      },
-      B16W_620:{
-         room: "620",
          location: "16W",
          book_list:[],
          status: ""

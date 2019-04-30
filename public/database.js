@@ -20,7 +20,15 @@ function addMessageToDatable(email){
     var course_ss = $( "#message_select option:selected" ).text();
     let action = confirm("Send the Message ?");
     if(action == true){
+      if(u_email != "Anonymous Student")
+      {
+        db.collection("user").doc(u_email).collection("account").doc("userInfo")
+         .get().then(function(doc2) {
+          var userRef = doc2.data();
+          u_name = userRef.name;
+
           db.collection("message").add({
+            user_name : u_name,
             user_email: u_email,
             course_id: tempt_id,
             message: message.value,
@@ -35,6 +43,27 @@ function addMessageToDatable(email){
             console.error("Error writing document: ", error);
         });
         alert("You have successfully sent the message ");
+        });
+      }
+      else
+      {
+          db.collection("message").add({
+            user_name : "Anonymous Student",
+            user_email: u_email,
+            course_id: tempt_id,
+            message: message.value,
+            time: g,
+            course_short : course_ss
+        })
+        .then(function() {
+          message.innerHTML = '';
+            console.log("message successfully written!");
+        })
+        .catch(function(error) {
+            console.error("Error writing document: ", error);
+        });
+        alert("You have successfully sent the message ");
+      }
     }
     else
     {
@@ -204,34 +233,98 @@ function message_update(){
 function message_listener(){
     var db = firebase.firestore();
     var count  = 0;
+
     db.collection("message").orderBy("time", "desc")
     .onSnapshot(function(querySnapshot) {
       var tempt = document.getElementById("message_info");
       tempt.innerHTML = '';
+
        querySnapshot.forEach(function(doc) {
-             ref = doc.data();
-             if((course_enrolled.has(ref.course_id))&&(ref.course_id == $("#message_select").val()))
-             {
+              var ref = doc.data();
+              if((course_enrolled.has(ref.course_id))&&(ref.course_id == $("#message_select").val()))
+              {
+                let formated_time = new Date(ref.time);
+                var t = document.getElementById("message_info");
+                var z = document.createElement('div');
 
-               let formated_time = new Date(ref.time);
-               var t = document.getElementById("message_info");
-               var z = document.createElement('div');
+                var unm = document.createElement('div');
+                unm.innerHTML = ref.user_name + ": "+ ref.message;
+                unm.style.fontSize='25px';
 
-               var s = document.createElement('div');
-               s.innerHTML = ref.user_email + " : " + ref.message;
-               s.style.color = "red";
-               // z.innerHTML = "Course ID : " + ref.course_id + "</br>" + "Message : " + ref.message + "</br>" + "From : " + ref.user_email + "</br>" + "Time : " +  formated_time + "</br>" + "</br>";
-               z.innerHTML =  "</br>" + "Course : " + ref.course_short + "</br>" + "Time : " +  messageTimeFormat(formated_time) + "</br>";
+                unm.style.fontFamily = 'Arial ';
 
-               z.appendChild(s);
+                var ci = document.createElement('div');
+                ci.innerHTML = "</br>" + "course : " + ref.course_short;
+                ci.style.color = 'gray';
+                ci.style.fontSize='15px';
 
-               z.setAttribute("id","message" + count);
-               t.appendChild(z);
-             }
+                var tm = document.createElement('div');
+                tm.innerHTML = messageTimeFormat(formated_time) + "</br>"+"</br>"+ "<hr>";
+                tm.style.color = 'gray';
+                tm.style.fontSize='15px';
+                tm.style.fontStyle="italic";
+
+                  // z.innerHTML = "Course ID : " + ref.course_id + "</br>" + "Message : " + ref.message + "</br>" + "From : " + ref.user_email + "</br>" + "Time : " +  formated_time + "</br>" + "</br>";
+                /*z.innerHTML = "Course ID : " + ref.course_id + "</br>" +user_name + " : "  + ref.message + "</br>" + "Time : " +  messageTimeFormat(formated_time) + "</br>" + "</br>"+"<hr>";*/
+
+
+                z.appendChild(ci);
+                z.appendChild(unm);
+                z.appendChild(tm);
+                //Lin add
+
+                z.setAttribute("id","message" + count);
+                t.appendChild(z);
+              }
              count++;
        });
    });
 }
+
+
+function delete_list(usermail)
+{
+  var db = firebase.firestore();
+
+  db.collection("user").doc(usermail).collection("courses")
+  .onSnapshot(function(querySnapshot) {
+           var tt = document.getElementById("delete_select");
+           tt.innerHTML = '';
+           var opp = document.createElement("option");
+           opp.text = "Select Course";
+           tt.add(opp,0);
+           course_enrolled.clear();
+     querySnapshot.forEach(function(doc)  {
+           ref_tempt = doc.data();
+           course_enrolled.add(ref_tempt.course_id);
+         });
+         for(let value of course_enrolled)
+         {
+           var x = document.getElementById("delete_select");
+           var option = document.createElement("option");
+           option.value = value;
+           for(var ind = 0; ind < course_list_global.length; ind ++)
+           {
+             if(course_list_global[ind][1] == value)
+                option.text = course_list_global[ind][4] + ' ' + course_list_global[ind][2] + ' ' + course_list_global[ind][10];
+           }
+           x.add(option,value);
+         }
+  });
+}
+
+function room_des(id)
+{
+  var db = firebase.firestore();
+  if (id != null)
+    db.collection("room").doc(id).get().then(function(doc) {
+      var userRef = doc.data();
+      $("#classdes").html(userRef.book_list);
+    });
+
+}
+
+
 
 function getUserInfoRealTime(user){
     var db = firebase.firestore();
@@ -258,7 +351,15 @@ function getUserInfoRealTime(user){
              courseDetail.push(ref.department_code,ref.course_number,ref.schedule);
              var x = document.getElementById("course1-info");
              var g = document.createElement('div');
-             g.innerHTML = "Course Info " + global_count + ": </br>"+ "Name: " + ref.department_code  + " " + ref.course_number + "</br>CourseID: " + ref.course_id  + "</br>Schedule: " + scheduleFormat(ref.schedule) + "</br>" + "</br>";
+             g.innerHTML = "Course Info " + global_count + ": </br>"+ "Name: " + ref.department_code  + " " + ref.course_number + "</br>Location : ";
+             for(var i = 0 ; i < ref.location.split(" ").length; i++)
+             {
+              if(i == ref.location.split(" ").length - 1)
+                g.innerHTML += ref.location.split(" ")[i] + " " + ref.room.split(" ")[i];
+              else
+                g.innerHTML += ref.location.split(" ")[i] + " " + ref.room.split(" ")[i]  + ", ";
+             }
+             g.innerHTML += "</br>Schedule: " + scheduleFormat(ref.schedule) + "</br>" + "</br>";
              g.setAttribute("id", "Div" + global_count);
              x.appendChild(g);
 
@@ -292,7 +393,12 @@ function get_class_status(){
           if( x != null)
               x.style.fill = 'green';
           break;
-        default:
+       default:
+          var locate = 'b'  + `${ref.location}` +   `${ref.room}`;
+          var x = document.getElementById(locate);
+          if( x != null)
+              x.style.fill = 'green';
+          break;
       }
     });
   });
@@ -325,10 +431,6 @@ function check_if_in_class(){
       var z = d.getHours();
       var n = d.getMinutes();
       var current_min = z*60 + n;
-      console.log("type of array :");
-      console.log(typeof list_transfer_2);
-      console.log("the of array :");
-      console.log(list_transfer_2.length);
 
       for(var i = 0; i < list_transfer_2.length; i++)
       {
@@ -384,26 +486,17 @@ function getUserCourseMessageRealTime(usermail){
            }
            x.add(option,value);
          }
-    console.log(course_enrolled);
   });
 
-  db.collection("message")
-  .onSnapshot(function(querySnapshot) {
-    var tempt = document.getElementById("message_info");
-    tempt.innerHTML = '';
-     querySnapshot.forEach(function(doc) {
-           ref = doc.data();
-               // if((course_enrolled.has(ref.course_id))&&(ref.course_id == $("#message_select").val()))
-               // {
-               //   var t =document.getElementById("message_info");
-               //   var z = document.createElement('div');
-               //   z.innerHTML = "Course ID : " + ref.course_id + "</br>" + "Message : " + ref.message + "</br>" + "From : " + ref.user_email + "</br>" + "Time :" + ref.time + "</br>" + "</br>";
-               //   z.setAttribute("id","message" + count);
-               //   t.appendChild(z);
-               // }
-           count++;
-     });
- });
+ //  db.collection("message")
+ //  .onSnapshot(function(querySnapshot) {
+ //    var tempt = document.getElementById("message_info");
+ //    tempt.innerHTML = '';
+ //     querySnapshot.forEach(function(doc) {
+ //           ref = doc.data();
+ //           count++;
+ //     });
+ // });
 }
 
 
@@ -468,14 +561,18 @@ function scheduleFormat(schedule){
     //from: 16W 723 1 9:30 10:50 16W 723 2 9:30 10:50
     //to: 16W Room723 Mon 9:30-10:50,16W Room723 Tue 9:30-10:50.
     const sa = schedule.split(" ");
-    const loopTime = sa.length / 5;
+    const loopTime = sa.length / 3;
     let i = 0;
-    let dayIndex = 2;
+    let dayIndex = 0;
+    let fpos = 1;
+    let dpos = 2;
     let tempString = "";
     while(i < loopTime){
-        tempString += `${sa[0]} Room${sa[1]} ${getDayName(parseInt(sa[dayIndex]))} ${sa[3]}-${sa[4]},`;
+        tempString += `${getDayName(parseInt(sa[dayIndex]))} ${sa[fpos]}-${sa[dpos]},`;
         i++;
-        dayIndex += 5;
+        fpos += 3;
+        dpos += 3;
+        dayIndex += 3;
     }
     const finalString = tempString.replace(/.$/,".");
     return finalString;
@@ -486,6 +583,7 @@ function check_time2(){
   var d = new Date();
   var z = d.getHours();
   var n = d.getMinutes();
+  var day = d.getDay();
   var current_min = z*60 + n;
   for(let i of Object.keys(courseArray_2))
   {
@@ -495,19 +593,43 @@ function check_time2(){
       {
       var tempt_room  = courseArray_2[i]["room"].split(" ")[j];
       var tempt_location  = courseArray_2[i]["location"].split(" ")[j];
+      var c_day = courseArray_2[i]["schedule"].split(" ")[j*3];
       var tempt1 = courseArray_2[i]["schedule"].split(" ")[j*3 + 1];
       var tempt2 = courseArray_2[i]["schedule"].split(" ")[j*3 + 2];
       var start_time = timeConverterMinute(tempt1);
       var end_time = timeConverterMinute(tempt2);
-        if((start_time < current_min)&&(current_min < end_time))
+        if((c_day == day)&&(start_time < current_min)&&(current_min < end_time))
         {
+          console.log("in class ZZZZZZZZZZZZ");
           var room_data = {
             room: tempt_room,
             location: tempt_location,
-            book_list:[],
+            book_list:courseArray_2[i]["department_code"] + " " + courseArray_2[i]["course_number"] + " is in class",
             status: "red"
           };
           db.collection("room").doc("b" + tempt_location + tempt_room).set(room_data);
+        }
+        else
+        {
+            db.collection("room").doc("b" + tempt_location + tempt_room).onSnapshot(function(doc) {
+            var userRef = doc.data();
+            var t3a = userRef.status;
+            if(t3a == "red" )
+            {
+              console.log("Class is over" + "  " + "b" + tempt_location + tempt_room);
+              var room_data2 = {
+                room: tempt_room,
+                location: tempt_location,
+                book_list:courseArray_2[i]["department_code"] + " " + courseArray_2[i]["course_number"] + " is free room",
+                status: "green"
+              };
+              db.collection("room").doc("b" + tempt_location + tempt_room).set(room_data2);
+            }
+            else
+            {
+                return false;
+            }
+          });
         }
       }
   }
@@ -525,7 +647,7 @@ var courseArray_2 = {
   room: "314 314 314",
   term: "Spring 2019",
   instructor: "Marcus Johnson",
-  schedule: "1 7:00 9:55 3 12:30 13:55 5 12:30 13:55"
+  schedule: "1 5:30 8:50 3 12:30 13:55 5 12:30 13:55"
 },
 
 MATH115_M01:{

@@ -123,9 +123,20 @@ function course_add(){
   }
 
 });
-
-
 }
+
+function delete_course(current_user_email){
+  var course_id = $("#delete_select").val();
+  var db = firebase.firestore();
+  db.collection("user").doc(current_user_email).collection('courses').where("course_id", "==", course_id)
+  .onSnapshot(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+         doc.ref.delete();
+        });
+        console.log("DELETE course Id :  " +  course_id  );
+    });
+}
+
 // function course_add(){
 //   var tempt = $("#course_select").val();
 //   var db = firebase.firestore();
