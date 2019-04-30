@@ -598,40 +598,35 @@ function check_time2(){
       var tempt2 = courseArray_2[i]["schedule"].split(" ")[j*3 + 2];
       var start_time = timeConverterMinute(tempt1);
       var end_time = timeConverterMinute(tempt2);
-        if((c_day == day)&&(start_time < current_min)&&(current_min < end_time))
-        {
-          console.log("in class ZZZZZZZZZZZZ");
-          var room_data = {
-            room: tempt_room,
-            location: tempt_location,
-            book_list:courseArray_2[i]["department_code"] + " " + courseArray_2[i]["course_number"] + " is in class",
-            status: "red"
-          };
-          db.collection("room").doc("b" + tempt_location + tempt_room).set(room_data);
-        }
-        else
-        {
-            db.collection("room").doc("b" + tempt_location + tempt_room).onSnapshot(function(doc) {
-            var userRef = doc.data();
-            var t3a = userRef.status;
-            if(t3a == "red" )
+      console.log("Search : " + tempt_location + " " + tempt_room);
+            if((c_day == day)&&(start_time < current_min)&&(current_min < end_time))
             {
-              console.log("Class is over" + "  " + "b" + tempt_location + tempt_room);
-              var room_data2 = {
+              console.log("in class ZZZZZZZZZZZZ");
+              var room_data = {
                 room: tempt_room,
                 location: tempt_location,
-                book_list:courseArray_2[i]["department_code"] + " " + courseArray_2[i]["course_number"] + " is free room",
-                status: "green"
+                book_list:courseArray_2[i]["department_code"] + " " + courseArray_2[i]["course_number"] + " is in class",
+                status: "red"
               };
-              db.collection("room").doc("b" + tempt_location + tempt_room).set(room_data2);
+              db.collection("room").doc("b" + tempt_location + tempt_room).set(room_data);
             }
             else
             {
-                return false;
+                    db.collection("room").doc("b" + tempt_location + tempt_room).onSnapshot(function(doc) {
+                    var userRef = doc.data();
+                    if(userRef != null)
+                    {
+                          if(userRef.status == "red" )
+                          {
+                            console.log("Class is over" + "  " + "b" + tempt_location + tempt_room);
+                            db.collection("room").doc("b" + tempt_location + tempt_room).update({
+                                'status': "green"
+                            });
+                          }
+                    }
+                  });
             }
-          });
-        }
-      }
+       }
   }
 }
 
@@ -649,7 +644,6 @@ var courseArray_2 = {
   instructor: "Marcus Johnson",
   schedule: "1 5:30 8:50 3 12:30 13:55 5 12:30 13:55"
 },
-
 MATH115_M01:{
   course_id: "1817",
   department_code: "MATH",
@@ -852,8 +846,8 @@ MATH171_M03:{
   section:"M03",
   course_title: "Calculus I",
   capmus: "Manhattan Campus",
-  location: "16W 16W",
-  room: "820 822",
+  location: "GGC GGC",
+  room: "405 405",
   term: "Spring 2019",
   instructor: "Laihan Luo",
   schedule: "1 17:30 19:45 3 17:30 19:45"
@@ -895,7 +889,7 @@ MATH180_M03:{
   course_title: "Calculus II",
   capmus: "Manhattan Campus",
   location: "16W 16W",
-  room: "624 721",
+  room: "820 721",
   term: "Spring 2019",
   instructor: "Vitaly Katsnelson",
   schedule: "1 14:00 16:30 3 14:00 16:30"
@@ -979,7 +973,7 @@ MATH310_M02:{
   course_title: "Linear Algebra",
   capmus: "Manhattan Campus",
   location: "16W 16W",
-  room: "624 624",
+  room: "820 820",
   term: "Spring 2019",
   instructor: "Vitaly Katsnelson",
   schedule: "1 12:30 13:50 3 12:30 13:50"
@@ -1254,7 +1248,7 @@ CSCI445_M02:{
   course_title: "Operating System Security",
   capmus: "Manhattan Campus",
   location: "16W",
-  room: "624",
+  room: "820",
   term: "Spring 2019",
   instructor: "Li",
   schedule: "5 09:30 12:10"
@@ -1327,7 +1321,7 @@ CSCI362_M01D:{
   course_title: "Information System Security Engineering and Administration",
   capmus: "Manhattan Campus",
   location: "16W",
-  room: "624",
+  room: "820",
   term: "Spring 2019",
   instructor: " Michael Nizich",
   schedule: "2 20:35 23:15"
@@ -1340,7 +1334,7 @@ CSCI357_M01:{
   section:"M01",
   course_title: "Cisco Academy Level I",
   capmus: "Manhattan Campus",
-  location: "GGC ",
+  location: "GGC",
   room: "601",
   term: "Spring 2019",
   instructor: "Michael Silva ",
@@ -1399,8 +1393,8 @@ CSCI335_M01:{
   section:"M01",
   course_title: "Design and Analysis of Algorithms",
   capmus: "Manhattan Campus",
-  location: "16W",
-  room: "624",
+  location: "GGC",
+  room: "406",
   term: "Spring 2019",
   instructor: "Herbert Taylor",
   schedule: "1 17:45 20:25"
@@ -1428,8 +1422,8 @@ CSCI330_M03:{
   section:"M01",
   course_title: "Operating Systems",
   capmus: "Manhattan Campus",
-  location: "16W 16W",
-  room: "624 624",
+  location: "GGC GGC",
+  room: "407 407",
   term: "Spring 2019",
   instructor: "Susan Gass",
   schedule: "2 15:30 16:50 4 15:30 16:50"
@@ -1441,8 +1435,8 @@ CSCI318_M01:{
   section:"M01",
   course_title: "Programming Language Concepts",
   capmus: "Manhattan Campus",
-  location: "16W 16W",
-  room: "624 624",
+  location: "GGC GGC",
+  room: "404 404",
   term: "Spring 2019",
   instructor: " Wenjia Li",
   schedule: "2 14:00 15:20 4 14:00 15:20"
@@ -1522,24 +1516,11 @@ CSCI260_M03:{
   course_title: " Data Structures",
   capmus: "Manhattan Campus",
   location: "16W",
-  room: "624",
+  room: "820",
   term: "Spring 2019",
   instructor: "Altion Simo",
   schedule: "3 17:30 20:10"
-},
-CSCI260_M05:{
-  course_id: "2762",
-  department_code: "CSCI",
-  course_number: "260",
-  section:"M05",
-  course_title: "Data Structures",
-  capmus: "Manhattan Campus",
-  location: "GGC GGC",
-  room: "624 624",
-  term: "Spring 2019",
-  instructor: "Michael Kadri",
-  schedule: "2 09:30 10:50 4 09:30 10:50"
- }
+}
 };
 // function getCourseTest(info){
 //    var userRef = info.userInfo;
