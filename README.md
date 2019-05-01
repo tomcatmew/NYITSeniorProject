@@ -1,3 +1,48 @@
+# Enroll Sorted
+```
+function getDatabaseCourseInfo(){
+    var list_transfer_final = [];
+    var math_course = [];
+    var csci_course = [];
+    var db = firebase.firestore();
+      db.collection("courseDatabase").where("course_number", ">=", "100")
+      .onSnapshot(function(querySnapshot) {
+        querySnapshot.forEach(function(doc) {
+            //courseInfoList(doc.data());
+            var ref = doc.data();
+            var list_transfer  = [];
+
+            list_transfer.push(`${ref.capmus}`);
+            list_transfer.push(`${ref.course_id}`);
+            list_transfer.push(`${ref.course_number}`);
+            list_transfer.push(`${ref.course_title}`);
+            list_transfer.push(`${ref.department_code}`);
+            list_transfer.push(`${ref.instructor}`);
+            list_transfer.push(`${ref.location}`);
+            list_transfer.push(`${ref.schedule}`);
+            list_transfer.push(`${ref.term}`);
+            list_transfer.push(`${ref.room}`);
+            list_transfer.push(`${ref.section}`);
+            if(ref.department_code == "MATH"){
+                math_course.push(list_transfer);
+            }
+            else {
+               csci_course.push(list_transfer);
+            }
+
+            });
+            console.log("courses Database: ", csci_course.sort());
+            const finalCourseList = csci_course.sort().concat(math_course.sort())
+            courseList(finalCourseList);
+        });
+}
+
+
+
+
+```
+
+
 # push notification
 ```
 after add message:
