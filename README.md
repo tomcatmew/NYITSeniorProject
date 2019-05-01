@@ -1,6 +1,8 @@
+
 # Course Sorted
 
 ```
+    math_course.sort((a,b) => (a.course_number > b.course_number)? -1: 1);
 function sortObject(obj)
 {
   // convert object into array
