@@ -46,7 +46,7 @@ function getDatabaseCourseInfo(){
 # push notification
 ```
 after add message:
-  $(".red_notification").html("1");
+  $(".red_notification").html("123");
 
 inside style.css:
  .red_notification {
@@ -60,7 +60,7 @@ inside style.css:
 	right: 0;
 }
 main.js line 3152:      
-<a href="#" class="projects2" v-on:click="makeActive('projects2')">Message<span class = "red_notification">0</span></a>
+<a href="#" class="projects2" v-on:click="makeActive('projects2')">Message<span class = "red_notification">!</span></a>
 ```
 # Delete Course Update - confirm box
 ```
