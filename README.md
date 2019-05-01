@@ -1,7 +1,6 @@
 # Enroll Sorted
 ```
 function getDatabaseCourseInfo(){
-    var list_transfer_final = [];
     var math_course = [];
     var csci_course = [];
     var db = firebase.firestore();
