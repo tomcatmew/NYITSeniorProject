@@ -38,7 +38,7 @@ function getDatabaseCourseInfo(){
 }
 
 
-
+//main.js 95 -> delete  any sort() function;
 
 ```
 
