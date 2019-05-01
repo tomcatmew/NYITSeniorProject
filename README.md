@@ -1,3 +1,22 @@
+# push notification
+```
+after add message:
+  $(".red_notification").html("1");
+
+inside style.css:
+ .red_notification {
+	background-color: #fa3e3e;
+	border-radius: 2px;
+	color: white;
+	padding: 1px 3px;
+	font-size: 15px;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+main.js line 3152:      
+<a href="#" class="projects2" v-on:click="makeActive('projects2')">Message<span class = "red_notification">0</span></a>
+```
 # Delete Course Update - confirm box
 ```
 function delete_course(current_user_email){
