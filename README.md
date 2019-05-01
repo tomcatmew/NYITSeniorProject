@@ -90,7 +90,7 @@ function delete_course(current_user_email){
     });
 }
 ```
-
+=============================================>
 
 ```
     var delay = ( function() {
