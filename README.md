@@ -32,7 +32,7 @@ function getDatabaseCourseInfo(){
 
             });
             console.log("courses Database: ", csci_course.sort());
-            const finalCourseList = csci_course.sort().concat(math_course.sort())
+            const finalCourseList = csci_course.sort().concat(math_course.sort());
             courseList(finalCourseList);
         });
 }
