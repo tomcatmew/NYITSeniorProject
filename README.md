@@ -35,13 +35,14 @@ function course_add(){
   var tempt = document.getElementById("course_select");
   var tempt_value = tempt.value;
   var tempt_text = tempt.options[tempt_value].text;
+  var str = tempt_text.substring(0,tempt_text.length-4);
   var db = firebase.firestore();
   var check = courseConflict();
   console.log(conflict);
   courseConflict();
   db.collection('user').doc(current_user_email).collection('courses').get().then(snap => {
     if(conflict){
-        alert("You already enrolled "+ tempt_text + ". Thereforce, you can not enroll " + tempt_text + " again.");
+        alert("You already enrolled "+  str + ". Thereforce, you can not enroll " + tempt_text + " again.");
     }
     else if(snap.size < 6) // will return the collection size
     {
