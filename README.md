@@ -1,4 +1,51 @@
+# Same Courses Conflict
+```
+var conflict = false;
+function courseConflict(){
+  var db = firebase.firestore();
+   var tempt = document.getElementById("course_select");
+   var tempt_value = tempt.value;
+   var tempt_text = tempt.options[tempt_value].text;
+   var oneTrue = false;
 
+  db.collection("user").doc(current_user_email).collection('courses')
+  .onSnapshot(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+      let dep = doc.data().department_code;
+      let cn = doc.data().course_number;
+        console.log("NAME!!!", dep + cn);
+        if(tempt_text.includes(dep) && tempt_text.includes(cn)){
+            conflict = true;
+            oneTrue = true;
+            console.log("conflict", conflict);
+        }else{
+          if (oneTrue){
+            conflict = true;
+          }else{
+            conflict = false;
+          }
+        }
+    });
+  });
+
+}
+
+man.js  =>
+function course_add(){
+  var tempt = document.getElementById("course_select");
+  var tempt_value = tempt.value;
+  var tempt_text = tempt.options[tempt_value].text;
+  var db = firebase.firestore();
+  var check = courseConflict();
+  console.log(conflict);
+  courseConflict();
+  db.collection('user').doc(current_user_email).collection('courses').get().then(snap => {
+    if(conflict){
+        alert("You already enrolled "+ tempt_text + ". Thereforce, you can not enroll " + tempt_text + " again.");
+    }
+    else if(snap.size < 6) // will return the collection size
+    {
+```
 # Course Sorted
 
 ```
