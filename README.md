@@ -1,3 +1,166 @@
+# main.js update
+```
+function eggcfloorc4()
+{
+    $('#centerMAP4').css("display", "block" );
+    $('#centerMAP6').css("display", "none" );
+    $('#centerMAP7').css("display", "none" );
+    $('#centerMAP8').css("display", "none" );
+    $('#eggc4').css("color", "#e39c03" );
+    $('#eggc6').css("color", "#000000" );
+    $('#eggc7').css("color", "#000000" );
+    $('#eggc8').css("color", "#000000" );
+}
+function eggcfloorc6()
+{
+    $('#centerMAP4').css("display", "none" );
+    $('#centerMAP6').css("display", "block" );
+    $('#centerMAP7').css("display", "none" );
+    $('#centerMAP8').css("display", "none" );
+    $('#eggc4').css("color", "#000000" );
+    $('#eggc6').css("color", "#e39c03" );
+    $('#eggc7').css("color", "#000000" );
+    $('#eggc8').css("color", "#000000" );
+}
+function eggcfloorc7()
+{
+    $('#centerMAP4').css("display", "none" );
+    $('#centerMAP6').css("display", "none" );
+    $('#centerMAP7').css("display", "block" );
+    $('#centerMAP8').css("display", "none" );
+    $('#eggc4').css("color", "#000000" );
+    $('#eggc6').css("color", "#000000" );
+    $('#eggc7').css("color", "#e39c03" );
+    $('#eggc8').css("color", "#000000" );
+}
+function eggcfloorc8()
+{
+    $('#centerMAP4').css("display", "none" );
+    $('#centerMAP6').css("display", "none" );
+    $('#centerMAP7').css("display", "none" );
+    $('#centerMAP8').css("display", "block" );
+    $('#eggc4').css("color", "#000000" );
+    $('#eggc6').css("color", "#000000" );
+    $('#eggc7').css("color", "#000000" );
+    $('#eggc8').css("color", "#e39c03" );
+}
+function f_select_16_7()
+{
+    $('#MAP16W_8').css("display", "none" );
+    $('#MAP16W_7').css("display", "block" );
+    $('#ft16_8').css("color", "#000000" );
+    $('#ft16_7').css("color", "#e39c03" );
+}
+function f_select_16_8()
+{
+    $('#MAP16W_7').css("display", "none" );
+    $('#MAP16W_8').css("display", "block" );
+    $('#ft16_7').css("color", "#000000" );
+    $('#ft16_8').css("color", "#e39c03" );
+}
+
+
+
+```
+# style.css  update
+
+```
+#ft16_7{
+	position: absolute;
+	top:100px;
+	left:40px;
+	width:50px;
+	height:50px;
+	background-image:url('metal.jpg');
+	border: 3px solid black;
+	font-weight:bold;
+	border-radius: 50%;
+	font-size:40px;
+	text-align: center;
+	color:#e39c03;
+	z-index: 400;
+}
+#ft16_8{
+	position: absolute;
+	top:100px;
+	left:110px;
+	width:50px;
+	height:50px;
+	background-image:url('metal.jpg');
+	border: 3px solid black;
+	font-weight:bold;
+	border-radius: 50%;
+	font-size:40px;
+	text-align: center;
+	color:#000000;
+	z-index: 400;
+}
+#eggc4{
+	position: absolute;
+	top:100px;
+	left:40px;
+	width:50px;
+	height:50px;
+	background-image:url('metal.jpg');
+	border: 3px solid black;
+	font-weight:bold;
+	border-radius: 50%;
+	text-align: center;
+	font-size:40px;
+	text-align: center;
+	color: #e39c03;
+	z-index: 400;
+
+}
+#eggc6{
+	position: absolute;
+	top:100px;
+	left:110px;
+	width:50px;
+	height:50px;
+	background-image:url('metal.jpg');
+	border-radius: 50%;
+	border: 3px solid black;
+	font-weight:bold;
+	font-size:40px;
+	text-align: center;
+	color: #000000;
+	z-index: 400;
+}
+#eggc7{
+	position: absolute;
+	top:100px;
+	left:180px;
+	width:50px;
+	height:50px;
+	background-image:url('metal.jpg');
+	border-radius: 50%;
+	border: 3px solid black;
+	font-weight:bold;
+	font-size:40px;
+	text-align: center;
+	color:#000000;
+	z-index: 400;
+}
+#eggc8{
+	position: absolute;
+	top:100px;
+	left:250px;
+	width:50px;
+	height:50px;
+	background-image:url('metal.jpg');
+	border-radius: 50%;
+	border: 3px solid black;
+	font-weight:bold;
+	font-size:40px;
+	text-align: center;
+	color:#000000;
+	z-index: 400;
+}
+```
+
+
+
 # Same Courses Conflict
 ```
 var conflict = false;
