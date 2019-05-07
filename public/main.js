@@ -141,6 +141,15 @@ function add_book(){
   var the_month = $("#time_select_month option:selected").val();
   var time_area = $("#time_select option:selected").val();
 
+  if(time_area == '8')
+      {
+        document.getElementById("book_confirm").disabled = true;
+      }
+  else
+      {
+        document.getElementById("book_confirm").disabled = false;
+      }
+
   var the_month_text = $("#time_select_month option:selected").text();
   var dt = new Date(the_month_text+ " " + the_day_tempt +", 2019 23:15:00");
   var the_day = dt.getDay() + 1;
@@ -174,8 +183,6 @@ function add_book(){
               else
               {
                 var tempt_list = ref.book.split(" ");
-                console.log("List first Element : " + tempt_list[0]);
-                console.log("List second Element : " + tempt_list[1]);
                 if(!tempt_list.includes(book_string))
                 {
                   console.log("Not include : " + book_string);

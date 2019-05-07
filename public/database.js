@@ -524,14 +524,14 @@ function check_if_book()
             if((book_start_time <= current_min)&&(current_min <= book_end_time))
             {
               db.collection("room").doc("b" + ref.location + ref.room).update({
-                  "book_list" : "Room is Reserved",
+                  "book_list" : ref.location + ref.room + " Room is Reserved",
                   "status": "yellow"
               });
             }
             else
             {
               db.collection("room").doc("b" + ref.location + ref.room).update({
-                  "book_list" : "room is free",
+                  "book_list" : ref.location + ref.room + " room is free",
                   "status": "green"
               });
             }
