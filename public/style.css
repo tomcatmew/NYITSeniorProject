@@ -41,6 +41,17 @@ section, footer, header, aside, nav{
 textarea{
 	resize: none;
 }
+.red_notification {
+ background-color: #fa3e3e;
+ border-radius: 2px;
+ color: white;
+ padding: 1px 3px;
+ font-size: 15px;
+ position: absolute;
+ display:none;
+ top: 0;
+ right: 0;
+}
 #classdes{
 	position:absolute;
 	top:180px;
@@ -196,11 +207,20 @@ z-index: 400;
 	font-weight: bold;
 	background-color: #F7A800;
 	font-size: 22px;
-
 }
 
-#account:hover{
-	left:300px;
+#logout{
+	left:190px;
+	position:absolute;
+	width:100px;
+	height:30px;
+	border: 2px solid #F7A800;
+	text-align: center;
+	font-size: 22px;
+}
+
+#logout:hover{
+	left:190px;
 	position:absolute;
 	width:100px;
 	height:30px;
@@ -211,6 +231,19 @@ z-index: 400;
 	background-color: #F7A800;
 	font-size: 22px;
 }
+
+/* #account:hover{
+	left:300px;
+	position:absolute;
+	width:100px;
+	height:30px;
+	border: 1px solid #F7A800;
+	text-align: center;
+	color:#407CCA;
+	font-weight: bold;
+	background-color: #F7A800;
+	font-size: 22px;
+} */
 
 #accountinfo
 {
@@ -270,7 +303,7 @@ z-index: 400;
 	position: absolute;
 	display:none;
 	width:400px;
-	bottom:-200px;
+	bottom:-300px;
 	z-index: 200;
 }
 

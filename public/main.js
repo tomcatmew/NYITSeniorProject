@@ -15,7 +15,35 @@ var delay = ( function() {
   };
 })();
 
+var conflict = false;
 
+function courseConflict(){
+  var db = firebase.firestore();
+   var tempt = document.getElementById("course_select");
+   var tempt_value = tempt.value;
+   var tempt_text = tempt.options[tempt_value].text;
+   var oneTrue = false;
+
+  db.collection("user").doc(current_user_email).collection('courses')
+  .onSnapshot(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+      let dep = doc.data().department_code;
+      let cn = doc.data().course_number;
+        console.log("NAME!!!", dep + cn);
+        if(tempt_text.includes(dep) && tempt_text.includes(cn)){
+            conflict = true;
+            oneTrue = true;
+            console.log("conflict", conflict);
+        }else{
+          if (oneTrue){
+            conflict = true;
+          }else{
+            conflict = false;
+          }
+        }
+    });
+  });
+}
 // function displayf5()
 // {
 //   $('#floortitle').css('left','42%');
@@ -92,13 +120,141 @@ var delay = ( function() {
 
 var second_list = [];
 
+
+function book_update(){
+  var db = firebase.firestore();
+  var selectElement = document.getElementById("time_select_month");
+  var selectElement2 = document.getElementById("time_select_day");
+  var selectElement3 = document.getElementById("time_select");
+  selectElement.addEventListener('change', add_book);
+  selectElement2.addEventListener('change', add_book);
+  selectElement3.addEventListener('change', add_book);
+}
+
+function add_book(){
+  var db = firebase.firestore();
+  var ele1 = document.getElementById("time_select_month");
+  var ele2 = document.getElementById("time_select_day");
+  var ele3 = document.getElementById("time_select");
+
+  var the_day_tempt = $("#time_select_day option:selected").text();
+  var the_month = $("#time_select_month option:selected").val();
+  var time_area = $("#time_select option:selected").val();
+
+  var the_month_text = $("#time_select_month option:selected").text();
+  var dt = new Date(the_month_text+ " " + the_day_tempt +", 2019 23:15:00");
+  var the_day = dt.getDay() + 1;
+
+
+
+  var book_string = the_day_tempt + "," + the_month + "," + time_area;
+
+  var unable_list = book_check_class(time_area,the_day);
+
+    db.collection("room")
+    .onSnapshot(function(querySnapshot) {
+      var select = document.getElementById("book_select");
+      select.innerHTML = '';
+      querySnapshot.forEach(function(doc) {
+
+        var ref = doc.data();
+        var x = document.getElementById("book_select");
+        var room_des = ref.location + ref.room;
+
+        if(!unable_list.includes(room_des))
+        {
+              console.log(the_day_tempt + "," + the_month + "," + time_area);
+              if(ref.book == " ")
+                {
+                  var option = document.createElement("option");
+                  option.value = "b" + ref.location + ref.room;
+                  option.text = ref.location + ref.room;
+                  x.add(option);
+                }
+              else
+              {
+                var tempt_list = ref.book.split(" ");
+                console.log("List first Element : " + tempt_list[0]);
+                console.log("List second Element : " + tempt_list[1]);
+                if(!tempt_list.includes(book_string))
+                {
+                  console.log("Not include : " + book_string);
+                  var option2 = document.createElement("option");
+                  option2.value = "b" + ref.location + ref.room;
+                  option2.text = ref.location + ref.room;
+                  x.add(option2);
+                }
+              }
+        }
+      });
+      var select2 = document.getElementById("book_select");
+      var length = select2.options.length;
+      var aa = document.getElementById("showp");
+      aa.innerHTML = "Number : " + length;
+    });
+
+
+}
+
+function clear_book()
+{
+  var select = document.getElementById("book_select");
+  var length = select.options.length;
+  var aa = document.getElementById("showp");
+  aa.innerHTML = "Length : " + length;
+  if(length != 0)
+  {
+      for (i = 0; i < length; i++) {
+        select.options[i] = null;
+      }
+  }
+}
+
+function confirm_book()
+{
+  var db = firebase.firestore();
+  var the_day = $("#time_select_day option:selected").text();
+  var the_month = $("#time_select_month option:selected").val();
+  var time_area = $("#time_select option:selected").val();
+  var book_string;
+
+  var origin_list ;
+
+  var room =  $("#book_select option:selected").val();
+  if(room == "")
+      return "error";
+
+  db.collection("room").doc(room).get().then(function(doc) {
+        var userRef = doc.data();
+        origin_list = userRef.book;
+
+  if (origin_list == " ")
+     book_string = the_day + "," + the_month + "," + time_area;
+  else
+     book_string = origin_list + " " + the_day + "," + the_month + "," + time_area;
+
+
+  let action = confirm("Confirm to Reserve " + room);
+  if(action == true){
+    db.collection("room").doc(room).update({"book" : book_string}).then(function() {
+        console.log("Room  booked");
+    });
+        alert("You have successfully reserved " + room);
+  }else{
+        console.log("cancel book");
+  }
+
+  });
+}
+
+
 function courseList(lista){
   course_list_global = lista;
   console.log("course_list_global : ");
   console.log(typeof course_list_global);
   console.log(course_list_global.length);
   console.log(typeof lista);
-  lista.sort();
+
   console.log(lista.length);
   for(var i = 0 ; i < lista.length; i++)
   {
@@ -110,15 +266,33 @@ function courseList(lista){
   }
 }
 
+// function course_add(){
+//   var tempt = document.getElementById("course_select");
+//   var tempt_value = tempt.value;
+//   var tempt_text = tempt.options[tempt_value].text;
+//   var db = firebase.firestore();
+//
+//   db.collection('user').doc(current_user_email).collection('courses').get().then(snap => {
+//   if(snap.size < 6)
+//   {
+
 function course_add(){
   var tempt = document.getElementById("course_select");
   var tempt_value = tempt.value;
   var tempt_text = tempt.options[tempt_value].text;
+  var str = tempt_text.substring(0,tempt_text.length-4);
   var db = firebase.firestore();
-
+  var check = courseConflict();
+  console.log(conflict);
+  courseConflict();
   db.collection('user').doc(current_user_email).collection('courses').get().then(snap => {
-  if(snap.size < 6) // will return the collection size
-  {
+    if(conflict){
+        alert("You already enrolled "+  str + ". Therefore, you can not enroll " + tempt_text + " again.");
+    }
+    else if(snap.size < 6) // will return the collection size
+    {
+
+
     global_count = 1;
     let action = confirm("Do you really want to add " + tempt_text);
     if(action == true){
@@ -135,16 +309,30 @@ function course_add(){
 });
 }
 
-function delete_course(current_user_email){
+function delete_course(current_user_email,buttonid){
+  console.log("=====button pressed===========");
+  var countt = 0;
+  var id_check ="drop_but";
+  var tempt_text = $("#delete_select option:selected").text();
   var course_id = $("#delete_select").val();
   var db = firebase.firestore();
   db.collection("user").doc(current_user_email).collection('courses').where("course_id", "==", course_id)
-  .onSnapshot(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-         doc.ref.delete();
-        });
-        console.log("DELETE course Id :  " +  course_id  );
-    });
+
+
+            const action = confirm("Do you really want to delete " + tempt_text + " ?");
+            if(action){
+                db.collection("user").doc(current_user_email).collection('courses').doc(course_id).delete().then(function() {
+                      alert("Course successfully deleted!");
+                      console.log("Course successfully deleted!");
+                  }).catch(function(error) {
+                      console.error("Error removing course: ", error);
+                  });
+            }
+            else
+            {
+
+            }
+
 }
 
 // function course_add(){
@@ -224,7 +412,20 @@ catch(e){
 // }
 
 
-
+function logoutclick(){
+    const action = confirm("Do you really want to SignOut ");
+            if(action){
+                firebase.auth().signOut().then(function() {
+                  window.location.href = "index.html";
+                }).catch(function(error) {
+                  // An error happened.
+                });
+            }
+            else
+            {
+              return ;
+            }
+}
 
 function goback()
 {
@@ -303,6 +504,8 @@ function b1_trigger(number)
     $('#titleSC').css("display", "block" );
     $('#centerMAP4').css("display", "block" );
     $('#floorselect').css("display", "block" );
+
+    $("#classdes").css("display", "block");
     eggcfloorc4();
     $('#accountinfo').css("display","none");
     allout();
@@ -311,6 +514,8 @@ function b1_trigger(number)
   {
     $('#titleSB').css("display", "block" );
     $('#floorselect16').css("display", "block" );
+
+    $("#classdes").css("display", "block");
     f_select_16_7();
     $('#MAP16W_7').css("display", "block" );
     $('#accountinfo').css("display","none");
@@ -320,6 +525,8 @@ function b1_trigger(number)
   {
     $('#titleSA').css("display", "block" );
     $('#MAP26W').css("display", "block" );
+
+    $("#classdes").css("display", "block");
     $('#accountinfo').css("display","none");
     allout();
   }

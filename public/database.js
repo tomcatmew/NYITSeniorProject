@@ -4,6 +4,7 @@
 // }
 var course_enrolled = new Set();
 var global_count = 1;
+var message_count = 0;
 
 function addMessageToDatable(email){
     var db = firebase.firestore();
@@ -26,14 +27,15 @@ function addMessageToDatable(email){
          .get().then(function(doc2) {
           var userRef = doc2.data();
           u_name = userRef.name;
-
+          u_role = userRef.role;
           db.collection("message").add({
             user_name : u_name,
             user_email: u_email,
             course_id: tempt_id,
             message: message.value,
             time: g,
-            course_short : course_ss
+            course_short : course_ss,
+            role : u_role
         })
         .then(function() {
           message.innerHTML = '';
@@ -53,7 +55,8 @@ function addMessageToDatable(email){
             course_id: tempt_id,
             message: message.value,
             time: g,
-            course_short : course_ss
+            course_short : course_ss,
+            role : u_role
         })
         .then(function() {
           message.innerHTML = '';
@@ -136,31 +139,32 @@ db.collection("user").doc(user.email).collection("account").doc("userInfo").set(
 //   return result;
 // }//end courseDescription(room,location,time)
 
-function addCourse(user){
-  var db = firebase.firestore();
-  db.collection("user").doc(user.email).collection("courses").add({
-    course_id: "1817",
-    department_code: "MATH",
-    course_number: "115",
-    course_title: "Introductory Concepts of Mathematics",
-    capmus: "Manhattan Campus",
-    location: "Guiliano Global Center",
-    term: "Spring 2019",
-    instructor: "Carol Bilsky_Bieniek",
-    schedule: "GGC 401 1 15:30 16:50 GGC 401 3 15:30 16:50"
-})
-.then(function() {
-    console.log("Document successfully written!");
-})
-.catch(function(error) {
-    console.error("Error writing document: ", error);
-});
-}
+// function addCourse(user){
+//   var db = firebase.firestore();
+//   db.collection("user").doc(user.email).collection("courses").add({
+//     course_id: "1817",
+//     department_code: "MATH",
+//     course_number: "115",
+//     course_title: "Introductory Concepts of Mathematics",
+//     capmus: "Manhattan Campus",
+//     location: "Guiliano Global Center",
+//     term: "Spring 2019",
+//     instructor: "Carol Bilsky_Bieniek",
+//     schedule: "GGC 401 1 15:30 16:50 GGC 401 3 15:30 16:50"
+// })
+// .then(function() {
+//     console.log("Document successfully written!");
+// })
+// .catch(function(error) {
+//     console.error("Error writing document: ", error);
+// });
+// }
 
 
 function addcoursefromdatabase(user_mail,input_campus,input_id,input_number,input_Ttitle,input_code,input_prof,input_locat,input_schedule,input_terms,input_room,input_section){
   var db = firebase.firestore();
-  db.collection("user").doc(user_mail).collection("courses").add({
+
+  db.collection("user").doc(user_mail).collection("courses").doc(input_id).set({
   course_id: input_id,
   department_code: input_code,
   course_number: input_number,
@@ -181,8 +185,35 @@ function addcoursefromdatabase(user_mail,input_campus,input_id,input_number,inpu
 });
 }
 
+function mess_note()
+{
+    var db = firebase.firestore();
+    db.collection("message")
+    .onSnapshot(function(querySnapshot) {
+      var old_count = message_count;
+      message_count = 0;
+      querySnapshot.forEach(function(doc) {
+          var ref = doc.data();
+          for(let i of course_enrolled)
+          {
+            if(i == ref.course_id)
+                message_count ++;
+          }
+      });
+      console.log("old count :" + old_count);
+      console.log("message_count" + message_count);
+      if(message_count > old_count)
+          {
+            $(".red_notification").html("!");
+            $(".red_notification").css("display", "block");
+          }
+    });
+}
+
+
 function getDatabaseCourseInfo(){
-    var list_transfer_final = [];
+    var math_course = [];
+    var csci_course = [];
     var db = firebase.firestore();
       db.collection("courseDatabase").where("course_number", ">=", "100")
       .onSnapshot(function(querySnapshot) {
@@ -190,6 +221,7 @@ function getDatabaseCourseInfo(){
             //courseInfoList(doc.data());
             var ref = doc.data();
             var list_transfer  = [];
+
             list_transfer.push(`${ref.capmus}`);
             list_transfer.push(`${ref.course_id}`);
             list_transfer.push(`${ref.course_number}`);
@@ -201,10 +233,19 @@ function getDatabaseCourseInfo(){
             list_transfer.push(`${ref.term}`);
             list_transfer.push(`${ref.room}`);
             list_transfer.push(`${ref.section}`);
-            list_transfer_final.push(list_transfer);
+            if(ref.department_code == "MATH"){
+                math_course.push(list_transfer);
+            }
+            else {
+               csci_course.push(list_transfer);
+            }
+
             });
-            console.log("courses Database: ", list_transfer_final);
-            courseList(list_transfer_final);
+            console.log("courses Database: ", sortObject(csci_course));
+            sortObject(csci_course);
+            math_course.sort((a,b) => (a.course_number > b.course_number)? -1: 1);
+            const finalCourseList = csci_course.concat(math_course);
+            courseList(finalCourseList);
         });
 }
 
@@ -221,6 +262,24 @@ function room_update_test(){
       console.log("Room Turn to Red");
   });
 
+}
+
+function sortObject(obj)
+{
+  // convert object into array
+	var sortable=[];
+	for(var key in obj)
+		if(obj.hasOwnProperty(key))
+			sortable.push([key, obj[key]]); // each item is an array in format [key, value]
+
+	// sort items by value
+	sortable.sort(function(a, b)
+	{
+	  return a[1]-b[1]; // compare numbers
+	});
+
+
+	return sortable; // array in format [ [ key1, val1 ], [ key2, val2 ], ... ]
 }
 
 function message_update(){
@@ -254,9 +313,27 @@ function message_listener(){
                 unm.style.fontFamily = 'Arial ';
 
                 var ci = document.createElement('div');
-                ci.innerHTML = "</br>" + "course : " + ref.course_short;
+                ci.innerHTML = "</br>" + "course : " + ref.course_short + "  ";
                 ci.style.color = 'gray';
                 ci.style.fontSize='15px';
+
+                var pi = document.createElement('p3');
+                if(ref.role == "professor")
+                {
+                  pi.innerHTML = "P";
+                  pi.style.color = 'red';
+                }
+                  else if (ref.role == "student")
+                  {
+                    pi.innerHTML = "S";
+                    pi.style.color = 'blue';
+                  }
+
+                pi.style.fontSize='18px';
+                pi.style.border = "2px solid black";
+                pi.style.padding = "1px";
+                pi.style.width = "16px";
+                // pi.style.height = "20px";
 
                 var tm = document.createElement('div');
                 tm.innerHTML = messageTimeFormat(formated_time) + "</br>"+"</br>"+ "<hr>";
@@ -267,7 +344,7 @@ function message_listener(){
                   // z.innerHTML = "Course ID : " + ref.course_id + "</br>" + "Message : " + ref.message + "</br>" + "From : " + ref.user_email + "</br>" + "Time : " +  formated_time + "</br>" + "</br>";
                 /*z.innerHTML = "Course ID : " + ref.course_id + "</br>" +user_name + " : "  + ref.message + "</br>" + "Time : " +  messageTimeFormat(formated_time) + "</br>" + "</br>"+"<hr>";*/
 
-
+                ci.appendChild(pi);
                 z.appendChild(ci);
                 z.appendChild(unm);
                 z.appendChild(tm);
@@ -338,7 +415,7 @@ function getUserInfoRealTime(user){
           var userRef = doc.data();
           console.log("Current data: ", doc.data());
           user_name = userRef.name;
-          document.getElementById("user-info").innerHTML = "User Info: </br>"+ "Name: " + userRef.name  + "</br>Email: " + userRef.email + "</br>";
+          document.getElementById("user-info").innerHTML = "User Info: </br>"+ "Name: " + userRef.name  + "</br>" + "Identity: " + userRef.role  + "</br>Email: " + userRef.email + "</br>";
       });
 
     db.collection("user").doc(user.email).collection("courses")
@@ -370,6 +447,104 @@ function getUserInfoRealTime(user){
    });
 }
 
+
+// switch (tempt_list][1]) {
+//     case 1:  the_montht = "January"; break;
+//     case 2:  the_montht = "February"; break;
+//     case 3:  the_montht = "March"; break;
+//     case 4:  the_montht = "April"; break;
+//     case 5:  the_montht = "May"; break;
+//     case 6:  the_montht = "June"; break;
+//     case 7:  the_montht = "July"; break;
+//     case 8:  the_montht = "August"; break;
+//     case 9:  the_montht = "September"; break;
+//     case 10:  the_montht = "October"; break;
+//     case 11:  the_montht = "November"; break;
+//     case 12:  the_montht = "December"; break;
+//     default: return "Error";
+// }
+
+function check_if_book()
+{
+  var db = firebase.firestore();
+  db.collection("room")
+  .onSnapshot(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+
+  ref = doc.data();
+  book_string = ref.book;
+  // ref.status = "green";
+  if(book_string != " ")
+  {
+        lista = book_string.split(" ");
+        for(var i = 0; i < lista.length; i++)
+        {
+          var tempt_list = lista[i].split(",");
+          var c_month = tempt_list[1];
+          var c_date = tempt_list[0];
+          var book_start_time;
+          var book_end_time;
+
+          var today = new Date();
+          var the_date = today.getDate();
+          var the_month = today.getMonth() + 1;
+
+          switch (tempt_list[2]) {
+              case '0':
+                      book_start_time = 9*60;
+                      book_end_time = 11*60;
+                      break;
+              case '1':
+                      book_start_time = 11*60;
+                      book_end_time = 13*60;
+                      break;
+              case '2':
+                      book_start_time = 13*60;
+                      book_end_time = 15*60;
+                      break;
+              case '3':
+                      book_start_time = 15*60;
+                      book_end_time = 17*60;
+                      break;
+              default: return "Error";
+          }
+          var z = today.getHours();
+          var n = today.getMinutes();
+          var current_min = z*60 + n;
+
+          console.log("current minutes: " + current_min);
+          console.log("start minutes: " + book_start_time);
+          console.log("end minutes: " + book_end_time);
+          console.log("current date: " + the_date);
+          console.log("current  month: " + the_month);
+          console.log("book date: " + c_date);
+          console.log("book month: " + c_month);
+          if((the_date == c_date)&&(the_month == c_month))
+          {
+            if((book_start_time <= current_min)&&(current_min <= book_end_time))
+            {
+              db.collection("room").doc("b" + ref.location + ref.room).update({
+                  "book_list" : "Room is Reserved",
+                  "status": "yellow"
+              });
+            }
+            else
+            {
+              db.collection("room").doc("b" + ref.location + ref.room).update({
+                  "book_list" : "room is free",
+                  "status": "green"
+              });
+            }
+          }
+
+         }
+   }
+   });
+  });
+}
+
+
+
 function get_class_status(){
   var db = firebase.firestore();
   db.collection("room")
@@ -379,9 +554,6 @@ function get_class_status(){
       switch(`${ref.status}`)
       {
         case "red":
-          console.log("color : ROOM render to red");
-          console.log(`${ref.location}`);
-          console.log(`${ref.room}`);
           var locate = 'b'  + `${ref.location}` +   `${ref.room}`;
           var x = document.getElementById(locate);
           if( x != null)
@@ -393,6 +565,12 @@ function get_class_status(){
           if( x != null)
               x.style.fill = 'green';
           break;
+        case "yellow":
+            var locate = 'b'  + `${ref.location}` +   `${ref.room}`;
+            var x = document.getElementById(locate);
+            if( x != null)
+                x.style.fill = 'yellow';
+        break;
        default:
           var locate = 'b'  + `${ref.location}` +   `${ref.room}`;
           var x = document.getElementById(locate);
@@ -599,7 +777,6 @@ function check_time2(){
       var tempt2 = courseArray_2[i]["schedule"].split(" ")[j*3 + 2];
       var start_time = timeConverterMinute(tempt1);
       var end_time = timeConverterMinute(tempt2);
-      console.log("Search : " + tempt_location + " " + tempt_room);
             if((c_day == day)&&(start_time < current_min)&&(current_min < end_time))
             {
               console.log("in class ZZZZZZZZZZZZ");
@@ -626,7 +803,7 @@ function check_time2(){
                           {
                             console.log("Class is over" + "  " + "b" + courseArray_2[i]["location"].split(" ")[j] + courseArray_2[i]["room"].split(" ")[j]);
                             db.collection("room").doc("b" + courseArray_2[i]["location"].split(" ")[j] + courseArray_2[i]["room"].split(" ")[j]).update({
-                                "book_list" : "Room is free",
+                                "book_list" : "room is free",
                                 "status": "green"
                             });
                           }
@@ -639,6 +816,68 @@ function check_time2(){
        }
   }
 }
+
+
+function book_check_class(time_area,day){
+  var db = firebase.firestore();
+  // var d = new Date();
+  var unable_book_list = [];
+  var book_start_time;
+  var book_end_time;
+
+  switch (time_area) {
+      case '0':
+              book_start_time = 9*60;
+              book_end_time = 11*60;
+              break;
+      case '1':
+              book_start_time = 11*60;
+              book_end_time = 13*60;
+              break;
+      case '2':
+              book_start_time = 13*60;
+              book_end_time = 15*60;
+              break;
+      case '3':
+              book_start_time = 15*60;
+              book_end_time = 17*60;
+              break;
+      default: return "Error";
+  }
+
+
+  for(let i of Object.keys(courseArray_2))
+  {
+      var check_length = courseArray_2[i]["schedule"].split(" ").length;
+      var real_leng = check_length/3;
+      for(var j = 0 ; j < real_leng; j++)
+      {
+      var tempt_room  = courseArray_2[i]["room"].split(" ")[j];
+      var tempt_location  = courseArray_2[i]["location"].split(" ")[j];
+      var c_day = courseArray_2[i]["schedule"].split(" ")[j*3];
+      var tempt1 = courseArray_2[i]["schedule"].split(" ")[j*3 + 1];
+      var tempt2 = courseArray_2[i]["schedule"].split(" ")[j*3 + 2];
+      var start_time = timeConverterMinute(tempt1);
+      var end_time = timeConverterMinute(tempt2);
+
+            if(c_day == day)
+            {
+                  if((start_time <= book_start_time)&&(book_start_time <= end_time))
+                  {
+                    unable_book_list.push(tempt_location+tempt_room);
+                  }
+                  if ((end_time <= book_end_time)&&(book_end_time <= end_time))
+                    unable_book_list.push(tempt_location+tempt_room);
+            }
+       }
+  }
+
+  return unable_book_list;
+}
+
+
+
+
 
 var courseArray_2 = {
   MATH101_M01:{

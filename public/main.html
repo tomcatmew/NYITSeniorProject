@@ -75,7 +75,10 @@
     // roomArray_init();
     // roomDatabase();
     saveUserInfo(user);
+    // courseArrayInfo();
+    // coursesDatabase();
     getDatabaseCourseInfo();
+
     getUserInfoRealTime(user);
     getUserCourseMessageRealTime(current_user_email);
     delete_list(current_user_email);
@@ -83,15 +86,15 @@
     get_class_status();
     check_time2();
     // setInterval(check_time2(), 60000);
+    mess_note();
     room_des();
+    check_if_book();
     // check_time2();
     // room_update_test();
     // addCourse(user);
 
 
     // addCourse(user);
-    // courseArrayInfo();
-    // coursesDatabase();
    } else {
     // Sign out operation. Reset the current user UID.
     currentUid = null;
@@ -3146,7 +3149,7 @@
   <div id="mainnav">
     <nav v-bind:class="active" v-on:click.prevent>
       <a href="#" class="projects" v-on:click="makeActive('projects')">Map</a>
-      <a href="#" class="projects2" v-on:click="makeActive('projects2')">Message</a>
+      <a href="#" class="projects2" v-on:click="makeActive('projects2')">Message<span class = "red_notification">!</span></a>
       <a href="#" class="projects3" v-on:click="makeActive('projects3')">Book</a>
     </nav>
   </div>
@@ -3156,11 +3159,11 @@
     <div id = "test">
         <select id = "course_select" name="course_pick">
         </select>
-        <input type="submit" value="Enroll" onclick="course_add();">
+        <input id = "enroll_but" type="submit" value="Enroll" onclick="course_add();">
 
         <select id = "delete_select" name="course_delete">
         </select>
-        <input type="submit" value="Drop" onclick="delete_course(current_user_email);">
+        <input id = "drop_but" type="submit" value="Drop" onclick="delete_course(current_user_email,this.id);">
 
       <!-- <select v-model="selected" @select = "onSelect">
         <option v-for="option in options" v-bind:value="option.value">
@@ -3181,6 +3184,7 @@
   <div id="botdiv" class="page v1">
         <!-- <div> Version 1.3 </div> -->
         <div id="goback" onclick="goback()"><a>Back</a></div>
+        <div id="logout" onclick="logoutclick()"><a>Logout</a></div>
         <div id="account" onclick="showacc()"><a>Account</a></div>
   </div>
 
@@ -3212,25 +3216,75 @@
   <div id = "book_room">
       <p> Choose a Room to reserve </p>
       <br></br>
-      <select id = "time_select" name="time_pick">
-        <option value="t1">8AM-10AM</option>
-        <option value="t2">10AM-12AM</option>
-        <option value="t3">1PM-3PM</option>
-        <option value="t4">4PM-5PM</option>
+      <select id = "time_select_month" name="month_pick">
+        <option value="1">January</option>
+        <option value="2">February</option>
+        <option value="3">March</option>
+        <option value="4">April</option>
+        <option value="5">May</option>
+        <option value="6">June</option>
+        <option value="7">July</option>
+        <option value="8">August</option>
+        <option value="9">September</option>
+        <option value="10">October</option>
+        <option value="11">November</option>
+        <option value="12">December</option>
+      </select>
+      <select id="time_select_day" name="day_pick" />
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+        <option>12</option>
+        <option>13</option>
+        <option>14</option>
+        <option>15</option>
+        <option>16</option>
+        <option>17</option>
+        <option>18</option>
+        <option>19</option>
+        <option>20</option>
+        <option>21</option>
+        <option>22</option>
+        <option>23</option>
+        <option>24</option>
+        <option>25</option>
+        <option>26</option>
+        <option>27</option>
+        <option>28</option>
+        <option>29</option>
+        <option>30</option>
+        <option>31</option>
       </select>
       <br></br>
-      <select id = "book_select" name="book_room_pick">
-        <option value="r401">GGC 401</option>
-        <option value="r402">GGC 402</option>
-        <option value="r403">GCC 403</option>
-        <option value="r404">GGC 404</option>
+      <select id = "time_select" name="time_pick">
+        <option value="8">Select Time</option>
+        <option value="0">9AM-11AM</option>
+        <option value="1">11AM-1PM</option>
+        <option value="2">1PM-3PM</option>
+        <option value="3">3PM-5PM</option>
       </select>
+      <br></br>
+      <s1>Available Room</s1><div id = "showp"></div>
+      <select id = "book_select" name="book_room_pick">
+      </select>
+      <br></br>
+      <input id = "book_confirm" type="submit" value="Reserve" onclick="confirm_book();">
+
   </div>
+
+
 
   <div id="textbox">
     Room Information
   </div>
-
 
   <script>
 
@@ -3257,6 +3311,8 @@
             $('#message_section').fadeIn();
             $('#accountinfo').css("display","none");
             $('#book_room').css("display","none");
+            $(".red_notification").css("display", "none");
+            $("#classdes").css("display", "none");
             alloutS();
           }
           if(item == "projects3")
@@ -3266,6 +3322,7 @@
             $('#message_section').css("display","none");
             $('#accountinfo').css("display","none");
             $('#book_room').fadeIn();
+            $("#classdes").css("display", "none");
             alloutS();
           }
       }
@@ -3274,7 +3331,10 @@
     //  Initialate
     demo.makeActive('projects');
   </script>
-
+  <script>
+  book_update();
+  // add_book();
+  </script>
 
 <!-- <script>
 document.addEventListener('touchmove', function(e) {

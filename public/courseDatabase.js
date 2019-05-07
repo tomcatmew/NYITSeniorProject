@@ -919,7 +919,7 @@ function courseArrayInfo(){
 function coursesDatabase(){
     var db = firebase.firestore();
     for(i = 0; i < courseArray.length; i++){
-      db.collection("courseDatabase").doc(roomArray[i]["course_id"]).set(roomArray[i]).then(function() {
+      db.collection("courseDatabase").doc(courseArray[i]["course_id"]).set(courseArray[i]).then(function() {
           console.log("Courses InfoDocument successfully written!");
       });
     }
