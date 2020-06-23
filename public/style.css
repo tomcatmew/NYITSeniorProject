@@ -4,6 +4,7 @@ body
 {
 	width:414;
 	height:896;
+	background-color:white;
 	position: fixed;
 	overflow: auto;
 	/* -webkit-transform-style: preserve-3d; */
@@ -75,7 +76,101 @@ z-index: 400;
 	display: none;
 z-index: 400;
 }
+
 #ft16_7{
+	position: absolute;
+	top:100px;
+	left:40px;
+	width:50px;
+	height:50px;
+	background-image:url('metal.jpg');
+	border: 3px solid black;
+	font-weight:bold;
+	border-radius: 50%;
+	font-size:40px;
+	text-align: center;
+	color:#e39c03;
+	z-index: 400;
+}
+#ft16_8{
+	position: absolute;
+	top:100px;
+	left:110px;
+	width:50px;
+	height:50px;
+	background-image:url('metal.jpg');
+	border: 3px solid black;
+	font-weight:bold;
+	border-radius: 50%;
+	font-size:40px;
+	text-align: center;
+	color:#000000;
+	z-index: 400;
+}
+#eggc4{
+	position: absolute;
+	top:100px;
+	left:40px;
+	width:50px;
+	height:50px;
+	background-image:url('metal.jpg');
+	border: 3px solid black;
+	font-weight:bold;
+	border-radius: 50%;
+	text-align: center;
+	font-size:40px;
+	text-align: center;
+	color: #e39c03;
+	z-index: 400;
+
+}
+#eggc6{
+	position: absolute;
+	top:100px;
+	left:110px;
+	width:50px;
+	height:50px;
+	background-image:url('metal.jpg');
+	border-radius: 50%;
+	border: 3px solid black;
+	font-weight:bold;
+	font-size:40px;
+	text-align: center;
+	color: #000000;
+	z-index: 400;
+}
+#eggc7{
+	position: absolute;
+	top:100px;
+	left:180px;
+	width:50px;
+	height:50px;
+	background-image:url('metal.jpg');
+	border-radius: 50%;
+	border: 3px solid black;
+	font-weight:bold;
+	font-size:40px;
+	text-align: center;
+	color:#000000;
+	z-index: 400;
+}
+#eggc8{
+	position: absolute;
+	top:100px;
+	left:250px;
+	width:50px;
+	height:50px;
+	background-image:url('metal.jpg');
+	border-radius: 50%;
+	border: 3px solid black;
+	font-weight:bold;
+	font-size:40px;
+	text-align: center;
+	color:#000000;
+	z-index: 400;
+}
+
+/* #ft16_7{
 	position: absolute;
 	top:100px;
 	left:40px;
@@ -153,7 +248,7 @@ z-index: 400;
 	text-align: center;
 	color:#000000;
 	z-index: 400;
-}
+} */
 
 #botdiv{
 	position:absolute;
@@ -162,7 +257,7 @@ z-index: 400;
 
 }
 
-#goback{
+/* #goback{
 	position:absolute;
 	width:60px;
 	height:30px;
@@ -183,7 +278,7 @@ z-index: 400;
 	text-align: center;
 	font-size: 22px;
 
-}
+} */
 
 
 #account{
@@ -210,7 +305,7 @@ z-index: 400;
 }
 
 #logout{
-	left:190px;
+	left:-5px;
 	position:absolute;
 	width:100px;
 	height:30px;
@@ -220,7 +315,7 @@ z-index: 400;
 }
 
 #logout:hover{
-	left:190px;
+	left:-5px;
 	position:absolute;
 	width:100px;
 	height:30px;
@@ -332,6 +427,7 @@ z-index: 400;
 	position: absolute;
 	zoom:1.1;
 	top:40px;
+	left:-5px;
 }
 
 #select1{

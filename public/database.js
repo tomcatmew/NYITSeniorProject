@@ -5,29 +5,29 @@
 var course_enrolled = new Set();
 var global_count = 1;
 var message_count = 0;
+// var courseArray_2 = {};
 
 function addMessageToDatable(email){
     var db = firebase.firestore();
     var message = document.getElementById("textbar");
     var anony = document.getElementById("a_Check");
-    if (anony.checked == true){
-      var u_email = "Anonymous Student";
-    } else {
-      var u_email = email;
-    }
+    var ana_check = false;
+    if (anony.checked == true)
+        ana_check = true;
+    var u_email = email;
     var d = new Date();
     var g = Date.now();
     var tempt_id = $("#message_select").val();
     var course_ss = $( "#message_select option:selected" ).text();
     let action = confirm("Send the Message ?");
     if(action == true){
-      if(u_email != "Anonymous Student")
-      {
         db.collection("user").doc(u_email).collection("account").doc("userInfo")
          .get().then(function(doc2) {
           var userRef = doc2.data();
           u_name = userRef.name;
           u_role = userRef.role;
+          if(ana_check)
+            u_name = "Anonymous Student";
           db.collection("message").add({
             user_name : u_name,
             user_email: u_email,
@@ -46,27 +46,6 @@ function addMessageToDatable(email){
         });
         alert("You have successfully sent the message ");
         });
-      }
-      else
-      {
-          db.collection("message").add({
-            user_name : "Anonymous Student",
-            user_email: u_email,
-            course_id: tempt_id,
-            message: message.value,
-            time: g,
-            course_short : course_ss,
-            role : u_role
-        })
-        .then(function() {
-          message.innerHTML = '';
-            console.log("message successfully written!");
-        })
-        .catch(function(error) {
-            console.error("Error writing document: ", error);
-        });
-        alert("You have successfully sent the message ");
-      }
     }
     else
     {
@@ -464,86 +443,6 @@ function getUserInfoRealTime(user){
 //     default: return "Error";
 // }
 
-function check_if_book()
-{
-  var db = firebase.firestore();
-  db.collection("room")
-  .onSnapshot(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-
-  ref = doc.data();
-  book_string = ref.book;
-  // ref.status = "green";
-  if(book_string != " ")
-  {
-        lista = book_string.split(" ");
-        for(var i = 0; i < lista.length; i++)
-        {
-          var tempt_list = lista[i].split(",");
-          var c_month = tempt_list[1];
-          var c_date = tempt_list[0];
-          var book_start_time;
-          var book_end_time;
-
-          var today = new Date();
-          var the_date = today.getDate();
-          var the_month = today.getMonth() + 1;
-
-          switch (tempt_list[2]) {
-              case '0':
-                      book_start_time = 9*60;
-                      book_end_time = 11*60;
-                      break;
-              case '1':
-                      book_start_time = 11*60;
-                      book_end_time = 13*60;
-                      break;
-              case '2':
-                      book_start_time = 13*60;
-                      book_end_time = 15*60;
-                      break;
-              case '3':
-                      book_start_time = 15*60;
-                      book_end_time = 17*60;
-                      break;
-              default: return "Error";
-          }
-          var z = today.getHours();
-          var n = today.getMinutes();
-          var current_min = z*60 + n;
-
-          console.log("current minutes: " + current_min);
-          console.log("start minutes: " + book_start_time);
-          console.log("end minutes: " + book_end_time);
-          console.log("current date: " + the_date);
-          console.log("current  month: " + the_month);
-          console.log("book date: " + c_date);
-          console.log("book month: " + c_month);
-          if((the_date == c_date)&&(the_month == c_month))
-          {
-            if((book_start_time <= current_min)&&(current_min <= book_end_time))
-            {
-              db.collection("room").doc("b" + ref.location + ref.room).update({
-                  "book_list" : ref.location + ref.room + " Room is Reserved",
-                  "status": "yellow"
-              });
-            }
-            else
-            {
-              db.collection("room").doc("b" + ref.location + ref.room).update({
-                  "book_list" : ref.location + ref.room + " room is free",
-                  "status": "green"
-              });
-            }
-          }
-
-         }
-   }
-   });
-  });
-}
-
-
 
 function get_class_status(){
   var db = firebase.firestore();
@@ -551,28 +450,28 @@ function get_class_status(){
   .onSnapshot(function(querySnapshot) {
     querySnapshot.forEach(function(doc) {
       var ref = doc.data();
-      switch(`${ref.status}`)
+      switch(ref.status)
       {
         case "red":
-          var locate = 'b'  + `${ref.location}` +   `${ref.room}`;
+          var locate = 'b'  + ref.location +   ref.room;
           var x = document.getElementById(locate);
           if( x != null)
             x.style.fill = 'red';
           break;
         case "green":
-          var locate = 'b'  + `${ref.location}` +   `${ref.room}`;
+          var locate = 'b'  + ref.location +  ref.room;
           var x = document.getElementById(locate);
           if( x != null)
               x.style.fill = 'green';
           break;
         case "yellow":
-            var locate = 'b'  + `${ref.location}` +   `${ref.room}`;
+            var locate = 'b'  + ref.location +   ref.room;
             var x = document.getElementById(locate);
             if( x != null)
                 x.style.fill = 'yellow';
         break;
        default:
-          var locate = 'b'  + `${ref.location}` +   `${ref.room}`;
+          var locate = 'b'  + ref.location +   ref.room;
           var x = document.getElementById(locate);
           if( x != null)
               x.style.fill = 'green';
@@ -583,57 +482,6 @@ function get_class_status(){
 }
 
 
-function check_if_in_class(){
-  var list_transfer_2 = [];
-
-  var db = firebase.firestore();
-  db.collection("courseDatabase").where("course_number", ">=", "100")
-  .onSnapshot(function(querySnapshot) {
-    querySnapshot.forEach(function(doc) {
-      var ref = doc.data();
-      var list_transfer = [];
-      list_transfer.push(`${ref.capmus}`);
-      list_transfer.push(`${ref.course_id}`);
-      list_transfer.push(`${ref.course_number}`);
-      list_transfer.push(`${ref.course_title}`);
-      list_transfer.push(`${ref.department_code}`);
-      list_transfer.push(`${ref.instructor}`);
-      list_transfer.push(`${ref.location}`);
-      list_transfer.push(`${ref.schedule}`);
-      list_transfer.push(`${ref.term}`);
-      list_transfer.push(`${ref.room}`);
-      list_transfer.push(`${ref.section}`);
-      list_transfer_2.push(list_transfer);
-      });
-      var d = new Date();
-      var z = d.getHours();
-      var n = d.getMinutes();
-      var current_min = z*60 + n;
-
-      for(var i = 0; i < list_transfer_2.length; i++)
-      {
-          var check_length = list_transfer_2[i][7].split(" ").length;
-          real_leng = check_length/3;
-          for(var j = 0 ; j < real_leng; j++)
-          {
-          var tempt1 = list_transfer_2[i][7].split(" ")[j*3 + 1];
-          var tempt2 = list_transfer_2[i][7].split(" ")[j*3 + 2];
-          var start_time = timeConverterMinute(tempt1);
-          var end_time = timeConverterMinute(tempt2);
-            if((start_time < current_min)&&(current_min < end_time))
-            {
-              console.log("Time is in between :");
-              console.log(start_time);
-              console.log(current_min);
-              console.log(end_time);
-
-            }
-          }
-      }
-    }
-   );
-
-}
 
 function getUserCourseMessageRealTime(usermail){
   var db = firebase.firestore();
@@ -756,67 +604,234 @@ function scheduleFormat(schedule){
     return finalString;
 }
 
+function check_if_book()
+{
+  var db = firebase.firestore();
+  db.collection("room").get().then(function(querySnapshot) {
+    querySnapshot.forEach(function(doc) {
+  room_info  = ref.location + ref.room
+  ref = doc.data();
+  book_string = ref.book;
+  // ref.status = "green";
+  if(book_string != " ")
+  {
+        lista = book_string.split(" ");
+        for(var i = 0; i < lista.length; i++)
+        {
+          var tempt_list = lista[i].split(",");
+          var c_month = tempt_list[1];
+          var c_date = tempt_list[0];
+          var book_start_time;
+          var book_end_time;
+
+          var today = new Date();
+          var the_date = today.getDate();
+          var the_month = today.getMonth() + 1;
+
+          switch (tempt_list[2]) {
+              case '0':
+                      book_start_time = 9*60;
+                      book_end_time = 11*60;
+                      break;
+              case '1':
+                      book_start_time = 11*60;
+                      book_end_time = 13*60;
+                      break;
+              case '2':
+                      book_start_time = 13*60;
+                      book_end_time = 15*60;
+                      break;
+              case '3':
+                      book_start_time = 15*60;
+                      book_end_time = 17*60;
+                      break;
+              default: return "Error";
+          }
+          var z = today.getHours();
+          var n = today.getMinutes();
+          var current_min = z*60 + n;
+
+          console.log("=================================================================================");
+          console.log("current minutes: " + current_min);
+          console.log("start minutes: " + book_start_time);
+          console.log("end minutes: " + book_end_time);
+          console.log("current date: " + the_date);
+          console.log("current  month: " + the_month);
+          console.log("book date: " + c_date);
+          console.log("book month: " + c_month);
+          if((the_date == c_date)&&(the_month == c_month))
+          {
+            if((book_start_time <= current_min)&&(current_min <= book_end_time))
+            {
+              if(ref.status != "red")
+                  db.collection("room").doc("b" + ref.location + ref.room).update({
+                      "book_list" : room_info + " room is Reserved",
+                      "status": "yellow"
+                  });
+            }
+            else
+            {
+              if(ref.status == "yellow")
+              db.collection("room").doc("b" + ref.location + ref.room).update({
+                  "book" : " ",
+                  "book_list" : room_info + " room is free",
+                  "status": "green"
+              });
+            }
+          }
+
+        }
+   }
+   });
+  });
+}
+
 function check_time2(){
   var db = firebase.firestore();
+  db.collection("courseDatabase").get().then(function(querySnapshot) {
+    var courseArray_2 = {};
+    querySnapshot.forEach(function(doc) {
+      var ref = doc.data();
+      courseArray_2[ref.department_code + ref.course_number + ref.section] =
+      {
+            course_id: ref.course_id,
+            department_code: ref.department_code,
+            course_number: ref.course_number,
+            section:ref.section,
+            course_title: ref.course_title,
+            capmus: ref.capmus,
+            location: ref.location,
+            room: ref.room,
+            term: ref.term,
+            instructor: ref.instructor,
+            schedule: ref.schedule
+      }
+      });
+
   var d = new Date();
   var z = d.getHours();
   var n = d.getMinutes();
   var day = d.getDay();
   var current_min = z*60 + n;
+  console.log("courseArray2 is ");
+  console.log(courseArray_2);
+  var count = 0;
   for(let i of Object.keys(courseArray_2))
   {
       var same_c_check = true;
       var check_length = courseArray_2[i]["schedule"].split(" ").length;
       var real_leng = check_length/3;
+      // console.log("real_leng : " + real_leng);
       for(var j = 0 ; j < real_leng; j++)
       {
-      var tempt_room  = courseArray_2[i]["room"].split(" ")[j];
-      var tempt_location  = courseArray_2[i]["location"].split(" ")[j];
-      var c_day = courseArray_2[i]["schedule"].split(" ")[j*3];
-      var tempt1 = courseArray_2[i]["schedule"].split(" ")[j*3 + 1];
-      var tempt2 = courseArray_2[i]["schedule"].split(" ")[j*3 + 2];
-      var start_time = timeConverterMinute(tempt1);
-      var end_time = timeConverterMinute(tempt2);
+        if(same_c_check == false)
+          break;
+        // console.log("count : " + count);
+        count++;
+          var tempt_room  = courseArray_2[i]["room"].split(" ")[j];
+          var tempt_location  = courseArray_2[i]["location"].split(" ")[j];
+          var c_day = courseArray_2[i]["schedule"].split(" ")[j*3];
+          var tempt1 = courseArray_2[i]["schedule"].split(" ")[j*3 + 1];
+          var tempt2 = courseArray_2[i]["schedule"].split(" ")[j*3 + 2];
+          var start_time = timeConverterMinute(tempt1);
+          var end_time = timeConverterMinute(tempt2);
+          // console.log(courseArray_2[i]["department_code"] + " " + courseArray_2[i]["course_number"]);
+          // console.log(start_time);
+          // console.log(current_min);
+          // console.log(end_time);
+          // console.log("=============");
             if((c_day == day)&&(start_time < current_min)&&(current_min < end_time))
             {
-              console.log("in class ZZZZZZZZZZZZ");
-              // var room_data = {
-              //   room: tempt_room,
-              //   location: tempt_location,
-              //   book_list:courseArray_2[i]["department_code"] + " " + courseArray_2[i]["course_number"] + " is in class",
-              //   status: "red"
-              // };
-              db.collection("room").doc("b" + courseArray_2[i]["location"].split(" ")[j] + courseArray_2[i]["room"].split(" ")[j]).update({
-                  "book_list" : courseArray_2[i]["department_code"] + " " + courseArray_2[i]["course_number"] + " is in class",
-                  "status": "red"
-              });
+              console.log(courseArray_2[i]["department_code"] + " " + courseArray_2[i]["course_number"] + "is in class");
+                db.collection("room").doc("b" + courseArray_2[i]["location"].split(" ")[j] + courseArray_2[i]["room"].split(" ")[j]).update({
+                    "book_list" : courseArray_2[i]["department_code"] + " " + courseArray_2[i]["course_number"] + " " + courseArray_2[i]["section"] + " is in class",
+                    "in_course_id" : courseArray_2[i]["course_id"],
+                    "status": "red"
+                });
               same_c_check = false;
+              break;
             }
             else
             {
                 if(same_c_check){
-                    db.collection("room").doc("b" + courseArray_2[i]["location"].split(" ")[j] + courseArray_2[i]["room"].split(" ")[j]).onSnapshot(function(doc) {
-                    var userRef = doc.data();
-                    if(userRef != null)
-                    {
-                          if((userRef.status == "red")&&(userRef.book_list.split(" ")[0] == courseArray_2[i]["department_code"])&&(userRef.book_list.split(" ")[1] == courseArray_2[i]["course_number"]))
-                          {
-                            console.log("Class is over" + "  " + "b" + courseArray_2[i]["location"].split(" ")[j] + courseArray_2[i]["room"].split(" ")[j]);
-                            db.collection("room").doc("b" + courseArray_2[i]["location"].split(" ")[j] + courseArray_2[i]["room"].split(" ")[j]).update({
-                                "book_list" : "room is free",
-                                "status": "green"
-                            });
-                          }
-                    }
+                  // .onSnapshot(function(doc) {
+                  // .doc("b" + courseArray_2[i]["location"].split(" ")[j] + courseArray_2[i]["room"].split(" ")[j])
+                    db.collection("room").where("in_course_id", "==", courseArray_2[i]["course_id"]).get().then(function(querySnapshot) {
+                        querySnapshot.forEach(function(doc) {
+                           var userRef = doc.data();
+                           if(userRef.status == "red")
+                           {
+                                    console.log("Class is Over : "+ userRef.location + userRef.room);
+                                     db.collection("room").doc("b" + userRef.location + userRef.room).update({
+                                         "book_list" : userRef.location + userRef.room + " room is free",
+                                         "in_course_id" : "0",
+                                         "status": "green"
+                                     });
+                           }
+                      });
                   });
               }
             }
-            if(j = real_leng - 1)
-              same_c_check = true;
+            // if(j = real_leng - 1)
+            //   same_c_check = true;
        }
-  }
+    }
+    });
 }
 
+// function check_if_in_class(){
+//
+//
+//   var db = firebase.firestore();
+//   db.collection("courseDatabase").where("course_number", ">=", "100")
+//   .onSnapshot(function(querySnapshot) {
+//     var list_transfer_2 = {};
+//     querySnapshot.forEach(function(doc) {
+//       var ref = doc.data();
+//       list_transfer_2[ref.department_code + ref.course_number]=
+//       {
+//             course_id: ref.course_id,
+//             department_code: ref.department_code,
+//             course_number: ref.course_number,
+//             section:ref.section,
+//             course_title: ref.course_title,
+//             capmus: ref.capmus,
+//             location: ref.location,
+//             room: ref.room,
+//             term: ref.term,
+//             instructor: ref.instructor,
+//             schedule: ref.schedule
+//       }
+//       });
+//
+//       var d = new Date();
+//       var z = d.getHours();
+//       var n = d.getMinutes();
+//       var current_min = z*60 + n;
+//
+//       for(var i = 0; i < list_transfer_2.length; i++)
+//       {
+//           var check_length = list_transfer_2[i][7].split(" ").length;
+//           real_leng = check_length/3;
+//           for(var j = 0 ; j < real_leng; j++)
+//           {
+//           var tempt1 = list_transfer_2[i][7].split(" ")[j*3 + 1];
+//           var tempt2 = list_transfer_2[i][7].split(" ")[j*3 + 2];
+//           var start_time = timeConverterMinute(tempt1);
+//           var end_time = timeConverterMinute(tempt2);
+//             if((start_time < current_min)&&(current_min < end_time))
+//             {
+//               console.log("Time is in between :");
+//               console.log(start_time);
+//               console.log(current_min);
+//               console.log(end_time);
+//
+//             }
+//           }
+//       }
+//     });
+//
+// }
 
 function book_check_class(time_area,day){
   var db = firebase.firestore();
@@ -836,7 +851,7 @@ function book_check_class(time_area,day){
               break;
       case '2':
               book_start_time = 13*60;
-              book_end_time = 15*60;
+              book_end_time = 14*60;
               break;
       case '3':
               book_start_time = 15*60;
@@ -846,17 +861,17 @@ function book_check_class(time_area,day){
   }
 
 
-  for(let i of Object.keys(courseArray_2))
+  for(let i of Object.keys(courseArray_3))
   {
-      var check_length = courseArray_2[i]["schedule"].split(" ").length;
+      var check_length = courseArray_3[i]["schedule"].split(" ").length;
       var real_leng = check_length/3;
       for(var j = 0 ; j < real_leng; j++)
       {
-      var tempt_room  = courseArray_2[i]["room"].split(" ")[j];
-      var tempt_location  = courseArray_2[i]["location"].split(" ")[j];
-      var c_day = courseArray_2[i]["schedule"].split(" ")[j*3];
-      var tempt1 = courseArray_2[i]["schedule"].split(" ")[j*3 + 1];
-      var tempt2 = courseArray_2[i]["schedule"].split(" ")[j*3 + 2];
+      var tempt_room  = courseArray_3[i]["room"].split(" ")[j];
+      var tempt_location  = courseArray_3[i]["location"].split(" ")[j];
+      var c_day = courseArray_3[i]["schedule"].split(" ")[j*3];
+      var tempt1 = courseArray_3[i]["schedule"].split(" ")[j*3 + 1];
+      var tempt2 = courseArray_3[i]["schedule"].split(" ")[j*3 + 2];
       var start_time = timeConverterMinute(tempt1);
       var end_time = timeConverterMinute(tempt2);
 
@@ -866,7 +881,7 @@ function book_check_class(time_area,day){
                   {
                     unable_book_list.push(tempt_location+tempt_room);
                   }
-                  if ((end_time <= book_end_time)&&(book_end_time <= end_time))
+                  else if ((end_time <= book_end_time)&&(book_end_time <= end_time))
                     unable_book_list.push(tempt_location+tempt_room);
             }
        }
@@ -879,7 +894,7 @@ function book_check_class(time_area,day){
 
 
 
-var courseArray_2 = {
+var courseArray_3 = {
   MATH101_M01:{
   course_id: "1815",
   department_code: "MATH",
@@ -1668,7 +1683,7 @@ CSCI330_M03:{
   course_id: "2764",
   department_code: "CSCI",
   course_number: "330",
-  section:"M01",
+  section:"M03",
   course_title: "Operating Systems",
   capmus: "Manhattan Campus",
   location: "GGC GGC",

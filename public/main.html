@@ -59,7 +59,7 @@
 
 </head>
 
-<body >
+<body>
   <script>
   var currentUid = null;
   firebase.auth().onAuthStateChanged(function(user) {
@@ -84,10 +84,11 @@
     delete_list(current_user_email);
     message_update();
     get_class_status();
+    // check_time2();
     check_time2();
     // setInterval(check_time2(), 60000);
     mess_note();
-    room_des();
+    // room_des();
     check_if_book();
     // check_time2();
     // room_update_test();
@@ -3183,7 +3184,7 @@
 
   <div id="botdiv" class="page v1">
         <!-- <div> Version 1.3 </div> -->
-        <div id="goback" onclick="goback()"><a>Back</a></div>
+        <!-- <div id="goback" onclick="goback()"><a>Back</a></div> -->
         <div id="logout" onclick="logoutclick()"><a>Logout</a></div>
         <div id="account" onclick="showacc()"><a>Account</a></div>
   </div>
@@ -3333,6 +3334,7 @@
   </script>
   <script>
   book_update();
+  // desktop_check();
   // add_book();
   </script>
 

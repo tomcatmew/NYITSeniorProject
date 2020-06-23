@@ -6,7 +6,7 @@
 <head>
 <!-- <meta name = "google-signin-client_id" content = "422335312378-69bauf2v55jqbqnohc6a5qi8mfccqgq7.apps.googleusercontent.com"> -->
 
-<title>Test</title>
+<title>Senior Project Login</title>
 
 <style>
     #my-signin2{
@@ -65,8 +65,10 @@
 
 
   <!--   test       -->
-  <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" />
+  <!-- <script src="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.js"></script> -->
+    <!-- <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.5.2/firebaseui.css" /> -->
+    <script src="https://www.gstatic.com/firebasejs/ui/4.2.0/firebase-ui-auth.js"></script>
+      <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.2.0/firebase-ui-auth.css" />
     <script type="text/javascript">
       // FirebaseUI config.
       var uiConfig = {
@@ -104,36 +106,6 @@
   <h1 align="center" style="color:white;">Firebase Auth Demo</h1>
   <div id="firebaseui-auth-container"></div>
   <div id  = "app_prompt"></div>
-
-
-
-<!--
-
-  <div id="my-signin2"></div>
-    <script>
-      function onSuccess(googleUser) {
-        console.log('Logged in as: ' + googleUser.getBasicProfile().getName());
-      }
-      function onFailure(error) {
-        console.log(error);
-      }
-      function renderButton() {
-        gapi.signin2.render('my-signin2', {
-          'scope': 'profile email',
-          'width': 240,
-          'height': 50,
-          'longtitle': true,
-          'theme': 'dark',
-          'onsuccess': onSuccess,
-          'onfailure': onFailure
-
-        });
-      }
-    </script>
-
-
- <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script> -->
-
 
 </body>
 </html>

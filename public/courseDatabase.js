@@ -791,7 +791,7 @@ function courseArrayInfo(){
       course_id: "2764",
       department_code: "CSCI",
       course_number: "330",
-      section:"M01",
+      section:"M03",
       course_title: "Operating Systems",
       capmus: "Manhattan Campus",
       location: "16W 16W",

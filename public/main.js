@@ -17,6 +17,21 @@ var delay = ( function() {
 
 var conflict = false;
 
+
+// function desktop_check(){
+//   var height = window.screen.height;
+//   var width = window.screen.width;
+//   console.log("height : " + height);
+//   console.log("width : " + width);
+//   if(width > height + 500)
+//   {
+//   var body = document.body;
+//   body.style.left = width/2.5 + "px";
+//   }
+// }
+
+
+
 function courseConflict(){
   var db = firebase.firestore();
    var tempt = document.getElementById("course_select");
@@ -122,7 +137,7 @@ var second_list = [];
 
 
 function book_update(){
-  var db = firebase.firestore();
+
   var selectElement = document.getElementById("time_select_month");
   var selectElement2 = document.getElementById("time_select_day");
   var selectElement3 = document.getElementById("time_select");
@@ -168,11 +183,11 @@ function add_book(){
 
         var ref = doc.data();
         var x = document.getElementById("book_select");
-        var room_des = ref.location + ref.room;
+        var room_des_s = ref.location + ref.room;
 
-        if(!unable_list.includes(room_des))
+        if(!unable_list.includes(room_des_s))
         {
-              console.log(the_day_tempt + "," + the_month + "," + time_area);
+
               if(ref.book == " ")
                 {
                   var option = document.createElement("option");
@@ -185,7 +200,6 @@ function add_book(){
                 var tempt_list = ref.book.split(" ");
                 if(!tempt_list.includes(book_string))
                 {
-                  console.log("Not include : " + book_string);
                   var option2 = document.createElement("option");
                   option2.value = "b" + ref.location + ref.room;
                   option2.text = ref.location + ref.room;
@@ -239,7 +253,6 @@ function confirm_book()
      book_string = the_day + "," + the_month + "," + time_area;
   else
      book_string = origin_list + " " + the_day + "," + the_month + "," + time_area;
-
 
   let action = confirm("Confirm to Reserve " + room);
   if(action == true){
@@ -619,7 +632,7 @@ function eggcfloorc4()
   $('#centerMAP6').css("display", "none" );
   $('#centerMAP7').css("display", "none" );
   $('#centerMAP8').css("display", "none" );
-  $('#eggc4').css("color", "#f44242" );
+  $('#eggc4').css("color", "#e39c03" );
   $('#eggc6').css("color", "#000000" );
   $('#eggc7').css("color", "#000000" );
   $('#eggc8').css("color", "#000000" );
@@ -631,7 +644,7 @@ function eggcfloorc6()
   $('#centerMAP7').css("display", "none" );
   $('#centerMAP8').css("display", "none" );
   $('#eggc4').css("color", "#000000" );
-  $('#eggc6').css("color", "#f44242" );
+  $('#eggc6').css("color", "#e39c03" );
   $('#eggc7').css("color", "#000000" );
   $('#eggc8').css("color", "#000000" );
 }
@@ -643,7 +656,7 @@ function eggcfloorc7()
   $('#centerMAP8').css("display", "none" );
   $('#eggc4').css("color", "#000000" );
   $('#eggc6').css("color", "#000000" );
-  $('#eggc7').css("color", "#f44242" );
+  $('#eggc7').css("color", "#e39c03" );
   $('#eggc8').css("color", "#000000" );
 }
 function eggcfloorc8()
@@ -655,21 +668,21 @@ function eggcfloorc8()
   $('#eggc4').css("color", "#000000" );
   $('#eggc6').css("color", "#000000" );
   $('#eggc7').css("color", "#000000" );
-  $('#eggc8').css("color", "#f44242" );
+  $('#eggc8').css("color", "#e39c03" );
 }
 function f_select_16_7()
 {
   $('#MAP16W_8').css("display", "none" );
   $('#MAP16W_7').css("display", "block" );
   $('#ft16_8').css("color", "#000000" );
-  $('#ft16_7').css("color", "#f44242" );
+  $('#ft16_7').css("color", "#e39c03" );
 }
 function f_select_16_8()
 {
   $('#MAP16W_7').css("display", "none" );
   $('#MAP16W_8').css("display", "block" );
   $('#ft16_7').css("color", "#000000" );
-  $('#ft16_8').css("color", "#f44242" );
+  $('#ft16_8').css("color", "#e39c03" );
 }
 
 
