@@ -1,4 +1,4 @@
-# This project is develop by Yifei Chen, Jialong Zhang and Binyu Wang for the Senior Project of New York Institute of Technology 
+# This project is develop by Yifei Chen,and Jialong Zhang Binyu Wang for the Senior Project of New York Institute of Technology 
 
 # main.js update
 ```
