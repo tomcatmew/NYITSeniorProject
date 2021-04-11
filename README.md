@@ -1,5 +1,10 @@
 # This project is develop by Yifei Chen,and Jialong Zhang Binyu Wang for the Senior Project of New York Institute of Technology 
 
+# NYITSeniorProject
+NYIT Senior Project - Web App
+
+Publishing Url： https://delta-chess-735.firebaseapp.com/
+
 # main.js update
 ```
 function eggcfloorc4()
